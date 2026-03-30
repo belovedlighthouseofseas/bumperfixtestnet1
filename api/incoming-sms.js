@@ -1,66 +1,120 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// /api/incoming-sms.js  —  Vercel serverless function
-//
-// Twilio webhook — receives inbound SMS replies from customers.
-// If the customer replies YES, marks their booking status = 'confirmed'.
-//
-// Required environment variables (Vercel):
-//   SUPABASE_URL         https://xxxx.supabase.co
-//   SUPABASE_SECRET_KEY  sb_secret_xxxx
-//
-// Setup: in Twilio Console → Phone Numbers → your number →
-//   Messaging → "A message comes in" → Webhook → set to:
-//   https://your-vercel-url.vercel.app/api/incoming-sms
-// ─────────────────────────────────────────────────────────────────────────────
-
+// /api/incoming-sms.js — Twilio inbound SMS webhook
+// Handles YES / NO / RESCHEDULE / STOP replies from customers
 import { createClient } from '@supabase/supabase-js';
+import twilio from 'twilio';
 
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_KEY = process.env.SUPABASE_SECRET_KEY;
+const SUPABASE_URL  = process.env.SUPABASE_URL;
+const SUPABASE_KEY  = process.env.SUPABASE_SECRET_KEY;
+const OWNER_PHONE   = process.env.OWNER_PHONE;
+
+function twiml(message) {
+  if (!message) return '<Response></Response>';
+  return `<Response><Message>${message}</Message></Response>`;
+}
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).send('Method not allowed.');
-  }
+  if (req.method !== 'POST') return res.status(405).send('Method not allowed.');
 
-  const body = req.body || {};
-  const from  = body.From  || '';   // customer's phone number e.g. +16195551234
+  const body  = req.body || {};
+  const from  = body.From  || '';
   const text  = (body.Body || '').trim().toUpperCase();
 
   console.log(`[incoming-sms] From: ${from} — Message: "${text}"`);
 
-  if (!from) {
-    return res.status(400).send('<Response></Response>');
-  }
-
-  // Only act on YES replies
-  if (text === 'YES' || text === 'YES.' || text === 'YES!') {
-    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-
-    // Find the most recent booking from this phone number with status 'confirmed'
-    const { data: bookings, error } = await supabase
-      .from('bookings')
-      .select('id, name, date, time, status')
-      .eq('phone', from)
-      .eq('status', 'confirmed')
-      .order('created_at', { ascending: false })
-      .limit(1);
-
-    if (error) {
-      console.error('[incoming-sms] Supabase error:', error.message);
-    } else if (bookings && bookings.length > 0) {
-      const booking = bookings[0];
-
-      await supabase
-        .from('bookings')
-        .update({ status: 'yes_confirmed' })
-        .eq('id', booking.id);
-
-      console.log(`[incoming-sms] Booking ${booking.id} marked yes_confirmed — ${booking.name} on ${booking.date} at ${booking.time}`);
-    }
-  }
-
-  // Respond to Twilio with empty TwiML (no reply text sent back)
   res.setHeader('Content-Type', 'text/xml');
-  return res.status(200).send('<Response></Response>');
+
+  if (!from) return res.status(200).send('<Response></Response>');
+
+  const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+  // Find the most recent active booking from this number
+  const { data: bookings, error } = await supabase
+    .from('bookings')
+    .select('*')
+    .eq('phone', from)
+    .in('status', ['confirmed', 'yes_confirmed', 'reschedule_requested'])
+    .order('created_at', { ascending: false })
+    .limit(1);
+
+  if (error) {
+    console.error('[incoming-sms] Supabase error:', error.message);
+    return res.status(200).send('<Response></Response>');
+  }
+
+  if (!bookings || bookings.length === 0) {
+    return res.status(200).send(twiml('We could not find an active booking for this number. Call (858) 988-0325 for help.'));
+  }
+
+  const booking = bookings[0];
+  const client  = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+
+  // ── YES ──────────────────────────────────────────────────────────────────────
+  if (text === 'YES' || text === 'YES.' || text === 'YES!') {
+    await supabase.from('bookings').update({
+      status: 'yes_confirmed',
+      customer_reply: 'YES',
+      customer_reply_at: new Date().toISOString()
+    }).eq('id', booking.id);
+
+    console.log(`[incoming-sms] YES confirmed: ${booking.id}`);
+
+    // Notify owner
+    if (OWNER_PHONE) {
+      try {
+        await client.messages.create({
+          body: `✅ Bumper Fix: ${booking.name} confirmed their appointment on ${booking.date} at ${booking.time} in ${booking.area}. Phone: ${from}`,
+          from: process.env.TWILIO_PHONE_NUMBER,
+          to: OWNER_PHONE
+        });
+      } catch (e) { console.error('[incoming-sms] Owner notify error:', e.message); }
+    }
+
+    return res.status(200).send(twiml(`Confirmed! See you on ${booking.date} at ${booking.time}. Call/text (858) 988-0325 if anything changes.`));
+  }
+
+  // ── RESCHEDULE ───────────────────────────────────────────────────────────────
+  if (text === 'RESCHEDULE') {
+    await supabase.from('bookings').update({
+      status: 'reschedule_requested',
+      customer_reply: 'RESCHEDULE',
+      customer_reply_at: new Date().toISOString()
+    }).eq('id', booking.id);
+
+    // Notify owner
+    if (OWNER_PHONE) {
+      try {
+        await client.messages.create({
+          body: `🔄 Bumper Fix: ${booking.name} requested a reschedule for ${booking.date} at ${booking.time}. Phone: ${from}`,
+          from: process.env.TWILIO_PHONE_NUMBER,
+          to: OWNER_PHONE
+        });
+      } catch (e) { console.error('[incoming-sms] Owner notify error:', e.message); }
+    }
+
+    return res.status(200).send(twiml('Got it — reschedule request received. We will contact you shortly to find a new time.'));
+  }
+
+  // ── NO / STOP / CANCEL ───────────────────────────────────────────────────────
+  if (text === 'NO' || text === 'STOP' || text === 'CANCEL' || text === 'NO.' || text === 'NO!') {
+    await supabase.from('bookings').update({
+      status: 'canceled',
+      customer_reply: text,
+      customer_reply_at: new Date().toISOString()
+    }).eq('id', booking.id);
+
+    if (OWNER_PHONE) {
+      try {
+        await client.messages.create({
+          body: `❌ Bumper Fix: ${booking.name} canceled their appointment on ${booking.date} at ${booking.time}. Phone: ${from}`,
+          from: process.env.TWILIO_PHONE_NUMBER,
+          to: OWNER_PHONE
+        });
+      } catch (e) { console.error('[incoming-sms] Owner notify error:', e.message); }
+    }
+
+    return res.status(200).send(twiml('Your appointment has been canceled. Call (858) 988-0325 if you change your mind.'));
+  }
+
+  // ── Unrecognized reply ───────────────────────────────────────────────────────
+  return res.status(200).send(twiml('Reply YES to confirm, RESCHEDULE to change, or STOP to cancel your appointment.'));
 }

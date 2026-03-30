@@ -2065,11 +2065,10 @@ document.addEventListener('mouseleave', function(e) {
       try {
         const res = await fetch('/api/get-availability');
         const data = await res.json();
-        if (data.booked) {
-          bookedSlots = new Set(
-            data.booked.map(b => `${b.date}|${b.time}`)
-          );
-        }
+        bookedSlots = new Set([
+          ...(data.booked  || []).map(b => `${b.date}|${b.time}`),
+          ...(data.blocked || []).map(b => b.time ? `${b.date}|${b.time}` : `${b.date}|ALL`)
+        ]);
       } catch (e) {
         console.warn('[calendar] Could not load availability:', e.message);
       }
@@ -2083,6 +2082,7 @@ document.addEventListener('mouseleave', function(e) {
 
     function isDateFullyBooked(date) {
       const ds = date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+      if (bookedSlots.has(`${ds}|ALL`)) return true;
       return TIMES.every(t => bookedSlots.has(`${ds}|${t}`));
     }
 
