@@ -2056,7 +2056,35 @@ document.addEventListener('mouseleave', function(e) {
     let selectedDate = null, selectedTime = null;
     const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
     const TIMES = ['8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM'];
-    const BOOKED = [2,5,8]; // fake booked slots by index
+
+    // Real booked slots loaded from Supabase via /api/get-availability
+    // Format: Set of "dateString|time" keys e.g. "Mon Apr 07 2026|10:00 AM"
+    let bookedSlots = new Set();
+
+    async function loadAvailability() {
+      try {
+        const res = await fetch('/api/get-availability');
+        const data = await res.json();
+        if (data.booked) {
+          bookedSlots = new Set(
+            data.booked.map(b => `${b.date}|${b.time}`)
+          );
+        }
+      } catch (e) {
+        console.warn('[calendar] Could not load availability:', e.message);
+      }
+      renderCal();
+      renderTimes();
+    }
+
+    function isSlotBooked(dateString, time) {
+      return bookedSlots.has(`${dateString}|${time}`);
+    }
+
+    function isDateFullyBooked(date) {
+      const ds = date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+      return TIMES.every(t => bookedSlots.has(`${ds}|${t}`));
+    }
 
     function renderCal() {
       const label = document.getElementById('calMonthLabel');
@@ -2073,8 +2101,10 @@ document.addEventListener('mouseleave', function(e) {
         const isPast = date < new Date(now.getFullYear(),now.getMonth(),now.getDate());
         const isWknd = date.getDay()===0||date.getDay()===6;
         const isSel = selectedDate && date.toDateString()===selectedDate.toDateString();
+        const isFull = !isPast && !isWknd && isDateFullyBooked(date);
         let cls = 'cal-day';
         if (isPast) cls += ' past';
+        else if (isFull) cls += ' past'; // fully booked — shown as unavailable
         else if (isSel) cls += ' selected available';
         else if (isToday) cls += ' today available has-slot';
         else if (!isWknd) cls += ' available has-slot';
@@ -2097,8 +2127,9 @@ document.addEventListener('mouseleave', function(e) {
       const el = document.getElementById('timeSlots');
       if (!el) return;
       if (!selectedDate) { el.innerHTML = '<p style="font-size:13px;color:#aaa;grid-column:span 3;">Select a date first</p>'; return; }
-      el.innerHTML = TIMES.map((t,i) => {
-        const isBooked = BOOKED.includes(i);
+      const ds = selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+      el.innerHTML = TIMES.map(t => {
+        const isBooked = isSlotBooked(ds, t);
         const isSel = selectedTime===t;
         return `<div class="ts-slot ${isBooked?'booked':''} ${isSel?'selected':''}" data-time="${t}">${isBooked?'Taken':t}</div>`;
       }).join('');
@@ -2143,7 +2174,7 @@ document.addEventListener('mouseleave', function(e) {
       openBookingModal();
     });
 
-    renderCal(); renderTimes();
+    loadAvailability();
   })();
 
   // ── COST CALCULATOR ───────────────────────────────────────
