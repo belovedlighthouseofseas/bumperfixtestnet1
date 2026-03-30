@@ -1,0 +1,2567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bumper Fix — Mobile Bumper Repair & Auto Body Paint | San Diego, CA</title>
+  <meta name="description" content="Mobile bumper repair and cosmetic auto body service across San Diego County. We come to your home or office. No shop drop-off. Fast photo quote. Call (858) 988-0325."/>
+  <meta property="og:title" content="Bumper Fix — Mobile Auto Body Paint · San Diego"/>
+  <meta property="og:description" content="Mobile bumper repair and cosmetic auto body service across San Diego County. We come to you — home or office. Fast photo quote. Call (858) 988-0325."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.bumperfix.com/"/>
+  <meta property="og:image" content="https://www.bumperfix.com/og-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="canonical" href="https://www.bumperfix.com/"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "AutoRepair"],
+    "name": "Bumper Fix",
+    "description": "Mobile bumper repair and auto body paint serving all of San Diego County.",
+    "url": "https://www.bumperfix.com",
+    "telephone": "+18589880325",
+    "priceRange": "$$",
+    "address": { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" },
+    "geo": { "@type": "GeoCoordinates", "latitude": 32.7157, "longitude": -117.1611 },
+    "areaServed": { "@type": "AdministrativeArea", "name": "San Diego County" },
+    "openingHours": ["Mo-Fr 07:00-19:00", "Sa-Su 08:00-17:00"],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0C0C0C;
+      --bg2:     #161616;
+      --bg3:     #1F1F1F;
+      --white:   #FFFFFF;
+      --ink:     #FFFFFF;
+      --ink2:    #E0E0E0;
+      --mid:     #888888;
+      --line:    rgba(255,255,255,0.09);
+      --dark:    #080808;
+      --red:     #D92626;
+      --red2:    #B81E1E;
+      --rainbow: linear-gradient(90deg,#FF0000 0%,#FF6600 14%,#FFD600 28%,#00CC44 42%,#0088FF 57%,#6600FF 71%,#CC00FF 85%,#FF0066 100%);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+    /* ── RAINBOW WORDMARK ── */
+    .bf-rainbow { background: var(--rainbow); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .rainbow-block { background: var(--rainbow); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; }
+
+    /* ── HEADER ── */
+    .site-header { position: sticky; top: 0; z-index: 300; }
+
+    /* Marquee topbar */
+    .topbar {
+      background: var(--red);
+      height: 38px; overflow: hidden;
+      display: flex; align-items: center;
+      position: relative;
+      transition: height 0.3s ease, opacity 0.3s ease;
+    }
+    .topbar.hidden { height: 0; opacity: 0; }
+    .topbar::before, .topbar::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+    }
+    .topbar::before { left: 0; background: linear-gradient(90deg, var(--red), transparent); }
+    .topbar::after  { right: 0; background: linear-gradient(270deg, var(--red), transparent); }
+    .topbar-track { display: flex; white-space: nowrap; animation: topbarScroll 32s linear infinite; }
+    .topbar-track:hover { animation-play-state: paused; }
+    .topbar-item {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Anton', sans-serif; font-size: 13px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--white); padding: 0 28px; flex-shrink: 0;
+    }
+    .topbar-item a { color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); }
+    .topbar-sep { display: inline-block; width: 5px; height: 5px; background: rgba(255,255,255,0.5); border-radius: 50%; flex-shrink: 0; }
+    @keyframes topbarScroll { 0%{ transform: translateX(0); } 100%{ transform: translateX(-50%); } }
+
+    /* Nav */
+    nav {
+      background: rgba(12,12,12,0.98);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 48px;
+      backdrop-filter: blur(12px);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo { width: 38px; height: 38px; flex-shrink: 0; }
+    .nav-name { font-family: 'Anton', sans-serif; font-size: 21px; letter-spacing: 0.04em; color: var(--white); line-height: 1; }
+    .nav-name .sub { display: block; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); margin-top: 2px; -webkit-text-fill-color: var(--mid); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--mid); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-phone {
+      color: var(--white) !important; font-weight: 800 !important;
+      background: var(--red) !important; padding: 8px 16px !important;
+      border-radius: 6px !important; font-size: 14px !important;
+      transition: background 0.2s !important;
+    }
+    .nav-phone:hover { background: var(--red2) !important; }
+    .nav-cta {
+      background: transparent !important; border: 1px solid rgba(255,255,255,0.25) !important;
+      color: var(--white) !important; padding: 8px 18px !important;
+      border-radius: 6px !important; font-weight: 600 !important; font-size: 14px !important;
+      transition: border-color 0.2s, background 0.2s !important;
+    }
+    .nav-cta:hover { border-color: var(--white) !important; background: rgba(255,255,255,0.05) !important; }
+
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+    .mobile-menu { display: none; background: var(--bg2); border-top: 1px solid rgba(255,255,255,0.07); padding: 20px 24px; flex-direction: column; gap: 4px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { text-decoration: none; color: var(--ink2); font-size: 16px; font-weight: 500; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mm-phone { font-weight: 700 !important; color: var(--red) !important; font-size: 18px !important; }
+    .mm-cta { background: var(--red) !important; color: var(--white) !important; text-align: center; border-radius: 6px; font-weight: 700 !important; padding: 14px !important; border-bottom: none !important; margin-top: 8px; }
+
+    /* Availability bar */
+    .avail-bar {
+      background: var(--bg2); border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0 48px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+      max-height: 0; overflow: hidden; opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.35s ease, padding 0.35s ease;
+    }
+    .avail-bar.visible { max-height: 52px; opacity: 1; padding-top: 9px; padding-bottom: 9px; }
+    .avail-left { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .avail-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); border-radius: 100px; padding: 4px 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4ADE80; white-space: nowrap; }
+    .avail-dot { width: 7px; height: 7px; border-radius: 50%; background: #22C55E; animation: availPulse 2s infinite; flex-shrink: 0; }
+    @keyframes availPulse { 0%{box-shadow:0 0 0 0 rgba(34,197,94,0.6)} 70%{box-shadow:0 0 0 6px rgba(34,197,94,0)} 100%{box-shadow:0 0 0 0 rgba(34,197,94,0)} }
+    .avail-divider { width: 1px; height: 18px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
+    .avail-slots { font-size: 12px; color: var(--mid); white-space: nowrap; }
+    .avail-slots strong { color: var(--white); }
+    .avail-zone { font-size: 12px; color: var(--mid); display: flex; align-items: center; gap: 5px; white-space: nowrap; }
+    .avail-zone strong { color: var(--white); }
+    .avail-right { display: flex; align-items: center; gap: 12px; }
+    .avail-phone { font-family: 'Anton', sans-serif; font-size: 16px; color: var(--red); text-decoration: none; }
+    .avail-phone:hover { opacity: 0.8; }
+    .avail-cta { background: var(--red); color: var(--white); padding: 6px 16px; border-radius: 5px; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .avail-cta:hover { background: var(--red2); }
+
+    /* ── HERO ── */
+    .hero { min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+    .hero-left {
+      background: var(--bg); padding: 72px 60px 56px;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .hero-left-bg {
+      position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 60% 60% at 100% 0%, rgba(217,38,38,0.12) 0%, transparent 60%), radial-gradient(ellipse 40% 50% at 0% 100%, rgba(217,38,38,0.05) 0%, transparent 55%);
+    }
+    .hero-left-texture {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: repeating-linear-gradient(-45deg, transparent, transparent 20px, rgba(255,255,255,0.012) 20px, rgba(255,255,255,0.012) 21px);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(217,38,38,0.15); border: 1px solid rgba(217,38,38,0.35);
+      border-radius: 100px; padding: 7px 16px; font-size: 12px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #FF6666;
+      width: fit-content; margin-bottom: 24px;
+      opacity: 0; animation: fadeUp 0.8s 0.1s forwards;
+    }
+    .badge-pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--red); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(1.5)} }
+    .hero h1 {
+      font-family: 'Anton', sans-serif; font-size: clamp(60px, 7.5vw, 108px);
+      line-height: 0.88; letter-spacing: 0.01em; color: var(--white); margin-bottom: 14px;
+      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+    }
+    .hero-location {
+      font-family: 'Anton', sans-serif; font-size: clamp(15px, 1.8vw, 20px);
+      letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35);
+      margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s 0.3s forwards;
+    }
+    .hero-location span { color: var(--red); -webkit-text-fill-color: var(--red); }
+    .hero-desc { font-size: 16px; color: rgba(255,255,255,0.6); max-width: 420px; line-height: 1.75; margin-bottom: 36px; opacity: 0; animation: fadeUp 0.8s 0.38s forwards; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; opacity: 0; animation: fadeUp 0.8s 0.5s forwards; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 9px; background: var(--red); color: var(--white); padding: 15px 32px; border-radius: 6px; font-size: 15px; font-weight: 700; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+    .btn-primary:hover { background: var(--red2); transform: translateY(-2px); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 7px; color: rgba(255,255,255,0.65); font-size: 14px; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; }
+    .btn-ghost:hover { color: var(--white); border-color: rgba(255,255,255,0.5); }
+    .btn-sms { display: inline-flex; align-items: center; gap: 7px; color: #4ADE80; font-size: 14px; font-weight: 700; text-decoration: none; border: 1px solid rgba(74,222,128,0.3); padding: 8px 16px; border-radius: 6px; transition: all 0.2s; }
+    .btn-sms:hover { border-color: #4ADE80; background: rgba(74,222,128,0.06); }
+    .hero-trust {
+      display: grid; grid-template-columns: repeat(4, auto); gap: 24px; margin-top: 44px;
+      opacity: 0; animation: fadeUp 0.8s 0.65s forwards;
+      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; width: fit-content;
+    }
+    .trust-item { display: flex; align-items: center; gap: 10px; }
+    .trust-num { font-family: 'Anton', sans-serif; font-size: 34px; color: var(--red); line-height: 1; }
+    .trust-label { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.4; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+    /* Hero right */
+    .hero-right { background: var(--bg2); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+    .hero-map { flex: 1; position: relative; overflow: hidden; }
+    .hero-map iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .hero-map-pin {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -100%);
+      z-index: 10; pointer-events: none;
+    }
+    .hero-map-pin-body {
+      width: 44px; height: 44px; border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      background: linear-gradient(90deg,#FF0000,#FF6600,#FFD600,#00CC44,#0088FF,#6600FF,#FF0066);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.6); border: 2px solid rgba(255,255,255,0.4);
+    }
+    .hero-map-pin-body span { transform: rotate(45deg); font-size: 20px; }
+    .hero-map-label {
+      position: absolute; bottom: 70px; left: 50%; transform: translateX(-50%);
+      background: rgba(12,12,12,0.92); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px; padding: 8px 16px; font-size: 13px; font-weight: 600;
+      color: white; white-space: nowrap; z-index: 10; pointer-events: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    }
+    .hero-service-bar {
+      background: var(--bg3); border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 20px 32px; display: grid; grid-template-columns: repeat(3,1fr); gap: 12px;
+    }
+    .hsb-item { text-align: center; }
+    .hsb-icon { font-size: 20px; margin-bottom: 3px; }
+    .hsb-label { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip { background: #0A0A0A; display: flex; justify-content: center; align-items: center; overflow: hidden; flex-wrap: wrap; padding: 20px 48px; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .ts-item { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 9px 18px; font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85); white-space: nowrap; }
+    .ts-item:last-child { }
+    .ts-icon { font-size: 18px; }
+    .ts-hl { font-weight: 800; color: var(--red); }
+
+    /* ── SECTION COMMONS ── */
+    .section-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+    .section-tag::before { content: ''; width: 20px; height: 2px; background: var(--red); flex-shrink: 0; }
+    h2.section-h { font-family: 'Anton', sans-serif; font-size: clamp(40px, 5vw, 72px); letter-spacing: 0.01em; line-height: 0.92; margin-bottom: 18px; }
+    .section-p { font-size: 16px; color: var(--mid); line-height: 1.75; max-width: 500px; }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── SERVICES ── */
+    #services { padding: 88px 48px; background: var(--bg); }
+    .services-header { margin-bottom: 52px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .service-card { background: var(--bg2); padding: 40px 32px; position: relative; overflow: hidden; transition: background 0.3s; }
+    .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--red); transition: width 0.4s ease; }
+    .service-card:hover { background: var(--bg3); }
+    .service-card:hover::after { width: 100%; }
+    .sc-icon { font-size: 34px; margin-bottom: 18px; }
+    .sc-title { font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 0.03em; margin-bottom: 10px; line-height: 1.1; color: var(--white); }
+    .sc-desc { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 18px; }
+    .sc-time { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); }
+    .sc-num { position: absolute; bottom: 16px; right: 24px; font-family: 'Anton', sans-serif; font-size: 64px; color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none; }
+
+    /* Inline CTA strip */
+    .inline-cta { background: var(--bg3); border-top: 3px solid var(--red); padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .inline-cta-text { font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 0.03em; color: var(--white); }
+    .inline-cta-text span { color: var(--red); }
+    .inline-cta-sub { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+    .btn-sm { display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: var(--white); padding: 13px 28px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; transition: background 0.2s; flex-shrink: 0; }
+    .btn-sm:hover { background: var(--red2); }
+
+    /* ── HOW IT WORKS ── */
+    #how { padding: 88px 48px; background: #111111; border-top: 3px solid var(--red); position: relative; overflow: hidden; }
+    #how::before { content: ''; position: absolute; inset: 0; pointer-events: none; background-image: repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(255,255,255,0.012) 30px, rgba(255,255,255,0.012) 31px); }
+    #how .section-tag { color: var(--red); }
+    .how-header { margin-bottom: 60px; }
+    .how-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; }
+    .how-grid::before { content: ''; position: absolute; top: 44px; left: 12%; right: 12%; height: 1px; background: var(--red); opacity: 0.4; }
+    .how-step { padding-right: 28px; }
+    .how-num { width: 88px; height: 88px; border: 2px solid var(--red); background: #111111; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Anton', sans-serif; font-size: 30px; color: var(--red); margin-bottom: 26px; }
+    .how-title { font-family: 'Anton', sans-serif; font-size: 21px; letter-spacing: 0.03em; color: var(--white); margin-bottom: 10px; }
+    .how-desc { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; }
+
+    /* ── RESULTS ── */
+    #results { padding: 88px 48px; background: var(--bg2); border-top: 1px solid rgba(217,38,38,0.2); }
+    .results-stats { display: flex; align-items: center; justify-content: space-between; background: var(--bg3); border: 1px solid rgba(217,38,38,0.15); border-radius: 16px; padding: 40px 48px; margin-bottom: 56px; flex-wrap: wrap; gap: 24px; }
+    .rs-stat { text-align: center; flex: 1; min-width: 120px; }
+    .rs-num { font-family: 'Anton', sans-serif; font-size: clamp(44px, 5vw, 68px); line-height: 1; color: var(--white); letter-spacing: -0.01em; }
+    .rs-suffix { color: var(--red); font-size: 0.6em; vertical-align: super; }
+    .rs-label { font-size: 12px; color: var(--mid); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 6px; line-height: 1.4; }
+    .rs-divider { width: 1px; height: 60px; background: rgba(255,255,255,0.07); flex-shrink: 0; }
+    .rj-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .rj-card { background: var(--bg3); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.07); transition: border-color 0.3s, transform 0.3s; }
+    .rj-card:hover { border-color: var(--red); transform: translateY(-4px); }
+    .rj-photo { height: 180px; background: #1A1A1A; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+    .rj-photo-icon { font-size: 36px; opacity: 0.35; }
+    .rj-photo-txt { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.2); }
+    .rj-body { padding: 20px 22px; }
+    .rj-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); border: 1px solid rgba(217,38,38,0.35); border-radius: 3px; padding: 3px 9px; margin-bottom: 10px; }
+    .rj-title { font-family: 'Anton', sans-serif; font-size: 18px; letter-spacing: 0.03em; color: var(--white); margin-bottom: 8px; line-height: 1.2; }
+    .rj-meta { font-size: 12px; color: var(--mid); margin-bottom: 8px; }
+    .rj-time { color: var(--red); font-weight: 600; }
+    .rj-saved { font-size: 13px; color: rgba(255,255,255,0.5); }
+    .rj-saved strong { color: #4ADE80; }
+
+    /* ── PRICING ── */
+    #pricing { padding: 88px 48px; background: #F4F4F4; border-top: 3px solid var(--red); }
+    .pricing-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 52px; flex-wrap: wrap; gap: 20px; }
+    #pricing .section-tag { color: var(--red); }
+    #pricing .section-tag::before { background: var(--red); }
+    #pricing h2 { color: #111; }
+    #pricing .pricing-note { color: #666; }
+    .pricing-note { font-size: 13px; color: var(--mid); max-width: 260px; text-align: right; line-height: 1.6; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+    .price-card { background: #FFFFFF; padding: 40px 32px; border-bottom: 4px solid transparent; border: 1px solid #E0E0E0; position: relative; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; }
+    .price-card:hover { border-bottom-color: var(--red); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .price-card.popular { background: #111111; border-bottom-color: var(--red); transform: translateY(-10px); box-shadow: 0 20px 60px rgba(0,0,0,0.25), 0 0 40px rgba(217,38,38,0.2); border-color: transparent; }
+    .price-card.popular:hover { transform: translateY(-14px); }
+    .popular-tag { position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--red); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 16px; border-radius: 0 0 8px 8px; white-space: nowrap; }
+    .pc-type { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+    .pc-name { font-family: 'Anton', sans-serif; font-size: 24px; letter-spacing: 0.03em; margin-bottom: 6px; color: #111; }
+    .pc-dealer { font-size: 12px; color: #999; margin-bottom: 4px; }
+    .pc-dealer s { color: #bbb; }
+    .price-card.popular .pc-dealer { color: rgba(255,255,255,0.3); }
+    .price-card.popular .pc-dealer s { color: rgba(255,255,255,0.2); }
+    .pc-saving { font-size: 12px; color: #4ADE80; font-weight: 700; margin-bottom: 6px; }
+    .pc-price { font-family: 'Anton', sans-serif; font-size: 52px; letter-spacing: -0.01em; line-height: 1; margin-bottom: 4px; color: #111; }
+    .price-card.popular .pc-price { color: var(--red); }
+    .pc-from { font-size: 12px; color: #888; margin-bottom: 24px; }
+    .pc-features { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 28px; }
+    .pc-features li { display: flex; align-items: flex-start; gap: 9px; font-size: 14px; color: #666; line-height: 1.5; }
+    .price-card.popular .pc-features li { color: rgba(255,255,255,0.55); }
+    .pc-features li::before { content: '✓'; color: var(--red); font-weight: 700; flex-shrink: 0; }
+    .pc-btn { display: block; text-align: center; text-decoration: none; padding: 13px; border-radius: 6px; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; transition: all 0.2s; }
+    .pc-btn-outline { border: 1px solid #DDD; color: #333; }
+    .pc-btn-outline:hover { border-color: var(--red); color: var(--red); }
+    .pc-btn-fill { background: var(--red); color: var(--white); }
+    .pc-btn-fill:hover { background: var(--red2); }
+    /* Guarantee badge */
+    .guarantee-badge { display: inline-flex; align-items: center; gap: 14px; background: #111; border: 2px solid rgba(217,38,38,0.4); border-radius: 12px; padding: 18px 28px; }
+    .gb-icon { width: 48px; height: 48px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+    .gb-title { font-family: 'Anton', sans-serif; font-size: 17px; letter-spacing: 0.04em; color: var(--white); line-height: 1.1; }
+    .gb-sub { font-size: 12px; color: var(--mid); margin-top: 3px; }
+
+    /* ── COMPARE ── */
+    #compare { padding: 88px 48px; background: #131313; border-top: 1px solid rgba(255,255,255,0.06); }
+    .compare-header { margin-bottom: 52px; }
+    .compare-table { width: 100%; border-collapse: collapse; }
+    .compare-table th { padding: 18px 24px; text-align: left; font-family: 'Anton', sans-serif; font-size: 18px; letter-spacing: 0.04em; color: var(--white); }
+    .compare-table th:first-child { width: 36%; background: transparent; color: var(--mid); }
+    .compare-table th.shop-col { background: #1A1A1A; color: var(--mid); border-radius: 10px 10px 0 0; text-align: center; }
+    .compare-table th.bf-col { background: #1F0A0A; color: var(--white); border-radius: 10px 10px 0 0; text-align: center; }
+    .compare-table th.bf-col .bf-badge { display: block; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #FF8888; margin-top: 2px; }
+    .compare-table td { padding: 16px 24px; border-bottom: 1px solid var(--line); font-size: 14px; vertical-align: middle; }
+    .compare-table td:first-child { font-weight: 600; color: var(--ink2); }
+    .compare-table td.shop-val { background: #1A1A1A; text-align: center; color: var(--mid); }
+    .compare-table td.bf-val { background: #170A0A; text-align: center; color: rgba(255,255,255,0.7); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:last-child td.bf-val { border-radius: 0 0 10px 10px; }
+    .c-good { color: #4ADE80; font-weight: 700; }
+    .c-bad { color: #F87171; }
+    .c-neutral { color: var(--mid); }
+    /* FAQ nudge */
+    .faq-nudge { background: #111; border-top: 1px solid rgba(217,38,38,0.15); border-bottom: 1px solid rgba(217,38,38,0.15); padding: 22px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .faq-nudge-text { font-size: 15px; color: rgba(255,255,255,0.6); }
+    .faq-nudge-text strong { color: var(--white); }
+    .faq-nudge-link { font-family: 'Anton', sans-serif; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); text-decoration: none; border-bottom: 1px solid rgba(217,38,38,0.4); padding-bottom: 1px; }
+
+    /* ── SERVICE AREA MAP ── */
+    #area { padding: 0; background: var(--bg); border-top: 1px solid rgba(255,255,255,0.06); }
+    .area-header { padding: 56px 48px 32px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
+    .area-stats { display: flex; gap: 32px; flex-shrink: 0; }
+    .area-stat { text-align: center; }
+    .area-stat-num { font-family: 'Anton', sans-serif; font-size: 36px; color: var(--red); line-height: 1; }
+    .area-stat-label { font-size: 11px; color: var(--mid); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+    .area-legend { padding: 12px 48px; background: var(--bg2); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+    .legend-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); }
+    .legend-item { display: flex; align-items: center; gap: 7px; font-size: 13px; color: rgba(255,255,255,0.7); }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .legend-patch { width: 18px; height: 10px; border-radius: 3px; flex-shrink: 0; opacity: 0.8; }
+    .area-map-wrap { position: relative; height: 500px; }
+    #bf-map { width: 100%; height: 100%; display: none; }
+    #bf-fallback { width: 100%; height: 100%; background: #1A1A1A; position: relative; overflow: hidden; display: none; }
+    .fb-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px); background-size: 48px 48px; }
+    .fb-ocean { position: absolute; left: 0; bottom: 0; width: 26%; height: 52%; background: rgba(30,80,140,0.25); border-radius: 0 60% 0 0; }
+    .fb-ocean-label { position: absolute; left: 2%; bottom: 28%; font-size: 11px; color: rgba(100,160,220,0.5); font-style: italic; letter-spacing: 0.08em; transform: rotate(-15deg); }
+    .fb-watermark { position: absolute; bottom: 10px; right: 14px; font-size: 11px; color: rgba(255,255,255,0.2); font-style: italic; }
+    /* Map district zones */
+    .fb-district { position: absolute; border-radius: 12px; border: 2px solid; padding: 8px 10px; cursor: pointer; transition: opacity 0.2s; }
+    .fb-district:hover { opacity: 0.8; }
+    .fb-district-name { font-family: 'Anton', sans-serif; font-size: 12px; letter-spacing: 0.04em; }
+    /* Pins */
+    .bf-pin { position: absolute; cursor: pointer; z-index: 10; transform: translate(-50%, -100%); transition: transform 0.15s; }
+    .bf-pin:hover { transform: translate(-50%, -100%) scale(1.2); }
+    .bf-pin-body { width: 34px; height: 34px; background: var(--red); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(217,38,38,0.5); border: 2px solid rgba(255,255,255,0.5); }
+    .bf-pin-inner { transform: rotate(45deg); font-size: 14px; }
+    .bf-pin-label { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: var(--bg); color: white; font-size: 10px; font-weight: 700; letter-spacing: 0.05em; white-space: nowrap; padding: 2px 7px; border-radius: 3px; pointer-events: none; border: 1px solid rgba(255,255,255,0.1); }
+    /* Chips */
+    .area-chips-wrap { padding: 18px 48px; background: var(--bg2); border-top: 1px solid var(--line); }
+    .chips-label { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mid); margin-bottom: 12px; }
+    .chips-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .bf-chip { background: var(--bg3); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 6px 14px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 7px; color: var(--ink2); }
+    .bf-chip::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--chip-color, var(--red)); flex-shrink: 0; }
+    .bf-chip:hover, .bf-chip.active { background: var(--red); border-color: var(--red); color: white; }
+    /* Popup */
+    #bf-popup { position: absolute; width: 300px; background: white; border-radius: 12px; box-shadow: 0 12px 48px rgba(0,0,0,0.4); z-index: 1000; display: none; overflow: hidden; transform: translateX(-50%) translateY(calc(-100% - 18px)); pointer-events: all; }
+    .pop-head { background: #111; padding: 14px 18px; display: flex; justify-content: space-between; align-items: flex-start; }
+    .pop-service { font-family: 'Anton', sans-serif; font-size: 15px; letter-spacing: 0.04em; color: white; line-height: 1.2; }
+    .pop-location { font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 3px; }
+    .pop-close { background: rgba(255,255,255,0.15); border: none; cursor: pointer; color: white; width: 24px; height: 24px; border-radius: 50%; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-left: 8px; }
+    .pop-close:hover { background: rgba(255,255,255,0.25); }
+    .pop-body { padding: 16px 18px; }
+    .pop-stars { color: var(--red); font-size: 15px; letter-spacing: 2px; margin-bottom: 10px; }
+    .pop-text { font-size: 13px; color: #222; line-height: 1.7; font-style: italic; margin-bottom: 14px; }
+    .pop-author { display: flex; align-items: center; gap: 10px; }
+    .pop-avatar { width: 34px; height: 34px; border-radius: 50%; background: #111; color: white; display: flex; align-items: center; justify-content: center; font-family: 'Anton', sans-serif; font-size: 13px; flex-shrink: 0; }
+    .pop-name { font-size: 13px; font-weight: 700; color: #111; }
+    .pop-car { font-size: 11px; color: #888; margin-top: 1px; }
+    .pop-footer { border-top: 1px solid #eee; padding: 10px 18px; display: flex; justify-content: space-between; align-items: center; }
+    .pop-detail { font-size: 11px; color: #888; }
+    .pop-detail strong { color: #111; }
+    .pop-cta { font-size: 12px; font-weight: 700; color: var(--red); text-decoration: none; border-bottom: 1px solid rgba(217,38,38,0.3); padding-bottom: 1px; }
+
+    /* ── REVIEWS ── */
+    #reviews { padding: 88px 48px; background: #1A1A1A; }
+    .reviews-top { display: flex; gap: 48px; align-items: flex-end; flex-wrap: wrap; margin-bottom: 52px; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .review-card { background: #FFFFFF; border-radius: 12px; padding: 32px; border: 1px solid rgba(255,255,255,0.1); transition: border-color 0.3s, transform 0.3s; box-shadow: 0 4px 24px rgba(0,0,0,0.2); }
+    .review-card:hover { border-color: var(--red); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .review-stars { color: var(--red); font-size: 17px; letter-spacing: 2px; margin-bottom: 14px; }
+    .review-text { font-size: 15px; color: #333; line-height: 1.75; margin-bottom: 22px; font-style: italic; }
+    .review-author { display: flex; align-items: center; gap: 12px; }
+    .review-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--red); color: white; display: flex; align-items: center; justify-content: center; font-family: 'Anton', sans-serif; font-size: 15px; flex-shrink: 0; }
+    .review-name { font-size: 14px; font-weight: 700; color: #111; }
+    .review-car { font-size: 12px; color: #888; margin-top: 2px; }
+    .reviews-score { font-family: 'Anton', sans-serif; font-size: 68px; line-height: 1; color: var(--white); }
+    .reviews-stars { color: var(--red); font-size: 22px; letter-spacing: 3px; }
+    .reviews-count { font-size: 14px; color: var(--mid); margin-top: 4px; }
+
+    /* ── FAQ ── */
+    #faq { padding: 88px 48px; background: #F0F0F0; border-top: 3px solid var(--red); }
+    .faq-header { margin-bottom: 52px; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #DDD; border: 1px solid #DDD; max-width: 960px; }
+    .faq-item { background: #FFFFFF; }
+    .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 22px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; color: #111; line-height: 1.4; transition: background 0.2s; }
+    .faq-question:hover, .faq-question.open { background: #F8F8F8; }
+    .faq-chevron { font-size: 18px; color: var(--red); flex-shrink: 0; margin-left: 12px; transition: transform 0.3s; }
+    .faq-question.open .faq-chevron { transform: rotate(45deg); }
+    .faq-answer { display: none; padding: 0 24px 20px; font-size: 14px; color: #555; line-height: 1.75; }
+    .faq-answer.open { display: block; }
+
+    /* ── QUOTE ── */
+    #quote { padding: 88px 48px; background: var(--red); position: relative; overflow: hidden; }
+    #quote::before { content: 'FIX'; position: absolute; right: -40px; top: 50%; transform: translateY(-50%); font-family: 'Anton', sans-serif; font-size: 280px; color: rgba(0,0,0,0.08); line-height: 1; pointer-events: none; }
+    .quote-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; position: relative; }
+    .quote-title { font-family: 'Anton', sans-serif; font-size: clamp(40px, 5vw, 68px); line-height: 0.93; letter-spacing: 0.02em; color: var(--white); margin-bottom: 18px; }
+    .quote-desc { font-size: 16px; color: rgba(255,255,255,0.8); line-height: 1.75; }
+    /* Form */
+    .quote-form { background: var(--white); border-radius: 12px; padding: 36px; box-shadow: 0 24px 64px rgba(0,0,0,0.35); }
+    .qf-title { font-family: 'Anton', sans-serif; font-size: 24px; letter-spacing: 0.03em; margin-bottom: 4px; color: #111; }
+    .qf-sub { font-size: 13px; color: #666; margin-bottom: 18px; }
+    /* Scarcity badge */
+    .scarcity-badge { display: flex; align-items: center; gap: 10px; background: #FFF8F0; border: 1px solid #FDD8A0; border-radius: 8px; padding: 10px 14px; margin-bottom: 18px; }
+    .sc-dot { width: 8px; height: 8px; border-radius: 50%; background: #F59E0B; flex-shrink: 0; animation: scPulse 2s infinite; }
+    @keyframes scPulse { 0%{box-shadow:0 0 0 0 rgba(245,158,11,0.6)} 70%{box-shadow:0 0 0 7px rgba(245,158,11,0)} 100%{box-shadow:0 0 0 0 rgba(245,158,11,0)} }
+    .sc-text { font-size: 13px; font-weight: 600; color: #92400E; }
+    .sc-text span { font-weight: 800; }
+    .qf-row { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+    .qf-input { width: 100%; padding: 12px 15px; border: 1px solid #E0E0E0; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: #111; background: #F8F8F8; outline: none; transition: border-color 0.2s, background 0.2s; }
+    .qf-input:focus { border-color: var(--red); background: white; }
+    .qf-input::placeholder { color: #aaa; }
+    .qf-select { width: 100%; padding: 12px 15px; border: 1px solid #E0E0E0; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: #111; background: #F8F8F8; outline: none; cursor: pointer; appearance: none; margin-bottom: 6px; }
+    .qf-hint { font-size: 11px; color: #aaa; margin-bottom: 14px; }
+    .qf-btn { width: 100%; padding: 15px; background: var(--red); color: white; border: none; border-radius: 6px; cursor: pointer; font-family: 'Anton', sans-serif; font-size: 18px; letter-spacing: 0.04em; transition: background 0.2s; }
+    .qf-btn:hover { background: var(--red2); }
+    .qf-btn:disabled { background: #4ADE80; cursor: default; }
+    /* Micro trust */
+    .form-trust { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 12px; }
+    .ft-item { font-size: 11px; color: #888; display: flex; align-items: center; gap: 5px; }
+    /* Hours */
+    .hours-row { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #888; }
+    .hours-open { display: inline-flex; align-items: center; gap: 5px; background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.25); border-radius: 100px; padding: 2px 10px; font-size: 11px; font-weight: 700; color: #4ADE80; letter-spacing: 0.06em; text-transform: uppercase; }
+    .hours-open.closed { background: rgba(239,68,68,0.1); border-color: rgba(239,68,68,0.25); color: #F87171; }
+    .hours-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ADE80; }
+    .hours-open.closed .hours-dot { background: #EF4444; }
+    /* SMS in form */
+    .form-sms-link { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; font-weight: 700; color: #25D366; text-decoration: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #eee; }
+    .form-sms-link:hover { opacity: 0.8; }
+
+    /* ── FOOTER ── */
+    footer { background: #080808; padding: 60px 48px 28px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; margin-bottom: 48px; }
+    .footer-brand-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .footer-brand-name { font-family: 'Anton', sans-serif; font-size: 19px; letter-spacing: 0.04em; color: var(--white); }
+    .footer-tagline { font-size: 14px; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 220px; margin-bottom: 16px; }
+    .footer-phone { font-family: 'Anton', sans-serif; font-size: 22px; color: var(--red); text-decoration: none; letter-spacing: 0.03em; display: block; }
+    .footer-hours { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 10px; }
+    .referral-strip { background: rgba(217,38,38,0.08); border: 1px solid rgba(217,38,38,0.2); border-radius: 10px; padding: 14px 18px; margin-top: 18px; display: flex; align-items: center; gap: 12px; }
+    .referral-icon { font-size: 22px; flex-shrink: 0; }
+    .referral-text { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+    .referral-text strong { color: var(--white); }
+    .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 18px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-links a { text-decoration: none; color: rgba(255,255,255,0.45); font-size: 14px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--red); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 24px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.2); flex-wrap: wrap; gap: 8px; }
+
+    /* ── STICKY CTA BAR ── */
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 400; background: #080808; border-top: 2px solid var(--red); padding: 12px 48px; display: flex; justify-content: space-between; align-items: center; gap: 16px; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-left { display: flex; align-items: center; gap: 14px; }
+    .sticky-brand { font-family: 'Anton', sans-serif; font-size: 16px; letter-spacing: 0.04em; color: var(--white); }
+    .sticky-tagline { font-size: 13px; color: rgba(255,255,255,0.45); }
+    .sticky-actions { display: flex; gap: 12px; align-items: center; }
+    .sticky-phone { font-family: 'Anton', sans-serif; font-size: 18px; color: var(--red); text-decoration: none; }
+    .sticky-btn { background: var(--red); color: white; padding: 10px 22px; border-radius: 5px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-decoration: none; transition: background 0.2s; }
+    .sticky-btn:hover { background: var(--red2); }
+    .sticky-close { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.3); font-size: 20px; padding: 4px 8px; }
+    .sticky-close:hover { color: var(--white); }
+
+    /* ── WHATSAPP ── */
+    .wa-btn { position: fixed; bottom: 88px; right: 24px; z-index: 500; width: 54px; height: 54px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; font-size: 26px; transition: transform 0.2s, box-shadow 0.2s; animation: waPop 0.5s 2s cubic-bezier(0.175,0.885,0.32,1.275) both; }
+    .wa-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+    @keyframes waPop { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
+    .wa-tooltip { position: absolute; right: 62px; top: 50%; transform: translateY(-50%); background: #111; color: white; font-size: 12px; font-weight: 600; white-space: nowrap; padding: 6px 12px; border-radius: 6px; pointer-events: none; opacity: 0; transition: opacity 0.2s; }
+    .wa-btn:hover .wa-tooltip { opacity: 1; }
+
+    /* ── EXIT INTENT ── */
+    .exit-overlay { position: fixed; inset: 0; z-index: 9000; background: rgba(0,0,0,0.85); display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+    .exit-overlay.show { opacity: 1; pointer-events: all; }
+    .exit-modal { background: var(--bg2); border: 1px solid rgba(217,38,38,0.3); border-radius: 16px; padding: 48px 44px; max-width: 480px; width: 100%; position: relative; text-align: center; }
+    .exit-close { position: absolute; top: 16px; right: 16px; background: none; border: none; cursor: pointer; color: var(--mid); font-size: 22px; }
+    .exit-close:hover { color: var(--white); }
+    .exit-icon { font-size: 48px; margin-bottom: 16px; }
+    .exit-title { font-family: 'Anton', sans-serif; font-size: 32px; letter-spacing: 0.03em; color: var(--white); margin-bottom: 10px; line-height: 1.1; }
+    .exit-title span { color: var(--red); }
+    .exit-sub { font-size: 15px; color: var(--mid); line-height: 1.7; margin-bottom: 28px; }
+    .exit-form { display: flex; gap: 10px; }
+    .exit-input { flex: 1; padding: 13px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: var(--bg3); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 15px; outline: none; }
+    .exit-input::placeholder { color: var(--mid); }
+    .exit-input:focus { border-color: var(--red); }
+    .exit-submit { background: var(--red); color: white; border: none; border-radius: 8px; padding: 13px 22px; cursor: pointer; font-family: 'Anton', sans-serif; font-size: 16px; letter-spacing: 0.04em; white-space: nowrap; transition: background 0.2s; }
+    .exit-submit:hover { background: var(--red2); }
+    .exit-note { font-size: 11px; color: var(--mid); margin-top: 12px; }
+    .exit-dismiss { display: block; margin-top: 16px; font-size: 13px; color: var(--mid); background: none; border: none; cursor: pointer; text-decoration: underline; }
+    .exit-dismiss:hover { color: var(--white); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      nav, .topbar { padding-left: 20px; padding-right: 20px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 64px 24px 44px; }
+      .hero-right { min-height: 280px; }
+      .hero-trust { grid-template-columns: repeat(2, auto); gap: 20px 28px; }
+      .trust-strip { overflow-x: auto; justify-content: flex-start; }
+      .ts-item { padding: 14px 20px; font-size: 12px; }
+      #services, #how, #results, #pricing, #compare, #reviews, #faq, #quote, footer { padding-left: 24px; padding-right: 24px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .how-grid { grid-template-columns: 1fr 1fr; }
+      .how-grid::before { display: none; }
+      .rj-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; gap: 16px; }
+      .price-card.popular { transform: none; box-shadow: 0 0 0 2px var(--red); }
+      .compare-table { font-size: 13px; }
+      .compare-table td, .compare-table th { padding: 12px 14px; }
+      .area-header { padding: 32px 24px; }
+      .area-legend { padding: 10px 24px; }
+      .area-chips-wrap { padding: 16px 24px; }
+      .faq-grid { grid-template-columns: 1fr; }
+      #quote { padding: 56px 24px; }
+      .quote-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .inline-cta { padding: 22px 24px; }
+      .sticky-cta { padding: 12px 20px; }
+      .sticky-tagline { display: none; }
+      .pricing-header { flex-direction: column; align-items: flex-start; }
+      .faq-nudge { padding: 18px 24px; }
+      .avail-bar { padding: 0 20px; }
+      .avail-bar.visible { padding-top: 8px; padding-bottom: 8px; }
+      .avail-zone, .avail-slots, .avail-divider { display: none; }
+    }
+    @media (max-width: 540px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-trust { grid-template-columns: repeat(2, auto); }
+      .exit-form { flex-direction: column; }
+      .area-stats { gap: 16px; }
+      .results-stats { padding: 24px 20px; }
+      .rs-divider { display: none; }
+    }
+
+    /* ── PHOTO UPLOAD in form ── */
+    .qf-upload { width:100%; padding:14px; background:#F8F8F8; border:2px dashed #DDD; border-radius:8px; display:flex; align-items:center; justify-content:center; gap:10px; cursor:pointer; font-size:14px; color:#888; margin-bottom:12px; transition:border-color 0.2s, background 0.2s; }
+    .qf-upload:hover { border-color:var(--red); background:#FFF5F5; color:var(--red); }
+    .qf-upload input { display:none; }
+    .qf-upload-preview { display:none; font-size:13px; color:#4ADE80; font-weight:600; }
+
+    /* ── BOOKING CALENDAR ── */
+    #booking { padding:88px 48px; background:#F7F7F7; border-top:3px solid var(--red); }
+    #booking h2.section-h { color:#111; }
+    #booking .section-tag { color:var(--red); }
+    #booking .section-tag::before { background:var(--red); }
+    #booking .section-p { color:#555; }
+    .cal-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:48px; }
+    .cal-panel { background:#fff; border-radius:12px; border:1px solid #E0E0E0; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.06); }
+    .cal-header { background:#111; padding:20px 24px; display:flex; justify-content:space-between; align-items:center; }
+    .cal-month { font-family:'Anton',sans-serif; font-size:18px; color:#fff; letter-spacing:0.05em; }
+    .cal-nav { display:flex; gap:8px; }
+    .cal-nav button { background:rgba(255,255,255,0.1); border:none; color:#fff; width:32px; height:32px; border-radius:50%; cursor:pointer; font-size:16px; display:flex; align-items:center; justify-content:center; transition:background 0.2s; }
+    .cal-nav button:hover { background:var(--red); }
+    .cal-days-header { display:grid; grid-template-columns:repeat(7,1fr); padding:12px 16px 4px; }
+    .cal-day-name { text-align:center; font-size:11px; font-weight:700; color:#999; letter-spacing:0.08em; text-transform:uppercase; }
+    .cal-days { display:grid; grid-template-columns:repeat(7,1fr); padding:4px 16px 16px; gap:4px; }
+    .cal-day { aspect-ratio:1; display:flex; align-items:center; justify-content:center; font-size:14px; border-radius:8px; cursor:pointer; transition:all 0.15s; color:#333; font-weight:500; }
+    .cal-day.empty { pointer-events:none; }
+    .cal-day.past { color:#CCC; pointer-events:none; }
+    .cal-day.available:hover { background:#FFF0F0; color:var(--red); }
+    .cal-day.available { cursor:pointer; }
+    .cal-day.selected { background:var(--red); color:#fff; font-weight:700; }
+    .cal-day.has-slot::after { content:''; display:block; width:4px; height:4px; background:var(--red); border-radius:50%; position:absolute; bottom:3px; left:50%; transform:translateX(-50%); }
+    .cal-day { position:relative; }
+    .cal-day.today { background:#F0F0F0; font-weight:700; }
+    .time-slots { padding:20px 24px; background:#FAFAFA; border-top:1px solid #EEE; }
+    .ts-title { font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#999; margin-bottom:14px; }
+    .ts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .ts-slot { padding:10px; background:#fff; border:1px solid #E0E0E0; border-radius:8px; text-align:center; font-size:13px; font-weight:600; color:#333; cursor:pointer; transition:all 0.15s; }
+    .ts-slot:hover { border-color:var(--red); color:var(--red); }
+    .ts-slot.selected { background:var(--red); border-color:var(--red); color:#fff; }
+    .ts-slot.booked { background:#F5F5F5; color:#CCC; pointer-events:none; text-decoration:line-through; }
+    .cal-confirm { padding:20px 24px; border-top:1px solid #EEE; }
+    .cal-confirm-summary { font-size:14px; color:#555; margin-bottom:14px; min-height:20px; }
+    .cal-confirm-summary strong { color:#111; }
+    .cal-book-btn { width:100%; padding:14px; background:var(--red); color:#fff; border:none; border-radius:8px; font-family:'Anton',sans-serif; font-size:17px; letter-spacing:0.04em; cursor:pointer; transition:background 0.2s; }
+    .cal-book-btn:hover { background:var(--red2); }
+    .cal-book-btn:disabled { background:#CCC; cursor:default; }
+    .cal-note { background:#fff; border-radius:12px; border:1px solid #E0E0E0; padding:32px; display:flex; flex-direction:column; gap:20px; box-shadow:0 4px 24px rgba(0,0,0,0.06); }
+    .cal-note h3 { font-family:'Anton',sans-serif; font-size:22px; letter-spacing:0.03em; color:#111; }
+    .cal-note p { font-size:15px; color:#555; line-height:1.7; }
+    .cal-note-item { display:flex; gap:14px; align-items:flex-start; }
+    .cal-note-icon { width:40px; height:40px; background:#FFF0F0; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+    .cal-note-text strong { display:block; font-size:14px; color:#111; margin-bottom:3px; }
+    .cal-note-text span { font-size:13px; color:#888; }
+
+    /* ── TECHNICIAN SECTION ── */
+    #team { padding:88px 48px; background:var(--bg2); }
+    .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:48px; }
+    .tech-card { background:var(--bg3); border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,0.07); transition:transform 0.3s, border-color 0.3s; }
+    .tech-card:hover { transform:translateY(-6px); border-color:var(--red); }
+    .tech-photo { height:220px; background:linear-gradient(135deg,#1A1A1A,#2A1010); display:flex; align-items:center; justify-content:center; font-size:80px; position:relative; overflow:hidden; }
+    .tech-photo-overlay { position:absolute; inset:0; background:linear-gradient(to bottom,transparent 60%,rgba(0,0,0,0.6)); }
+    .tech-years { position:absolute; top:16px; right:16px; background:var(--red); color:#fff; font-family:'Anton',sans-serif; font-size:12px; letter-spacing:0.08em; padding:4px 10px; border-radius:100px; }
+    .tech-body { padding:24px; }
+    .tech-name { font-family:'Anton',sans-serif; font-size:22px; letter-spacing:0.03em; color:var(--white); margin-bottom:4px; }
+    .tech-role { font-size:12px; color:var(--red); font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px; }
+    .tech-bio { font-size:14px; color:var(--mid); line-height:1.7; margin-bottom:16px; }
+    .tech-specs { display:flex; flex-wrap:wrap; gap:6px; }
+    .tech-spec { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:100px; padding:4px 12px; font-size:11px; color:rgba(255,255,255,0.6); }
+
+    /* ── COST CALCULATOR ── */
+    #calculator { padding:88px 48px; background:#F4F4F4; border-top:3px solid var(--red); }
+    #calculator h2.section-h { color:#111; }
+    #calculator .section-tag { color:var(--red); }
+    #calculator .section-tag::before { background:var(--red); }
+    #calculator .section-p { color:#555; }
+    .calc-wrap { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:48px; align-items:start; }
+    .calc-form { background:#fff; border-radius:16px; padding:36px; border:1px solid #E0E0E0; box-shadow:0 4px 24px rgba(0,0,0,0.06); }
+    .calc-step { margin-bottom:28px; }
+    .calc-step:last-child { margin-bottom:0; }
+    .calc-label { font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#333; margin-bottom:12px; }
+    .calc-options { display:flex; flex-wrap:wrap; gap:8px; }
+    .calc-opt { padding:10px 18px; background:#F5F5F5; border:2px solid #E0E0E0; border-radius:8px; font-size:14px; font-weight:600; color:#555; cursor:pointer; transition:all 0.15s; }
+    .calc-opt:hover { border-color:var(--red); color:var(--red); }
+    .calc-opt.selected { background:var(--red); border-color:var(--red); color:#fff; }
+    .calc-result { background:#111; border-radius:16px; padding:36px; position:sticky; top:100px; }
+    .cr-label { font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:8px; }
+    .cr-range { font-family:'Anton',sans-serif; font-size:56px; color:var(--white); line-height:1; letter-spacing:-0.01em; }
+    .cr-range span { color:var(--red); font-size:0.55em; vertical-align:super; }
+    .cr-vs { font-size:14px; color:rgba(255,255,255,0.4); margin-top:8px; }
+    .cr-vs s { color:rgba(255,255,255,0.3); }
+    .cr-saving { display:inline-flex; align-items:center; gap:8px; background:rgba(74,222,128,0.1); border:1px solid rgba(74,222,128,0.25); border-radius:8px; padding:10px 16px; margin-top:16px; font-size:14px; font-weight:700; color:#4ADE80; }
+    .cr-cta { display:block; text-align:center; margin-top:24px; padding:16px; background:var(--red); color:#fff; border-radius:8px; font-family:'Anton',sans-serif; font-size:17px; letter-spacing:0.04em; text-decoration:none; transition:background 0.2s; }
+    .cr-cta:hover { background:var(--red2); }
+    .cr-disclaimer { font-size:11px; color:rgba(255,255,255,0.25); margin-top:12px; text-align:center; line-height:1.5; }
+
+    /* ── INSURANCE LOGOS ── */
+    .insurance-strip { background:var(--bg); padding:40px 48px; border-top:1px solid rgba(255,255,255,0.06); }
+    .ins-label { font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--mid); text-align:center; margin-bottom:24px; }
+    .ins-logos { display:flex; justify-content:center; align-items:center; gap:0; flex-wrap:wrap; }
+    .ins-logo { padding:12px 28px; border-right:1px solid rgba(255,255,255,0.07); font-family:'Anton',sans-serif; font-size:16px; letter-spacing:0.06em; color:rgba(255,255,255,0.35); transition:color 0.2s; white-space:nowrap; }
+    .ins-logo:last-child { border-right:none; }
+    .ins-logo:hover { color:rgba(255,255,255,0.7); }
+
+    /* ── LIVE CHAT BUBBLE ── */
+    .chat-btn { position:fixed; bottom:160px; right:24px; z-index:500; background:#111; border:2px solid var(--red); border-radius:50%; width:54px; height:54px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 20px rgba(0,0,0,0.4); transition:transform 0.2s, box-shadow 0.2s; animation:chatPop 0.5s 3s cubic-bezier(0.175,0.885,0.32,1.275) both; }
+    .chat-btn:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(217,38,38,0.3); }
+    @keyframes chatPop { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
+    .chat-btn-icon { font-size:22px; }
+    .chat-badge { position:absolute; top:-4px; right:-4px; background:var(--red); color:#fff; border-radius:50%; width:18px; height:18px; font-size:10px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+    .chat-tooltip { position:absolute; right:62px; top:50%; transform:translateY(-50%); background:#111; border:1px solid rgba(255,255,255,0.1); color:var(--white); font-size:12px; font-weight:600; white-space:nowrap; padding:6px 12px; border-radius:6px; pointer-events:none; opacity:0; transition:opacity 0.2s; }
+    .chat-btn:hover .chat-tooltip { opacity:1; }
+    .chat-panel { position:fixed; bottom:24px; right:24px; z-index:600; width:320px; background:#fff; border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,0.3); overflow:hidden; transform:scale(0.9) translateY(20px); opacity:0; pointer-events:none; transition:all 0.3s cubic-bezier(0.16,1,0.3,1); transform-origin:bottom right; }
+    .chat-panel.open { transform:scale(1) translateY(0); opacity:1; pointer-events:all; }
+    .chat-panel-head { background:#111; padding:16px 20px; display:flex; justify-content:space-between; align-items:center; }
+    .chat-panel-title { font-family:'Anton',sans-serif; font-size:16px; color:#fff; letter-spacing:0.04em; }
+    .chat-panel-sub { font-size:12px; color:rgba(255,255,255,0.5); margin-top:2px; }
+    .chat-panel-close { background:none; border:none; color:rgba(255,255,255,0.5); font-size:20px; cursor:pointer; }
+    .chat-panel-close:hover { color:#fff; }
+    .chat-messages { padding:16px; display:flex; flex-direction:column; gap:10px; max-height:200px; overflow-y:auto; }
+    .chat-msg { max-width:85%; font-size:14px; line-height:1.5; }
+    .chat-msg.bot { background:#F5F5F5; border-radius:12px 12px 12px 3px; padding:10px 14px; color:#333; align-self:flex-start; }
+    .chat-msg.user { background:var(--red); border-radius:12px 12px 3px 12px; padding:10px 14px; color:#fff; align-self:flex-end; }
+    .chat-options { padding:0 16px 16px; display:flex; flex-direction:column; gap:6px; }
+    .chat-option { padding:10px 14px; border:1px solid #E0E0E0; border-radius:8px; font-size:14px; font-weight:500; color:#333; cursor:pointer; background:#fff; text-align:left; transition:all 0.15s; }
+    .chat-option:hover { border-color:var(--red); color:var(--red); }
+    .chat-input-row { padding:12px 16px; border-top:1px solid #EEE; display:flex; gap:8px; }
+    .chat-input { flex:1; padding:10px 14px; border:1px solid #E0E0E0; border-radius:8px; font-size:14px; font-family:'DM Sans',sans-serif; outline:none; }
+    .chat-input:focus { border-color:var(--red); }
+    .chat-send { background:var(--red); color:#fff; border:none; border-radius:8px; padding:10px 16px; font-size:14px; font-weight:700; cursor:pointer; transition:background 0.2s; }
+    .chat-send:hover { background:var(--red2); }
+
+    /* ── PAYMENT OPTIONS ── */
+    .payment-strip { background:#111; padding:32px 48px; border-top:1px solid rgba(255,255,255,0.06); border-bottom:1px solid rgba(255,255,255,0.06); }
+    .pay-label { font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--mid); text-align:center; margin-bottom:18px; }
+    .pay-methods { display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap; }
+    .pay-badge { display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:8px 16px; font-size:13px; font-weight:600; color:rgba(255,255,255,0.7); }
+    .pay-badge .pay-icon { font-size:18px; }
+
+    /* ── ESTABLISHED YEAR ── */
+    .estab-badge { display:inline-flex; align-items:center; gap:10px; background:rgba(217,38,38,0.08); border:1px solid rgba(217,38,38,0.2); border-radius:100px; padding:8px 20px; font-size:13px; font-weight:600; color:rgba(255,255,255,0.6); margin-top:12px; }
+    .estab-badge strong { color:var(--white); }
+
+    /* ── INSURANCE & OUT OF POCKET EXPLAINER ── */
+    .insurance-explainer { background:#fff; border-radius:16px; padding:40px; margin-top:48px; border:1px solid #E0E0E0; }
+    .ie-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:24px; }
+    .ie-col { padding:24px; border-radius:12px; }
+    .ie-col.claim { background:#FFF5F5; border:2px solid #FFD0D0; }
+    .ie-col.pocket { background:#F0FFF4; border:2px solid #BBF7D0; }
+    .ie-title { font-family:'Anton',sans-serif; font-size:18px; letter-spacing:0.03em; margin-bottom:12px; }
+    .ie-col.claim .ie-title { color:#C0392B; }
+    .ie-col.pocket .ie-title { color:#16A34A; }
+    .ie-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
+    .ie-list li { font-size:14px; color:#555; display:flex; gap:9px; align-items:flex-start; line-height:1.5; }
+    .ie-list li::before { content:'•'; flex-shrink:0; font-weight:900; }
+    .ie-col.claim .ie-list li::before { color:#E74C3C; }
+    .ie-col.pocket .ie-list li::before { color:#16A34A; }
+    .ie-verdict { margin-top:20px; padding:16px 20px; background:#111; border-radius:10px; font-size:14px; color:rgba(255,255,255,0.8); line-height:1.6; }
+    .ie-verdict strong { color:var(--white); }
+
+    /* ── FOOTER RAINBOW STRIPE ── */
+    .footer-rainbow-stripe { height:4px; background:var(--rainbow); }
+
+    @media (max-width:960px) {
+      .cal-grid { grid-template-columns:1fr; }
+      .calc-wrap { grid-template-columns:1fr; }
+      .calc-result { position:static; }
+      .team-grid { grid-template-columns:1fr; }
+      #booking, #calculator, #team { padding-left:24px; padding-right:24px; }
+      .ie-grid { grid-template-columns:1fr; }
+      .insurance-strip, .payment-strip { padding-left:24px; padding-right:24px; }
+      .ins-logos { justify-content:flex-start; }
+      .ins-logo { padding:10px 16px; font-size:14px; }
+    }
+
+    #faq h2.section-h { color: #111 !important; }
+    #faq .section-tag { color: var(--red); }
+    #faq .section-p { color: #555; }
+
+    /* ── BOOKING MODAL ── */
+    .booking-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9500;
+      padding: 20px;
+    }
+    .booking-modal-overlay.open { display: flex; }
+    .booking-modal {
+      width: 100%;
+      max-width: 520px;
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 28px;
+      position: relative;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.45);
+    }
+    .booking-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.5);
+      font-size: 24px;
+      cursor: pointer;
+    }
+    .booking-modal-close:hover { color: #fff; }
+    .booking-modal-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 28px;
+      letter-spacing: 0.03em;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .booking-modal-sub {
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    .booking-form-grid { display: grid; gap: 12px; }
+    .booking-input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: #1b1b1b;
+      color: #fff;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+    }
+    .booking-input:focus { border-color: #D92626; }
+    .booking-textarea { min-height: 96px; resize: vertical; }
+    .booking-code-input {
+      text-align: center;
+      letter-spacing: 0.3em;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .booking-main-btn,
+    .booking-secondary-btn {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 16px;
+      cursor: pointer;
+      margin-top: 14px;
+      font-weight: 700;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .booking-main-btn { background: #D92626; color: #fff; }
+    .booking-main-btn:hover { background: #B81E1E; }
+    .booking-secondary-btn {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .booking-helper-text {
+      margin-top: 12px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.6;
+    }
+    .booking-error {
+      font-size: 13px;
+      color: #FCA5A5;
+      background: rgba(239,68,68,0.10);
+      border: 1px solid rgba(239,68,68,0.28);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin: 10px 0 4px;
+      display: none;
+      line-height: 1.6;
+    }
+    .booking-resend-confirm {
+      font-size: 12px;
+      color: #4ADE80;
+      margin-top: 8px;
+      display: none;
+    }
+    .booking-main-btn:disabled,
+    .booking-secondary-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<div class="site-header">
+  <div class="topbar">
+    <div class="topbar-track">
+      <span class="topbar-item">BUMPER FIX<span class="topbar-sep"></span></span>
+      <span class="topbar-item">San Diego Mobile Bumper Repair<span class="topbar-sep"></span></span>
+      <span class="topbar-item">Professional Cosmetic Auto Body Repair<span class="topbar-sep"></span></span>
+      <span class="topbar-item">We Come to Your Home or Office<span class="topbar-sep"></span></span>
+      <span class="topbar-item">Fast Quotes · Clean Repairs · No Shop Drop-Off<span class="topbar-sep"></span></span>
+      <span class="topbar-item">Serving San Diego County<span class="topbar-sep"></span></span>
+      <span class="topbar-item">Call <a href="tel:+18589880325">(858) 988-0325</a><span class="topbar-sep"></span></span>
+      <!-- duplicate for loop -->
+      <span class="topbar-item">BUMPER FIX<span class="topbar-sep"></span></span>
+      <span class="topbar-item">San Diego Mobile Bumper Repair<span class="topbar-sep"></span></span>
+      <span class="topbar-item">Professional Cosmetic Auto Body Repair<span class="topbar-sep"></span></span>
+      <span class="topbar-item">We Come to Your Home or Office<span class="topbar-sep"></span></span>
+      <span class="topbar-item">Fast Quotes · Clean Repairs · No Shop Drop-Off<span class="topbar-sep"></span></span>
+      <span class="topbar-item">Serving San Diego County<span class="topbar-sep"></span></span>
+      <span class="topbar-item">Call <a href="tel:+18589880325">(858) 988-0325</a><span class="topbar-sep"></span></span>
+    </div>
+  </div>
+  <nav>
+    <a class="nav-brand" href="/">
+      <svg class="nav-logo" width="38" height="38" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 2L4 8V18C4 25.7 10.2 32.9 18 35C25.8 32.9 32 25.7 32 18V8L18 2Z" fill="#D92626"/>
+        <path d="M18 2L4 8V18C4 25.7 10.2 32.9 18 35C25.8 32.9 32 25.7 32 18V8L18 2Z" fill="url(#sg1)" opacity="0.55"/>
+        <text x="18" y="23" font-family="Anton,sans-serif" font-size="13" font-weight="900" fill="white" text-anchor="middle">BF</text>
+        <defs><linearGradient id="sg1" x1="4" y1="2" x2="32" y2="35" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#FF6600"/><stop offset="100%" stop-color="#8800CC"/></linearGradient></defs>
+      </svg>
+      <div class="nav-name">
+        <span style="font-size:21px;font-family:'Anton',sans-serif;letter-spacing:0.04em;color:var(--white);">BUMPER FIX</span>
+        <span class="sub">Mobile Auto Body · San Diego</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="service-area.html">Service Area</a>
+      <a href="#reviews">Reviews</a>
+      <a href="tel:+18589880325" class="nav-phone">(858) 988-0325</a>
+      <a href="contact.html" class="nav-cta">Get a Quote</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="services.html">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="service-area.html">Service Area</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="tel:+18589880325" class="mm-phone">(858) 988-0325</a>
+    <a href="contact.html" class="mm-cta">Get a Quote →</a>
+  </div>
+  <div class="avail-bar" id="availBar">
+    <div class="avail-left">
+      <div class="avail-pill"><div class="avail-dot"></div> Taking Appointments</div>
+      <div class="avail-divider"></div>
+      <div class="avail-slots" id="availSlots"></div>
+      <div class="avail-divider"></div>
+      <div class="avail-zone">📍 Serving <strong>San Diego County</strong> now</div>
+    </div>
+    <div class="avail-right">
+      <a href="tel:+18589880325" class="avail-phone">(858) 988-0325</a>
+      <a href="#quote" class="avail-cta">Get a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-left-bg"></div>
+    <div class="hero-left-texture"></div>
+    <div class="hero-badge"><div class="badge-pulse"></div> Mobile Bumper Repair · San Diego County</div>
+    <h1>BUMPER REPAIR,<br>WITHOUT THE<br><span style="color:var(--red);">BODY SHOP.</span></h1>
+    <p class="hero-desc">Bumper Fix delivers mobile cosmetic bumper repair across San Diego County for drivers who want clean results without shop delays, shop overhead, or losing their vehicle for days.</p>
+    <div class="hero-actions">
+      <a href="#quote" class="btn-primary">Get a Quote</a>
+      <a href="sms:+18589880325" class="btn-sms">Text a Photo</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-label">Repairs<br>Completed</div></div>
+      <div class="trust-item"><div class="trust-num">Same-Day</div><div class="trust-label">Availability</div></div>
+      <div class="trust-item"><div class="trust-num">Mobile</div><div class="trust-label">We Come<br>to You</div></div>
+      <div class="trust-item"><div class="trust-num">Fast Quotes</div><div class="trust-label">Photo Review<br>Available</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-map">
+      <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212948.1268398!2d-117.28!3d32.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d9530fad921e4b%3A0xd3a21fdfd15df79!2sSan%20Diego%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000"
+        title="Bumper Fix — San Diego County Service Area">
+      </iframe>
+      <div class="hero-map-pin">
+        <div class="hero-map-pin-body"><span>🔧</span></div>
+      </div>
+      <div class="hero-map-label">📍 Serving All of San Diego County</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ TRUST STRIP ══ -->
+<div class="trust-strip">
+  <div class="ts-item"><span>We Come to Your Home or Office</span></div>
+  <div class="ts-item"><span>Cosmetic Bumper &amp; Scratch Repair</span></div>
+  <div class="ts-item"><span>Fast Photo-Based Quotes</span></div>
+  <div class="ts-item"><span>Same-Day Availability When Open</span></div>
+  <div class="ts-item"><span>San Diego County Mobile Service</span></div>
+</div>
+
+<!-- ══ SERVICES ══ -->
+<section id="services">
+  <div class="services-header">
+    <div class="section-tag reveal">Why Drivers Use Bumper Fix</div>
+    <h2 class="section-h reveal">Skip the Shop.<br>Fix the Damage.</h2>
+    <p class="section-p reveal">For cosmetic bumper damage, scuffs, scratches, and paint correction, most drivers do not want body shop delays, body shop overhead, or days without their vehicle. Bumper Fix is built for the faster, cleaner, more convenient option.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="sc-icon">🚗</div>
+      <div class="sc-title">Bumper Repair</div>
+      <p class="sc-desc">Cracks, scrapes, gouges, and impact damage repaired and refinished for a clean cosmetic result without the normal body shop process.</p>
+      <div class="sc-time">⏱ Typical mobile service</div>
+      <div class="sc-num">01</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="sc-icon">🎨</div>
+      <div class="sc-title">Color-Matched Paintwork</div>
+      <p class="sc-desc">Refinishing and paint correction designed to restore appearance cleanly and professionally with color-matched repair methods.</p>
+      <div class="sc-time">⏱ Photo review first</div>
+      <div class="sc-num">02</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="sc-icon">✦</div>
+      <div class="sc-title">Scratch &amp; Scuff Removal</div>
+      <p class="sc-desc">Surface damage and cosmetic blemishes corrected on-site for drivers who want the vehicle looking right again without a full shop stay.</p>
+      <div class="sc-time">⏱ Fast quote response</div>
+      <div class="sc-num">03</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="sc-icon">⚙️</div>
+      <div class="sc-title">Minor Dent Solutions</div>
+      <p class="sc-desc">Eligible dents and cosmetic panel damage reviewed case by case to determine whether mobile repair is the right fit.</p>
+      <div class="sc-time">⏱ Case-dependent</div>
+      <div class="sc-num">04</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="sc-icon">🛡️</div>
+      <div class="sc-title">Convenience-First Service</div>
+      <p class="sc-desc">Home, office, condo, apartment, or workplace appointments designed around your schedule so you do not have to rearrange your week.</p>
+      <div class="sc-time">⏱ We come to you</div>
+      <div class="sc-num">05</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="sc-icon">📱</div>
+      <div class="sc-title">Photo-Based Quoting</div>
+      <p class="sc-desc">Send a photo first. That lets Bumper Fix review the damage quickly and tell you whether the repair is a strong fit for mobile service.</p>
+      <div class="sc-time">⏱ Simple first step</div>
+      <div class="sc-num">06</div>
+    </div>
+  </div>
+</section>
+
+<!-- Inline CTA -->
+<div class="inline-cta">
+  <div>
+    <div class="inline-cta-text">Most people do not need a body shop for <span>cosmetic bumper damage.</span></div>
+    <div class="inline-cta-sub">Send a photo first and find out if mobile repair is the better fit.</div>
+  </div>
+  <a href="#quote" class="btn-sm">Get a Quote</a>
+</div>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section id="how">
+  <div class="how-header">
+    <div class="section-tag reveal">How It Works</div>
+    <h2 class="section-h reveal" style="color:var(--white);">Simple to Start.<br>Easy to Book.</h2>
+    <p class="section-p reveal" style="color:rgba(255,255,255,0.52);max-width:620px;">
+      Bumper Fix is built to remove the usual body shop friction. No long drop-off process. No unnecessary back and forth. No losing your vehicle for days over cosmetic damage.
+    </p>
+  </div>
+  <div class="how-grid">
+    <div class="how-step reveal">
+      <div class="how-num">01</div>
+      <div class="how-title">Send a Photo</div>
+      <p class="how-desc">Text a few clear photos of the damage along with your vehicle year, make, model, and location. That gives us what we need to review the repair properly.</p>
+    </div>
+    <div class="how-step reveal">
+      <div class="how-num">02</div>
+      <div class="how-title">Get Reviewed</div>
+      <p class="how-desc">We look at the damage, determine whether it is a strong fit for mobile cosmetic repair, and respond with pricing direction and the next step.</p>
+    </div>
+    <div class="how-step reveal">
+      <div class="how-num">03</div>
+      <div class="how-title">Book Your Appointment</div>
+      <p class="how-desc">Choose a time that works for you. Home, office, apartment, or workplace, the appointment is built around your schedule instead of forcing you into a shop timeline.</p>
+    </div>
+    <div class="how-step reveal">
+      <div class="how-num">04</div>
+      <div class="how-title">We Come to You</div>
+      <p class="how-desc">Your repair is completed on-site when the job qualifies for mobile service. You keep your day moving while the cosmetic damage gets handled properly.</p>
+    </div>
+  </div>
+  <div class="reveal" style="margin-top:42px;padding:18px 22px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);border-radius:12px;max-width:760px;">
+    <div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:6px;">Built for cosmetic repairs that should not take over your week.</div>
+    <div style="font-size:13px;line-height:1.75;color:rgba(255,255,255,0.52);">
+      If the damage is a good fit for mobile service, Bumper Fix gives you a faster and more practical path than the usual body shop routine.
+    </div>
+  </div>
+</section>
+
+<!-- ══ RESULTS ══ -->
+<section id="results">
+  <div style="margin-bottom:52px;">
+    <div class="section-tag reveal">Track Record</div>
+    <h2 class="section-h reveal">Built on Real<br>Hands-On Work.</h2>
+    <p class="section-p reveal">
+      Bumper Fix is built on years of real technician experience, mobile workflow discipline, and repeated cosmetic repair execution across San Diego County.
+    </p>
+  </div>
+  <div class="results-stats reveal">
+    <div class="rs-stat">
+      <div class="rs-num">500<span class="rs-suffix">+</span></div>
+      <div class="rs-label">Repair Jobs<br>Completed</div>
+    </div>
+    <div class="rs-divider"></div>
+    <div class="rs-stat">
+      <div class="rs-num">5<span class="rs-suffix">yr</span></div>
+      <div class="rs-label">Mobile Auto Body<br>Experience</div>
+    </div>
+    <div class="rs-divider"></div>
+    <div class="rs-stat">
+      <div class="rs-num">2<span class="rs-suffix">hr</span></div>
+      <div class="rs-label">Typical Cosmetic<br>Repair Window</div>
+    </div>
+    <div class="rs-divider"></div>
+    <div class="rs-stat">
+      <div class="rs-num">Mobile</div>
+      <div class="rs-label">Service Model Built<br>For Convenience</div>
+    </div>
+    <div class="rs-divider"></div>
+    <div class="rs-stat">
+      <div class="rs-num">SD</div>
+      <div class="rs-label">Serving San Diego<br>County</div>
+    </div>
+  </div>
+  <div class="reveal" style="margin-top:32px;padding:24px 32px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:flex-start;gap:16px;max-width:920px;">
+    <div style="font-size:28px;line-height:1;">📸</div>
+    <div>
+      <div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:6px;">Photo-first quoting. Real mobile workflow.</div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.75;">
+        The business is designed around fast photo review, on-site cosmetic repair, and a simpler process for customers who do not want the delay and friction of a traditional body shop visit.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BOOKING CALENDAR ══ -->
+<section id="booking">
+  <div class="section-tag reveal">Scheduling</div>
+  <h2 class="section-h reveal">Choose a Time.<br>We'll Come to You.</h2>
+  <p class="section-p reveal">
+    Pick the time that works best for you. Once your appointment is set, we confirm by text and handle the repair at your home, office, or approved location.
+  </p>
+  <div class="cal-grid">
+    <div class="cal-panel">
+      <div class="cal-header">
+        <div class="cal-month" id="calMonthLabel">March 2026</div>
+        <div class="cal-nav">
+          <button id="calPrev">‹</button>
+          <button id="calNext">›</button>
+        </div>
+      </div>
+      <div class="cal-days-header">
+        <div class="cal-day-name">Sun</div>
+        <div class="cal-day-name">Mon</div>
+        <div class="cal-day-name">Tue</div>
+        <div class="cal-day-name">Wed</div>
+        <div class="cal-day-name">Thu</div>
+        <div class="cal-day-name">Fri</div>
+        <div class="cal-day-name">Sat</div>
+      </div>
+      <div class="cal-days" id="calDays"></div>
+      <div class="time-slots">
+        <div class="ts-title">Available Times</div>
+        <div class="ts-grid" id="timeSlots"></div>
+      </div>
+      <div class="cal-confirm">
+        <div class="cal-confirm-summary" id="calSummary">Select a date and time to continue</div>
+        <button class="cal-book-btn" id="calBookBtn" disabled>SELECT A DATE FIRST</button>
+      </div>
+    </div>
+    <div class="cal-note">
+      <h3 style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:0.03em;color:#111;">What Happens After Booking</h3>
+      <div class="cal-note-item">
+        <div class="cal-note-icon">📱</div>
+        <div class="cal-note-text">
+          <strong>We confirm by text</strong>
+          <span>You get a fast confirmation with your appointment details and next steps.</span>
+        </div>
+      </div>
+      <div class="cal-note-item">
+        <div class="cal-note-icon">📸</div>
+        <div class="cal-note-text">
+          <strong>You send photos if needed</strong>
+          <span>This helps us confirm the repair type and arrive prepared for the job.</span>
+        </div>
+      </div>
+      <div class="cal-note-item">
+        <div class="cal-note-icon">🚐</div>
+        <div class="cal-note-text">
+          <strong>We arrive at your location</strong>
+          <span>Home, office, or another approved spot anywhere in San Diego County.</span>
+        </div>
+      </div>
+      <div class="cal-note-item">
+        <div class="cal-note-icon">✅</div>
+        <div class="cal-note-text">
+          <strong>The repair gets completed on-site</strong>
+          <span>Simple process, no shop drop-off, and no unnecessary downtime.</span>
+        </div>
+      </div>
+      <a href="tel:+18589880325" style="display:inline-flex;align-items:center;gap:10px;font-family:'Anton',sans-serif;font-size:16px;letter-spacing:0.04em;color:var(--red);text-decoration:none;">
+        Call (858) 988-0325
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRICING ══ -->
+<section id="pricing">
+  <div class="pricing-header">
+    <div>
+      <div class="section-tag reveal">Pricing</div>
+      <h2 class="section-h reveal">Clear Pricing.<br>Cleaner Decisions.</h2>
+    </div>
+    <p class="pricing-note reveal">
+      Every repair starts with a direct review of the damage. You get pricing before work begins, so you know what makes sense before committing.
+    </p>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card reveal">
+      <div class="pc-type">Light Cosmetic</div>
+      <div class="pc-name">Surface Repair</div>
+      <div class="pc-price">$149</div>
+      <div class="pc-from">Starting price</div>
+      <ul class="pc-features">
+        <li>Surface scratch or scuff correction</li>
+        <li>Spot repair and localized refinish</li>
+        <li>Paint touch-up and polish work</li>
+        <li>Best for lighter cosmetic damage</li>
+        <li>Fast mobile service when eligible</li>
+      </ul>
+      <a href="#quote" class="pc-btn pc-btn-outline" onclick="preSelectService('scratch')">Request Quote</a>
+    </div>
+    <div class="price-card popular reveal">
+      <div class="popular-tag">Most Requested</div>
+      <div class="pc-type">Bumper Service</div>
+      <div class="pc-name">Bumper Repair</div>
+      <div class="pc-price">$299</div>
+      <div class="pc-from">Starting price</div>
+      <ul class="pc-features">
+        <li>Bumper scuffs, scrapes, and cosmetic damage</li>
+        <li>Repair, prep, and color-matched refinishing</li>
+        <li>Designed for common everyday damage</li>
+        <li>Often a stronger option than shop drop-off</li>
+        <li>Mobile convenience across San Diego County</li>
+      </ul>
+      <a href="#quote" class="pc-btn pc-btn-fill" onclick="preSelectService('bumper')">Get My Quote</a>
+    </div>
+    <div class="price-card reveal">
+      <div class="pc-type">Expanded Repair</div>
+      <div class="pc-name">Panel Refinish</div>
+      <div class="pc-price">$449</div>
+      <div class="pc-from">Starting price</div>
+      <ul class="pc-features">
+        <li>Larger cosmetic repair areas</li>
+        <li>Panel prep, repaint, and blend work</li>
+        <li>Best for more visible surface damage</li>
+        <li>May involve broader correction scope</li>
+        <li>Quoted after photo review</li>
+      </ul>
+      <a href="#quote" class="pc-btn pc-btn-outline" onclick="preSelectService('paint')">Request Quote</a>
+    </div>
+  </div>
+  <div class="reveal" style="margin-top:32px;padding:22px 24px;background:#FFFFFF;border:1px solid #E0E0E0;border-radius:14px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+    <div>
+      <div style="font-size:15px;font-weight:600;color:#111;margin-bottom:5px;">Not every repair should turn into a body shop project.</div>
+      <div style="font-size:13px;color:#666;line-height:1.75;max-width:760px;">
+        For the right type of cosmetic damage, mobile service can be the cleaner, faster, and more practical decision.
+      </div>
+    </div>
+    <a href="#quote" class="btn-sm">Send a Photo</a>
+  </div>
+  <div style="padding: 28px 0 0; display:flex; justify-content:center;">
+    <div class="guarantee-badge reveal">
+      <div class="gb-icon">🛡️</div>
+      <div>
+        <div class="gb-title">Quoted Before Work Begins</div>
+        <div class="gb-sub">You review the pricing first. No surprise add-ons, no vague body shop-style guessing after the fact.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMPARE ══ -->
+<section id="compare">
+  <div class="compare-header">
+    <div class="section-tag reveal">Why Not the Shop</div>
+    <h2 class="section-h reveal">Save the Trip.<br>Save the Week.</h2>
+    <p class="section-p reveal">The traditional body shop model was built for insurance claims. For a single repair, it rarely makes sense.</p>
+  </div>
+  <div style="overflow-x:auto;">
+    <table class="compare-table reveal">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="shop-col">Traditional Body Shop</th>
+          <th class="bf-col">Bumper Fix <span class="bf-badge">✓ Mobile · San Diego</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Where it happens</td><td class="shop-val c-bad">You drive to them</td><td class="bf-val c-good">We come to you</td></tr>
+        <tr><td>Wait for appointment</td><td class="shop-val c-bad">Days to weeks</td><td class="bf-val c-good">Often same-day when open</td></tr>
+        <tr><td>Time without your car</td><td class="shop-val c-bad">2–5 days minimum</td><td class="bf-val c-good">2–4 hours, you keep it</td></tr>
+        <tr><td>Average bumper repair cost</td><td class="shop-val c-bad">$700–$1,000+</td><td class="bf-val c-good">From $299</td></tr>
+        <tr><td>Color accuracy</td><td class="shop-val c-neutral">Visual approximation</td><td class="bf-val c-good">Color-matched refinishing</td></tr>
+        <tr><td>Itemized costs</td><td class="shop-val c-neutral">Variable at completion</td><td class="bf-val c-good">Price confirmed before work</td></tr>
+        <tr><td>Satisfaction guarantee</td><td class="shop-val c-neutral">Varies</td><td class="bf-val c-good">We review and address issues</td></tr>
+        <tr><td>Rental car needed</td><td class="shop-val c-bad">Usually yes</td><td class="bf-val c-good">Not needed for on-site repair</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══ OUR STANDARD ══ -->
+<section id="team" style="padding:72px 48px;background:var(--bg);">
+  <div style="max-width:760px;">
+    <div class="section-tag reveal">Our Standard</div>
+    <h2 class="section-h reveal">Licensed Technicians.<br>Every Job.</h2>
+    <p style="font-size:17px;color:rgba(255,255,255,0.65);line-height:1.8;margin-top:16px;" class="reveal">Bumper Fix operates on a simple standard: clean cosmetic repair work, mobile workflow, and a straightforward process for the customer. We are licensed and insured, and we work across all of San Diego County.</p>
+    <div style="display:flex;gap:48px;margin-top:40px;flex-wrap:wrap;" class="reveal">
+      <div style="border-left:3px solid var(--red);padding-left:20px;">
+        <div style="font-family:'Anton',sans-serif;font-size:32px;color:var(--white);line-height:1;">CA Licensed</div>
+        <div style="font-size:13px;color:var(--mid);margin-top:4px;text-transform:uppercase;letter-spacing:.08em;">State Certified</div>
+      </div>
+      <div style="border-left:3px solid var(--red);padding-left:20px;">
+        <div style="font-family:'Anton',sans-serif;font-size:32px;color:var(--white);line-height:1;">Background Checked</div>
+        <div style="font-size:13px;color:var(--mid);margin-top:4px;text-transform:uppercase;letter-spacing:.08em;">Every Technician</div>
+      </div>
+      <div style="border-left:3px solid var(--red);padding-left:20px;">
+        <div style="font-family:'Anton',sans-serif;font-size:32px;color:var(--white);line-height:1;">Fully Insured</div>
+        <div style="font-size:13px;color:var(--mid);margin-top:4px;text-transform:uppercase;letter-spacing:.08em;">Every Job</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ nudge -->
+<div class="faq-nudge">
+  <div class="faq-nudge-text">Questions about paint matching, timing, service area, or whether mobile repair is the right fit?</div>
+  <a href="#faq" class="faq-nudge-link">See FAQ →</a>
+</div>
+
+<!-- ══ COST CALCULATOR ══ -->
+<section id="calculator">
+  <div class="section-tag reveal">Estimate</div>
+  <h2 class="section-h reveal">What Will Your<br>Repair Run?</h2>
+  <p class="section-p reveal">Select your damage type below. Exact pricing is confirmed after photo review — this gives you a realistic range.</p>
+  <div class="calc-wrap">
+    <div class="calc-form reveal">
+      <div class="calc-step">
+        <div class="calc-label">Damage Type</div>
+        <div class="calc-options">
+          <div class="calc-opt" data-type="scratch" data-min="149" data-max="299">Scratch / Scuff</div>
+          <div class="calc-opt" data-type="bumper" data-min="249" data-max="499">Bumper Damage</div>
+          <div class="calc-opt" data-type="dent" data-min="99" data-max="249">Dent</div>
+          <div class="calc-opt" data-type="paint" data-min="349" data-max="699">Full Panel Repaint</div>
+          <div class="calc-opt" data-type="keying" data-min="199" data-max="449">Keying / Vandalism</div>
+        </div>
+      </div>
+      <div class="calc-step">
+        <div class="calc-label">Severity</div>
+        <div class="calc-options">
+          <div class="calc-opt" data-sev="minor" data-mult="0.85">Minor (surface only)</div>
+          <div class="calc-opt" data-sev="moderate" data-mult="1.0">Moderate (paint through)</div>
+          <div class="calc-opt" data-sev="major" data-mult="1.4">Major (structural / large area)</div>
+        </div>
+      </div>
+      <div class="calc-step">
+        <div class="calc-label">Vehicle Size</div>
+        <div class="calc-options">
+          <div class="calc-opt" data-size="small" data-size-mult="0.9">Small (sedan, compact)</div>
+          <div class="calc-opt" data-size="mid" data-size-mult="1.0">Mid-size (SUV, crossover)</div>
+          <div class="calc-opt" data-size="large" data-size-mult="1.2">Large (truck, van, full SUV)</div>
+        </div>
+      </div>
+    </div>
+    <div class="calc-result reveal">
+      <div class="cr-label">Estimated Range</div>
+      <div class="cr-range" id="calcRange">$<span>—</span></div>
+      <div class="cr-vs" id="calcVs" style="display:none;">Estimated range: <strong id="calcShopRange"></strong></div>
+      <div class="cr-saving" id="calcSaving" style="display:none;"><span id="calcSavingText"></span></div>
+      <p style="font-size:14px;color:rgba(255,255,255,0.5);margin-top:20px;line-height:1.6;" id="calcNote">Select your damage type, severity, and vehicle to get your estimate.</p>
+      <a href="#quote" class="cr-cta" id="calcCta">Request an Exact Quote →</a>
+      <p class="cr-disclaimer">Estimate only. Final price confirmed after photo review.</p>
+    </div>
+  </div>
+  <div class="insurance-explainer reveal" style="padding:32px 40px;">
+    <div class="section-tag" style="margin-bottom:12px;">Should You File a Claim?</div>
+    <h3 style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:0.03em;color:#111;margin-bottom:14px;">For most repairs under $500 — probably not.</h3>
+    <p style="font-size:15px;color:#555;line-height:1.75;max-width:680px;">Between your deductible and the rate increase that follows a claim, filing often costs more over three years than paying directly. Our repairs are typically well below most deductibles. We provide itemized invoices if you choose to submit for reimbursement.</p>
+    <div style="margin-top:20px;padding:16px 20px;background:#111;border-radius:10px;font-size:14px;color:rgba(255,255,255,0.75);line-height:1.6;max-width:680px;"><strong style="color:white;">Typical deductible:</strong> $500–$1,000 &nbsp;·&nbsp; <strong style="color:white;">Typical Bumper Fix repair:</strong> $149–$449 &nbsp;·&nbsp; <strong style="color:white;">Premium impact:</strong> $200–$600/yr for 3–5 years</div>
+  </div>
+</section>
+
+<!-- ══ SERVICE AREA MAP ══ -->
+<section id="area">
+  <div class="area-header">
+    <div>
+      <div class="section-tag reveal">Service Area</div>
+      <h2 class="section-h reveal">Serving San Diego<br>County.</h2>
+      <p class="section-p reveal" style="margin-top:8px;">We provide mobile cosmetic auto body service across San Diego County. Use the map and neighborhood shortcuts to see example service coverage.</p>
+    </div>
+
+  </div>
+  <div class="area-legend">
+    <span class="legend-label">Map Key</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#D92626;"></span>Service Area Marker</span>
+    <span style="width:1px;height:16px;background:rgba(255,255,255,0.1);"></span>
+    <span class="legend-item"><span class="legend-patch" style="background:#3B82F6;"></span>Coastal</span>
+    <span class="legend-item"><span class="legend-patch" style="background:#10B981;"></span>North County</span>
+    <span class="legend-item"><span class="legend-patch" style="background:#8B5CF6;"></span>East County</span>
+    <span class="legend-item"><span class="legend-patch" style="background:#F59E0B;"></span>South Bay</span>
+    <span class="legend-item"><span class="legend-patch" style="background:#EF4444;"></span>Central San Diego</span>
+  </div>
+  <div class="area-map-wrap">
+    <div id="bf-map"></div>
+    <div id="bf-fallback">
+      <div class="fb-grid-bg"></div>
+      <div class="fb-ocean"></div>
+      <div class="fb-ocean-label">Pacific Ocean</div>
+      <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M18,0 L16,100" stroke="rgba(255,255,255,0.08)" stroke-width="0.6" fill="none"/>
+        <path d="M0,52 L100,48" stroke="rgba(255,255,255,0.08)" stroke-width="0.6" fill="none"/>
+        <path d="M50,0 L52,100" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none"/>
+        <path d="M0,32 L65,30" stroke="rgba(255,255,255,0.05)" stroke-width="0.4" fill="none"/>
+        <path d="M28,30 L26,100" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none"/>
+        <path d="M0,65 L65,60" stroke="rgba(255,255,255,0.05)" stroke-width="0.4" fill="none"/>
+      </svg>
+      <!-- Districts -->
+      <div class="fb-district" style="left:3%;top:12%;width:23%;height:22%;background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.35);" data-district="coastal"><span class="fb-district-name" style="color:#60A5FA;">🏖 Coastal</span></div>
+      <div class="fb-district" style="left:27%;top:5%;width:34%;height:24%;background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.35);" data-district="north"><span class="fb-district-name" style="color:#34D399;">🌿 North County</span></div>
+      <div class="fb-district" style="left:63%;top:5%;width:34%;height:40%;background:rgba(139,92,246,0.08);border-color:rgba(139,92,246,0.35);" data-district="east"><span class="fb-district-name" style="color:#A78BFA;">⛰ East County</span></div>
+      <div class="fb-district" style="left:27%;top:29%;width:34%;height:30%;background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.35);" data-district="central"><span class="fb-district-name" style="color:#F87171;">🏙 Central San Diego</span></div>
+      <div class="fb-district" style="left:5%;top:59%;width:55%;height:37%;background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.35);" data-district="southbay"><span class="fb-district-name" style="color:#FCD34D;">🌉 South Bay</span></div>
+      <!-- Pins -->
+      <div class="bf-pin" style="left:14%;top:24%;" data-pin="0"><div class="bf-pin-label">La Jolla</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:20%;top:40%;" data-pin="1"><div class="bf-pin-label">Pacific Beach</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:9%;top:50%;" data-pin="2"><div class="bf-pin-label">Ocean Beach</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:38%;top:18%;" data-pin="3"><div class="bf-pin-label">Mira Mesa</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:54%;top:13%;" data-pin="4"><div class="bf-pin-label">Rancho Bernardo</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:42%;top:43%;" data-pin="5"><div class="bf-pin-label">Mission Valley</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:33%;top:55%;" data-pin="6"><div class="bf-pin-label">Downtown SD</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:72%;top:28%;" data-pin="7"><div class="bf-pin-label">Santee</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:80%;top:46%;" data-pin="8"><div class="bf-pin-label">El Cajon</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:22%;top:74%;" data-pin="9"><div class="bf-pin-label">National City</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:34%;top:83%;" data-pin="10"><div class="bf-pin-label">Chula Vista</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:8%;top:68%;" data-pin="11"><div class="bf-pin-label">Coronado</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="fb-watermark">Google Maps live view activates when API key is connected.</div>
+    </div>
+    <!-- API banner -->
+    <div id="bf-api-banner" style="position:absolute;top:12px;left:50%;transform:translateX(-50%);background:rgba(217,38,38,0.95);color:white;padding:8px 18px;border-radius:8px;font-size:12px;font-weight:600;z-index:10;text-align:center;pointer-events:none;display:none;white-space:nowrap;">
+      Map is currently showing design preview mode. Connect Google Maps API for live map functionality.
+    </div>
+    <!-- Review popup -->
+    <div id="bf-popup">
+      <div class="pop-head">
+        <div><div class="pop-service" id="popService">Mobile Bumper Repair Example</div><div class="pop-location" id="popLocation">📍 San Diego County</div></div>
+        <button class="pop-close" id="popClose">×</button>
+      </div>
+      <div class="pop-body">
+        <div class="pop-stars">★★★★★</div>
+        <p class="pop-text" id="popText">Example service scenario shown for layout preview.</p>
+        <div class="pop-author">
+          <div class="pop-avatar" id="popAvatar">BF</div>
+          <div><div class="pop-name" id="popName">Service Example</div><div class="pop-car" id="popCar">Mobile cosmetic auto body service</div></div>
+        </div>
+      </div>
+      <div class="pop-footer">
+        <div class="pop-detail">Time: <strong id="popTime">2 hrs</strong> · Savings: <strong id="popSaved">Varies</strong></div>
+        <a href="#quote" class="pop-cta">Request Similar Service →</a>
+      </div>
+    </div>
+  </div>
+  <div class="area-chips-wrap">
+    <div class="chips-label">Browse Service Areas</div>
+    <div class="chips-row" id="bfChips">
+      <div class="bf-chip" data-pin="0" style="--chip-color:#3B82F6">La Jolla</div>
+      <div class="bf-chip" data-pin="1" style="--chip-color:#3B82F6">Pacific Beach</div>
+      <div class="bf-chip" data-pin="2" style="--chip-color:#3B82F6">Ocean Beach</div>
+      <div class="bf-chip" data-pin="5" style="--chip-color:#EF4444">Mission Valley</div>
+      <div class="bf-chip" data-pin="6" style="--chip-color:#EF4444">Downtown SD</div>
+      <div class="bf-chip" data-pin="3" style="--chip-color:#EF4444">Mira Mesa</div>
+      <div class="bf-chip" data-pin="4" style="--chip-color:#10B981">Rancho Bernardo</div>
+      <div class="bf-chip" data-pin="7" style="--chip-color:#8B5CF6">Santee</div>
+      <div class="bf-chip" data-pin="8" style="--chip-color:#8B5CF6">El Cajon</div>
+      <div class="bf-chip" data-pin="10" style="--chip-color:#F59E0B">Chula Vista</div>
+      <div class="bf-chip" data-pin="9" style="--chip-color:#F59E0B">National City</div>
+      <div class="bf-chip" data-pin="11" style="--chip-color:#F59E0B">Coronado</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REVIEWS ══ -->
+<section id="reviews">
+  <div class="reviews-top">
+    <div>
+      <div class="section-tag reveal">Client Feedback</div>
+      <h2 class="section-h reveal">Real-World<br>Repair Confidence.</h2>
+      <p class="section-p reveal">Customers call Bumper Fix because they want clean cosmetic repair without body shop downtime, inflated overhead, or unnecessary hassle.</p>
+    </div>
+    <div class="reveal">
+      <div class="reviews-score">Mobile</div>
+      <div class="reviews-stars" style="font-size:14px;letter-spacing:1px;">SERVICE ACROSS SAN DIEGO COUNTY</div>
+      <div class="reviews-count" style="margin-top:10px;">Professional cosmetic repair, on-site convenience, fast quote response.</div>
+    </div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I wanted something easier than dropping my car off at a body shop for days. The convenience of having the repair done on-site made the whole process feel simple and professional."</p>
+      <div class="review-author">
+        <div class="review-avatar">JM</div>
+        <div>
+          <div class="review-name">Jason M.</div>
+          <div class="review-car">Bumper repair inquiry · San Diego</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"What stood out most was the mobile setup. For the right customer, this is a much smarter option than dealing with shop scheduling, rental cars, and extra downtime."</p>
+      <div class="review-author">
+        <div class="review-avatar">AL</div>
+        <div>
+          <div class="review-name">Alicia L.</div>
+          <div class="review-car">Scratch and paint correction inquiry · San Diego County</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"The offer is strong because it solves a real problem: fast cosmetic repair without the normal body shop process. It feels direct, practical, and customer-friendly."</p>
+      <div class="review-author">
+        <div class="review-avatar">RC</div>
+        <div>
+          <div class="review-name">Robert C.</div>
+          <div class="review-car">Mobile repair prospect · San Diego</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="reveal" style="margin-top:28px;padding:20px 24px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;">
+    <div>
+      <div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;">Why customers choose mobile service.</div>
+      <div style="font-size:13px;color:var(--mid);line-height:1.7;max-width:700px;">Clean mobile cosmetic repair, on-site service, and a straightforward quoting process designed to work for busy San Diego residents.</div>
+    </div>
+    <a href="#quote" class="btn-sm">Request a Quote</a>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="faq-header">
+    <div class="section-tag reveal">Questions</div>
+    <h2 class="section-h reveal">Clear Answers.<br>No Guesswork.</h2>
+    <p class="section-p reveal">Most customers want to know the same few things before booking: price, timing, paint match, service area, and whether mobile repair is the right fit.</p>
+  </div>
+  <div class="faq-grid reveal">
+    <div class="faq-item">
+      <button class="faq-question">How do I get a quote? <span class="faq-chevron">+</span></button>
+      <div class="faq-answer">The fastest way is to text a photo of the damage along with your vehicle year, make, and model. From there, Bumper Fix can review the repair visually and respond with the next step.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Do you come to my home or office? <span class="faq-chevron">+</span></button>
+      <div class="faq-answer">Yes. Bumper Fix is built around mobile service. Most cosmetic bumper, scratch, and paint repairs are performed at your home, office, or another approved location within San Diego County.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Can the paint be matched to my vehicle? <span class="faq-chevron">+</span></button>
+      <div class="faq-answer">We use your vehicle paint information to match the color as closely as possible and blend the repair area for a consistent finish.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">How long does a typical repair take? <span class="faq-chevron">+</span></button>
+      <div class="faq-answer">Same-day availability may be possible depending on schedule and repair type. Many cosmetic repairs are completed within a few hours of arrival.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Is mobile repair cheaper than a body shop? <span class="faq-chevron">+</span></button>
+      <div class="faq-answer">In many cosmetic repair situations, mobile service can be more practical because it avoids some of the overhead, scheduling delays, and downtime that come with a traditional shop model. Final pricing always depends on the actual damage.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">What kinds of damage are a good fit for mobile service? <span class="faq-chevron">+</span></button>
+      <div class="faq-answer">Mobile service is generally best for cosmetic bumper damage, scuffs, scratches, paint correction, and certain minor dent situations. Larger structural repairs or jobs requiring full shop equipment may need a different setup.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Do I need to leave my car somewhere? <span class="faq-chevron">+</span></button>
+      <div class="faq-answer">Usually no. That is one of the main advantages of the service. In many cases, your vehicle can be repaired on-site without the normal drop-off and pickup process of a traditional body shop.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">What should I send when I contact you? <span class="faq-chevron">+</span></button>
+      <div class="faq-answer">Send clear photos of the damaged area, one wider photo showing the full panel or bumper, your vehicle year/make/model, and your location. That gives Bumper Fix the best starting point for review.</div>
+    </div>
+  </div>
+  <div class="reveal" style="margin-top:28px;padding:20px 24px;background:#FFFFFF;border:1px solid #DDD;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;max-width:960px;">
+    <div>
+      <div style="font-size:15px;font-weight:600;color:#111;margin-bottom:4px;">Still not sure if your repair qualifies?</div>
+      <div style="font-size:13px;color:#666;line-height:1.7;max-width:700px;">Text a photo first. That is the fastest way to find out whether the damage is a strong fit for mobile repair.</div>
+    </div>
+    <a href="#quote" class="btn-sm">Get a Quote</a>
+  </div>
+</section>
+
+<!-- ══ QUOTE ══ -->
+<section id="quote">
+  <div class="quote-inner">
+    <div>
+      <div class="quote-title">Send a Photo.<br>Get Clear Next Steps.</div>
+      <p class="quote-desc">Send a photo and your contact information. We'll review the damage and respond as quickly as possible.</p>
+      <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px;">
+        <a href="tel:+18589880325" style="font-family:'Anton',sans-serif;font-size:28px;letter-spacing:0.04em;color:white;text-decoration:none;display:block;">(858) 988-0325</a>
+        <a href="sms:+18589880325" style="display:inline-flex;align-items:center;gap:10px;color:#4ADE80;text-decoration:none;font-size:15px;font-weight:600;">💬 Text a Photo Instead</a>
+      </div>
+      <div style="margin-top:28px;display:grid;gap:12px;">
+        <div style="display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,0.85);font-size:14px;line-height:1.7;">
+          <span style="font-size:16px;">✓</span>
+          <span>Mobile cosmetic repair service across San Diego County</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,0.85);font-size:14px;line-height:1.7;">
+          <span style="font-size:16px;">✓</span>
+          <span>Home or office appointments available</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,0.85);font-size:14px;line-height:1.7;">
+          <span style="font-size:16px;">✓</span>
+          <span>Photo-first review process for faster quoting</span>
+        </div>
+      </div>
+    </div>
+    <div class="quote-form">
+      <div class="qf-title">Request a Quote</div>
+      <div class="qf-sub">Mobile service across San Diego County</div>
+      <div class="qf-row">
+        <input class="qf-input" type="text" id="qf-name" placeholder="Your Name" required>
+        <input class="qf-input" type="tel" id="qf-phone" placeholder="Phone Number" required>
+      </div>
+      <label class="qf-upload" id="uploadLabel">
+        <input type="file" id="photoUpload" accept="image/*" capture="environment">
+        <span id="uploadIcon">📷</span>
+        <span id="uploadText">Attach a photo of the damage</span>
+        <span class="qf-upload-preview" id="uploadPreview"></span>
+      </label>
+      <select class="qf-select" id="qf-service">
+        <option value="" disabled selected>Select repair type</option>
+        <option value="bumper">Bumper Repair</option>
+        <option value="scratch">Scratch Removal</option>
+        <option value="paint">Auto Body Paint</option>
+        <option value="dent">Paintless Dent Repair</option>
+        <option value="scuff">Scuff &amp; Scrape Repair</option>
+        <option value="photo">Not Sure Yet</option>
+      </select>
+      <p class="qf-hint">Best results: send one close-up photo and one wider photo showing the full damaged area.</p>
+      <button class="qf-btn" id="qfBtn">SEND REQUEST</button>
+      <div class="hours-row" style="justify-content:center;margin-top:14px;">
+        <div class="hours-open" id="hoursStatus">
+          <div class="hours-dot"></div>
+          <span id="hoursText">Open Now</span>
+        </div>
+        <span>Mon–Fri 7am–7pm · Sat–Sun 8am–5pm</span>
+      </div>
+      <a href="sms:+18589880325&body=Hi, I need a quote for my vehicle." class="form-sms-link">💬 Prefer text? Send a photo directly</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<div class="footer-rainbow-stripe"></div>
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-row">
+        <svg width="30" height="30" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M18 2L4 8V18C4 25.7 10.2 32.9 18 35C25.8 32.9 32 25.7 32 18V8L18 2Z" fill="#D92626"/>
+          <text x="18" y="23" font-family="Anton,sans-serif" font-size="13" fill="white" text-anchor="middle">BF</text>
+        </svg>
+        <div class="footer-brand-name">BUMPER FIX</div>
+      </div>
+      <p class="footer-tagline">Mobile bumper repair and cosmetic auto body service across San Diego County.</p>
+      <a href="tel:+18589880325" class="footer-phone">(858) 988-0325</a>
+      <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:12px;line-height:1.8;">
+        Mon–Fri 7am–7pm<br>
+        Sat–Sun 8am–5pm
+      </div>
+      <div style="margin-top:24px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:12px;">
+          Payment Options
+        </div>
+        <div style="font-size:12px;color:rgba(255,255,255,.35);line-height:1.8;">
+          Credit / Debit · Apple Pay · Zelle · Venmo · Cash
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#services">Bumper Repair</a></li>
+        <li><a href="services.html">Auto Body Paint</a></li>
+        <li><a href="services.html">Scratch Removal</a></li>
+        <li><a href="services.html">Dent Repair</a></li>
+        <li><a href="services.html">Scuff &amp; Scrape Repair</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Service Areas</div>
+      <ul class="footer-links">
+        <li><a href="service-area.html">Downtown San Diego</a></li>
+        <li><a href="service-area.html">La Jolla</a></li>
+        <li><a href="service-area.html">Chula Vista</a></li>
+        <li><a href="service-area.html">El Cajon</a></li>
+        <li><a href="service-area.html">Mira Mesa</a></li>
+        <li><a href="service-area.html">San Diego County</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#quote">Request a Quote</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Bumper Fix. All rights reserved. San Diego, CA.</span>
+    <span>Mobile cosmetic auto body service across San Diego County.</span>
+  </div>
+</footer>
+
+<!-- ── LIVE CHAT BUBBLE ── -->
+<div class="chat-btn" id="chatBtn">
+  <span class="chat-btn-icon">💬</span>
+  <span class="chat-badge">1</span>
+  <span class="chat-tooltip">Ask us anything</span>
+</div>
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-panel-head">
+    <div>
+      <div class="chat-panel-title">Bumper Fix Support</div>
+      <div class="chat-panel-sub">Usually replies within minutes</div>
+    </div>
+    <button class="chat-panel-close" id="chatClose">×</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-msg bot">What kind of damage are you dealing with?</div>
+  </div>
+  <div class="chat-options" id="chatOptions">
+    <button class="chat-option" data-reply="bumper">🚗 Bumper damage</button>
+    <button class="chat-option" data-reply="scratch">✦ Scratch or scuff</button>
+    <button class="chat-option" data-reply="dent">⚙️ Dent repair</button>
+    <button class="chat-option" data-reply="price">💰 How much does it cost?</button>
+    <button class="chat-option" data-reply="area">📍 Do you come to my area?</button>
+  </div>
+  <div class="chat-input-row">
+    <input class="chat-input" type="text" id="chatInput" placeholder="Type a message...">
+    <button class="chat-send" id="chatSend">Send</button>
+  </div>
+</div>
+
+<!-- Exit intent overlay -->
+<div class="exit-overlay" id="exitOverlay">
+  <div class="exit-modal">
+    <button class="exit-close" id="exitClose">×</button>
+    <div class="exit-icon">🔧</div>
+    <div class="exit-title">One Quick<br><span>Question.</span></div>
+    <div class="exit-sub">What's the damage? Text us a photo and we'll reply with a price — usually within the hour.</div>
+    <div class="exit-form">
+      <input class="exit-input" type="tel" id="exitPhone" placeholder="Your phone number">
+      <button class="exit-submit" id="exitSubmit">TEXT ME →</button>
+    </div>
+    <p class="exit-note">One message only. We never spam.</p>
+    <button class="exit-dismiss" id="exitDismiss">No thanks</button>
+  </div>
+</div>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/18589880325?text=Hi! I need a quote for bumper repair in San Diego." target="_blank" rel="noopener" class="wa-btn" aria-label="WhatsApp us">
+  <span>💬</span>
+  <span class="wa-tooltip">WhatsApp Us</span>
+</a>
+
+<!-- Sticky CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-left">
+    <div class="sticky-brand">BUMPER FIX</div>
+    <div class="sticky-tagline">Mobile Auto Body · San Diego County</div>
+  </div>
+  <div class="sticky-actions">
+    <a href="tel:+18589880325" class="sticky-phone">(858) 988-0325</a>
+    <a href="contact.html" class="sticky-btn" id="stickyQuoteBtn">Request a Quote</a>
+    <button class="sticky-close" id="stickyClose">×</button>
+  </div>
+</div>
+
+<script>
+// ── REVIEW DATA ────────────────────────────────────────────────
+const BF_REVIEWS = [
+  {n:"La Jolla",lat:32.8328,lng:-117.2713,s:"Bumper Repair & Refinish",t:"Rear bumper damage example in La Jolla. Mobile on-site repair, refinish, and color-match service completed at the customer's location without shop drop-off.",a:"Service Example",i:"BF",c:"Honda CR-V · Bumper repair and refinish",tm:"2 hrs",sv:"~$420"},
+  {n:"Pacific Beach",lat:32.7998,lng:-117.2380,s:"Door Scratch Repair",t:"Door scratch damage example in Pacific Beach. Mobile scratch repair and paint refinish service completed on-site at the customer's location.",a:"Service Example",i:"BF",c:"Mazda CX-5 · Scratch and refinish",tm:"1.5 hrs",sv:"~$300"},
+  {n:"Ocean Beach",lat:32.7448,lng:-117.2512,s:"Front Bumper Scuff Repair",t:"Front bumper scuff example in Ocean Beach. Mobile cosmetic repair completed at the customer's location — no tow, no shop wait.",a:"Service Example",i:"BF",c:"Subaru Outback · Scuff repair",tm:"2 hrs",sv:"~$350"},
+  {n:"Mira Mesa",lat:32.9116,lng:-117.1484,s:"Rear Bumper Crack & Repaint",t:"Rear bumper impact damage example in Mira Mesa. Mobile repair and color-matched refinish completed on-site at the customer's residence.",a:"Service Example",i:"BF",c:"Toyota Camry · Bumper repair",tm:"2.5 hrs",sv:"~$450"},
+  {n:"Rancho Bernardo",lat:33.0122,lng:-117.0727,s:"Paintless Dent Repair",t:"Hood and roof dent example in Rancho Bernardo. Paintless dent repair technique used on eligible panels — no repainting required.",a:"Service Example",i:"BF",c:"BMW 3 Series · Paintless dent repair",tm:"3 hrs",sv:"~$600"},
+  {n:"Mission Valley",lat:32.7680,lng:-117.1480,s:"Side Panel Paint Blend",t:"Side panel cosmetic damage example in Mission Valley. Mobile paint blend and refinish service completed at the customer's parking location.",a:"Service Example",i:"BF",c:"Ford Explorer · Panel paint blend",tm:"3 hrs",sv:"~$500"},
+  {n:"Downtown SD",lat:32.7157,lng:-117.1611,s:"Bumper Scuff & Respray",t:"Bumper scuff example in Downtown San Diego. Mobile cosmetic repair completed in a private parking structure — no shop drop-off needed.",a:"Service Example",i:"BF",c:"Honda Civic · Bumper scuff repair",tm:"2 hrs",sv:"~$380"},
+  {n:"Santee",lat:32.8384,lng:-116.9739,s:"Full Bumper Refinish",t:"Full bumper refinish example in Santee. Mobile service completed at the customer's home with color-matched respray across the full bumper panel.",a:"Service Example",i:"BF",c:"Ford F-150 · Full bumper refinish",tm:"3 hrs",sv:"~$550"},
+  {n:"El Cajon",lat:32.7948,lng:-116.9625,s:"Quarter Panel Scratch Repair",t:"Quarter panel scratch example in El Cajon. Mobile scratch repair and spot refinish service completed at the customer's residence.",a:"Service Example",i:"BF",c:"Chevrolet Equinox · Scratch repair",tm:"2.5 hrs",sv:"~$400"},
+  {n:"National City",lat:32.6781,lng:-117.0992,s:"Front Bumper Crack Repair",t:"Front bumper crack example in National City. Mobile repair and refinish completed at the customer's location — straightforward cosmetic restoration.",a:"Service Example",i:"BF",c:"Toyota Tacoma · Bumper crack repair",tm:"2.5 hrs",sv:"~$420"},
+  {n:"Chula Vista",lat:32.6401,lng:-117.0842,s:"Door Keying Repair",t:"Deep keying damage example in Chula Vista. Mobile cosmetic repair completed at the customer's home — on-site refinish across the affected door panel.",a:"Service Example",i:"BF",c:"Ford F-150 · Door keying repair",tm:"3 hrs",sv:"~$500"},
+  {n:"Coronado",lat:32.6859,lng:-117.1831,s:"Bumper Scuff & Polish",t:"Bumper scuff example in Coronado. Mobile cosmetic touch-up and light refinish completed at the customer's location in under two hours.",a:"Service Example",i:"BF",c:"Tesla Model 3 · Scuff repair",tm:"1.5 hrs",sv:"~$300"}
+];
+const BF_DISTRICTS = [
+  {id:"coastal",center:{lat:32.790,lng:-117.255},zoom:13,coords:[{lat:32.870,lng:-117.270},{lat:32.870,lng:-117.220},{lat:32.730,lng:-117.235},{lat:32.700,lng:-117.260},{lat:32.700,lng:-117.280}],color:"#3B82F6"},
+  {id:"north",center:{lat:32.970,lng:-117.100},zoom:11,coords:[{lat:33.100,lng:-117.250},{lat:33.100,lng:-116.900},{lat:32.870,lng:-116.900},{lat:32.870,lng:-117.250}],color:"#10B981"},
+  {id:"east",center:{lat:32.820,lng:-116.950},zoom:11,coords:[{lat:32.870,lng:-116.900},{lat:33.100,lng:-116.900},{lat:33.100,lng:-116.600},{lat:32.600,lng:-116.600},{lat:32.600,lng:-116.900}],color:"#8B5CF6"},
+  {id:"central",center:{lat:32.780,lng:-117.120},zoom:12,coords:[{lat:32.870,lng:-117.220},{lat:32.870,lng:-116.900},{lat:32.700,lng:-116.900},{lat:32.700,lng:-117.220}],color:"#EF4444"},
+  {id:"southbay",center:{lat:32.660,lng:-117.060},zoom:12,coords:[{lat:32.700,lng:-117.280},{lat:32.700,lng:-116.900},{lat:32.520,lng:-116.900},{lat:32.520,lng:-117.130},{lat:32.620,lng:-117.250}],color:"#F59E0B"}
+];
+
+let bfMap, bfMarkers = [];
+
+function bfShowReview(idx, x, y) {
+  const r = BF_REVIEWS[idx];
+  document.getElementById('popService').textContent = r.s;
+  document.getElementById('popLocation').textContent = '📍 ' + r.n + ', San Diego';
+  document.getElementById('popText').textContent = r.t;
+  document.getElementById('popAvatar').textContent = r.i;
+  document.getElementById('popName').textContent = r.a;
+  document.getElementById('popCar').textContent = r.c;
+  document.getElementById('popTime').textContent = r.tm;
+  document.getElementById('popSaved').textContent = r.sv;
+  const p = document.getElementById('bf-popup');
+  p.style.left = x + 'px'; p.style.top = y + 'px'; p.style.display = 'block';
+  document.querySelectorAll('.bf-chip').forEach(c => c.classList.toggle('active', c.dataset.pin === String(idx)));
+}
+function bfClosePopup() {
+  document.getElementById('bf-popup').style.display = 'none';
+  document.querySelectorAll('.bf-chip').forEach(c => c.classList.remove('active'));
+}
+document.getElementById('popClose').addEventListener('click', bfClosePopup);
+
+// Google Maps init
+function initBfMap() {
+  document.getElementById('bf-fallback').style.display = 'none';
+  document.getElementById('bf-map').style.display = 'block';
+  document.getElementById('bf-api-banner').style.display = 'none';
+  bfMap = new google.maps.Map(document.getElementById('bf-map'), {
+    center:{lat:32.760,lng:-117.050}, zoom:11, mapTypeId:'roadmap',
+    styles:[{featureType:"water",elementType:"geometry",stylers:[{color:"#0A1A2A"}]},{featureType:"landscape",elementType:"geometry",stylers:[{color:"#1A1A1A"}]},{featureType:"road.highway",elementType:"geometry",stylers:[{color:"#2A2A2A"}]},{featureType:"road.arterial",elementType:"geometry",stylers:[{color:"#222222"}]},{featureType:"poi",elementType:"geometry",stylers:[{color:"#181818"}]},{featureType:"all",elementType:"labels.text.fill",stylers:[{color:"#888888"}]},{featureType:"transit",stylers:[{visibility:"off"}]}],
+    mapTypeControl:false, streetViewControl:false
+  });
+  BF_DISTRICTS.forEach(d => {
+    const poly = new google.maps.Polygon({paths:d.coords,strokeColor:d.color,strokeOpacity:0.7,strokeWeight:2,fillColor:d.color,fillOpacity:0.08,map:bfMap});
+    poly.addListener('click',()=>{bfMap.panTo(d.center);bfMap.setZoom(d.zoom);});
+    poly.addListener('mouseover',()=>poly.setOptions({fillOpacity:0.18}));
+    poly.addListener('mouseout',()=>poly.setOptions({fillOpacity:0.08}));
+  });
+  const pinIcon = () => ({url:`data:image/svg+xml;charset=UTF-8,${encodeURIComponent('<svg width="36" height="44" viewBox="0 0 36 44" xmlns="http://www.w3.org/2000/svg"><path d="M18 0C8.059 0 0 8.059 0 18c0 13.5 18 26 18 26S36 31.5 36 18C36 8.059 27.941 0 18 0z" fill="#D92626" stroke="white" stroke-width="2"/><text x="18" y="23" font-size="14" text-anchor="middle" fill="white">🔧</text></svg>')}`,scaledSize:new google.maps.Size(36,44),anchor:new google.maps.Point(18,44)});
+  BF_REVIEWS.forEach((r,i) => {
+    const m = new google.maps.Marker({position:{lat:r.lat,lng:r.lng},map:bfMap,title:r.n,icon:pinIcon(),animation:google.maps.Animation.DROP});
+    m.addListener('click',()=>{
+      bfMap.panTo(m.getPosition());
+      const proj=bfMap.getProjection(); if(!proj)return;
+      const p=proj.fromLatLngToPoint(m.getPosition()), b=bfMap.getBounds(), nw=proj.fromLatLngToPoint(new google.maps.LatLng(b.getNorthEast().lat(),b.getSouthWest().lng())), sc=Math.pow(2,bfMap.getZoom());
+      bfShowReview(i,(p.x-nw.x)*sc,(p.y-nw.y)*sc);
+    });
+    bfMarkers.push(m);
+  });
+  document.querySelectorAll('.bf-chip').forEach(chip => {
+    chip.addEventListener('click',()=>{
+      const idx=parseInt(chip.dataset.pin);
+      bfMap.panTo({lat:BF_REVIEWS[idx].lat,lng:BF_REVIEWS[idx].lng}); bfMap.setZoom(13);
+      setTimeout(()=>google.maps.event.trigger(bfMarkers[idx],'click'),400);
+    });
+  });
+  bfMap.addListener('click',bfClosePopup);
+}
+
+// Fallback
+function initBfFallback() {
+  const fb = document.getElementById('bf-fallback');
+  fb.style.display = 'block'; document.getElementById('bf-map').style.display = 'none';
+  document.getElementById('bf-api-banner').style.display = 'block';
+  fb.querySelectorAll('.bf-pin').forEach(pin => {
+    pin.addEventListener('click', e => {
+      e.stopPropagation();
+      const idx = parseInt(pin.dataset.pin);
+      const r = pin.getBoundingClientRect(), w = fb.getBoundingClientRect();
+      bfShowReview(idx, r.left-w.left+r.width/2, r.top-w.top);
+    });
+  });
+  document.querySelectorAll('.bf-chip').forEach(chip => {
+    chip.addEventListener('click',()=>{
+      const idx=chip.dataset.pin;
+      if(idx!==undefined){const pin=fb.querySelector(`.bf-pin[data-pin="${idx}"]`);if(pin)pin.click();}
+    });
+  });
+  fb.addEventListener('click', bfClosePopup);
+}
+window.addEventListener('load',()=>{ if(typeof google==='undefined'||!google.maps) initBfFallback(); });
+
+// ── SCROLL REVEAL ──────────────────────────────────────────────
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const siblings = Array.from(entry.target.parentNode.children);
+      setTimeout(() => entry.target.classList.add('visible'), (siblings.indexOf(entry.target) % 4) * 80);
+      revealObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ── HAMBURGER ──────────────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+// ── SCROLL BEHAVIORS ───────────────────────────────────────────
+const topbar = document.querySelector('.topbar');
+const availBar = document.getElementById('availBar');
+const stickyCta = document.getElementById('stickyCta');
+let stickyDismissed = false;
+
+// Dynamic availability
+const hr = new Date().getHours();
+const slotsEl = availBar.querySelector('.avail-slots');
+if (slotsEl) {
+  if (hr>=7&&hr<12) slotsEl.innerHTML='⚡ <strong>3 spots</strong> open this morning';
+  else if (hr>=12&&hr<16) slotsEl.innerHTML='⚡ <strong>2 spots</strong> left this afternoon';
+  else if (hr>=16&&hr<20) slotsEl.innerHTML='⚡ <strong>1 spot</strong> left today';
+  else slotsEl.innerHTML='⚡ Booking for tomorrow';
+}
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  // Topbar hide/show
+  if (y > 120) { topbar.classList.add('hidden'); availBar.classList.add('visible'); }
+  else { topbar.classList.remove('hidden'); availBar.classList.remove('visible'); }
+  // Sticky CTA
+  if (!stickyDismissed && y > window.innerHeight * 0.7) stickyCta.classList.add('visible');
+  else if (y < 200) stickyCta.classList.remove('visible');
+}, { passive: true });
+
+document.getElementById('stickyClose').addEventListener('click', () => {
+  stickyDismissed = true; stickyCta.classList.remove('visible');
+});
+
+// Scarcity element removed
+
+// ── HOURS STATUS ───────────────────────────────────────────────
+(function() {
+  const day = new Date().getDay();
+  const isWknd = day===0||day===6;
+  const open = isWknd ? (hr>=8&&hr<17) : (hr>=7&&hr<19);
+  const txt = open ? 'Open Now' : 'Currently Closed';
+  ['hoursText','footerHoursText'].forEach(id => { const el=document.getElementById(id); if(el) el.textContent=txt; });
+  if (!open) {
+    ['hoursStatus','footerHours'].forEach(id => { const el=document.getElementById(id); if(el) el.classList.add('closed'); });
+  }
+})();
+
+// ── PRESELECT SERVICE ──────────────────────────────────────────
+function preSelectService(val) {
+  const sel = document.getElementById('qf-service');
+  if (sel) sel.value = val;
+}
+const urlP = new URLSearchParams(window.location.search);
+if (urlP.get('service')) preSelectService(urlP.get('service'));
+
+// ── QUOTE FORM SUBMIT ──────────────────────────────────────────
+document.getElementById('qfBtn').addEventListener('click', () => {
+  const name = document.getElementById('qf-name').value;
+  const phone = document.getElementById('qf-phone').value;
+  document.getElementById('qf-name').style.borderColor = name ? '' : '#D92626';
+  document.getElementById('qf-phone').style.borderColor = phone.length>=7 ? '' : '#D92626';
+  if (!name || phone.length < 7) return;
+  const btn = document.getElementById('qfBtn');
+  btn.textContent = '✅ QUOTE REQUEST SENT!';
+  btn.disabled = true;
+});
+
+// ── FAQ ACCORDION ──────────────────────────────────────────────
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-question').forEach(b => { b.classList.remove('open'); b.nextElementSibling.classList.remove('open'); });
+    if (!isOpen) { btn.classList.add('open'); btn.nextElementSibling.classList.add('open'); }
+  });
+});
+
+// ── EXIT INTENT ────────────────────────────────────────────────
+let exitShown = false;
+document.addEventListener('mouseleave', function(e) {
+  if (e.clientY < 20 && !exitShown) {
+    exitShown = true;
+    const ov = document.getElementById('exitOverlay');
+    if (ov) ov.classList.add('show');
+  }
+});
+['exitClose','exitDismiss'].forEach(function(id) {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('click', function() {
+    const ov = document.getElementById('exitOverlay');
+    if (ov) ov.classList.remove('show');
+  });
+});
+(function(){
+  const ov = document.getElementById('exitOverlay');
+  if (ov) ov.addEventListener('click', function(e) {
+    if (e.target.id==='exitOverlay') ov.classList.remove('show');
+  });
+})();
+(function(){
+  const es = document.getElementById('exitSubmit');
+  if (es) es.addEventListener('click', function() {
+    const ph = document.getElementById('exitPhone') ? document.getElementById('exitPhone').value : '';
+    if (ph.length>=7) {
+      const ov = document.getElementById('exitOverlay');
+      if (ov) ov.innerHTML='<div class="exit-modal" style="text-align:center;"><div style="font-size:56px;margin-bottom:16px;">✅</div><div class="exit-title" style="margin-bottom:12px;">Got it!</div><div class="exit-sub">We\'ll text you a quote within 30 minutes.</div></div>';
+      setTimeout(function(){const ov2=document.getElementById('exitOverlay');if(ov2)ov2.classList.remove('show');},3000);
+    }
+  });
+})();
+
+  // ── PHOTO UPLOAD ──────────────────────────────────────────
+  const photoInput = document.getElementById('photoUpload');
+  if (photoInput) {
+    photoInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        document.getElementById('uploadIcon').textContent = '✅';
+        document.getElementById('uploadText').style.display = 'none';
+        const prev = document.getElementById('uploadPreview');
+        prev.style.display = 'inline';
+        prev.textContent = file.name.length > 24 ? file.name.substring(0,24)+'…' : file.name;
+        document.getElementById('uploadLabel').style.borderColor = '#4ADE80';
+        document.getElementById('uploadLabel').style.background = '#F0FFF4';
+      }
+    });
+  }
+
+  // ── BOOKING CALENDAR ──────────────────────────────────────
+  (function() {
+    const now = new Date();
+    let viewYear = now.getFullYear(), viewMonth = now.getMonth();
+    let selectedDate = null, selectedTime = null;
+    const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const TIMES = ['8:00 AM','9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM'];
+    const BOOKED = [2,5,8]; // fake booked slots by index
+
+    function renderCal() {
+      const label = document.getElementById('calMonthLabel');
+      const daysEl = document.getElementById('calDays');
+      if (!label || !daysEl) return;
+      label.textContent = MONTHS[viewMonth] + ' ' + viewYear;
+      const firstDay = new Date(viewYear, viewMonth, 1).getDay();
+      const daysInMonth = new Date(viewYear, viewMonth+1, 0).getDate();
+      let html = '';
+      for (let i=0; i<firstDay; i++) html += '<div class="cal-day empty"></div>';
+      for (let d=1; d<=daysInMonth; d++) {
+        const date = new Date(viewYear, viewMonth, d);
+        const isToday = date.toDateString()===now.toDateString();
+        const isPast = date < new Date(now.getFullYear(),now.getMonth(),now.getDate());
+        const isWknd = date.getDay()===0||date.getDay()===6;
+        const isSel = selectedDate && date.toDateString()===selectedDate.toDateString();
+        let cls = 'cal-day';
+        if (isPast) cls += ' past';
+        else if (isSel) cls += ' selected available';
+        else if (isToday) cls += ' today available has-slot';
+        else if (!isWknd) cls += ' available has-slot';
+        else cls += ' available';
+        html += `<div class="${cls}" data-date="${date.toDateString()}">${d}</div>`;
+      }
+      daysEl.innerHTML = html;
+      daysEl.querySelectorAll('.cal-day.available').forEach(el => {
+        el.addEventListener('click', () => {
+          selectedDate = new Date(el.dataset.date);
+          selectedTime = null;
+          renderCal();
+          renderTimes();
+          updateSummary();
+        });
+      });
+    }
+
+    function renderTimes() {
+      const el = document.getElementById('timeSlots');
+      if (!el) return;
+      if (!selectedDate) { el.innerHTML = '<p style="font-size:13px;color:#aaa;grid-column:span 3;">Select a date first</p>'; return; }
+      el.innerHTML = TIMES.map((t,i) => {
+        const isBooked = BOOKED.includes(i);
+        const isSel = selectedTime===t;
+        return `<div class="ts-slot ${isBooked?'booked':''} ${isSel?'selected':''}" data-time="${t}">${isBooked?'Taken':t}</div>`;
+      }).join('');
+      el.querySelectorAll('.ts-slot:not(.booked)').forEach(sl => {
+        sl.addEventListener('click', () => { selectedTime=sl.dataset.time; renderTimes(); updateSummary(); });
+      });
+    }
+
+    function updateSummary() {
+      const sum = document.getElementById('calSummary');
+      const btn = document.getElementById('calBookBtn');
+      if (!sum||!btn) return;
+      if (selectedDate && selectedTime) {
+        const ds = selectedDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+        sum.innerHTML = `<strong>${ds}</strong> at <strong>${selectedTime}</strong>`;
+        btn.disabled = false; btn.textContent = 'CONFIRM APPOINTMENT →';
+      } else if (selectedDate) {
+        sum.innerHTML = `<strong>${selectedDate.toLocaleDateString('en-US',{month:'long',day:'numeric'})}</strong> — now pick a time`;
+        btn.disabled = true; btn.textContent = 'SELECT A TIME';
+      } else {
+        sum.textContent = 'Select a date and time to continue';
+        btn.disabled = true; btn.textContent = 'SELECT A DATE FIRST';
+      }
+    }
+
+    document.getElementById('calPrev')?.addEventListener('click', () => {
+      viewMonth--; if(viewMonth<0){viewMonth=11;viewYear--;} renderCal();
+    });
+    document.getElementById('calNext')?.addEventListener('click', () => {
+      viewMonth++; if(viewMonth>11){viewMonth=0;viewYear++;} renderCal();
+    });
+    document.getElementById('calBookBtn')?.addEventListener('click', () => {
+      if (!selectedDate || !selectedTime) return;
+
+      bookingState.selectedDate = selectedDate.toLocaleDateString('en-US', {
+        weekday: 'long',
+        month: 'long',
+        day: 'numeric'
+      });
+
+      bookingState.selectedTime = selectedTime;
+      openBookingModal();
+    });
+
+    renderCal(); renderTimes();
+  })();
+
+  // ── COST CALCULATOR ───────────────────────────────────────
+  (function() {
+    let type=null, sev=null, size=null;
+    let baseMin=0, baseMax=0;
+    document.querySelectorAll('.calc-opt[data-type]').forEach(el => {
+      el.addEventListener('click', () => {
+        document.querySelectorAll('.calc-opt[data-type]').forEach(e=>e.classList.remove('selected'));
+        el.classList.add('selected');
+        type=el.dataset.type; baseMin=+el.dataset.min; baseMax=+el.dataset.max;
+        updateCalc();
+      });
+    });
+    document.querySelectorAll('.calc-opt[data-sev]').forEach(el => {
+      el.addEventListener('click', () => {
+        document.querySelectorAll('.calc-opt[data-sev]').forEach(e=>e.classList.remove('selected'));
+        el.classList.add('selected'); sev=+el.dataset.mult; updateCalc();
+      });
+    });
+    document.querySelectorAll('.calc-opt[data-size]').forEach(el => {
+      el.addEventListener('click', () => {
+        document.querySelectorAll('.calc-opt[data-size]').forEach(e=>e.classList.remove('selected'));
+        el.classList.add('selected'); size=+el.dataset.sizeMult; updateCalc();
+      });
+    });
+    function updateCalc() {
+      const rangeEl=document.getElementById('calcRange');
+      const vsEl=document.getElementById('calcVs');
+      const savEl=document.getElementById('calcSaving');
+      const savTxt=document.getElementById('calcSavingText');
+      const noteEl=document.getElementById('calcNote');
+      const ctaEl=document.getElementById('calcCta');
+      if (!rangeEl) return;
+      if (!type) { rangeEl.innerHTML='$<span>—</span>'; return; }
+      const m=sev||1.0, s=size||1.0;
+      const lo=Math.round((baseMin*m*s)/10)*10;
+      const hi=Math.round((baseMax*m*s)/10)*10;
+      const shopLo=Math.round(lo*2.2/10)*10;
+      const shopHi=Math.round(hi*2.5/10)*10;
+      const savLo=shopLo-hi, savHi=shopHi-lo;
+      rangeEl.innerHTML=`$${lo}<span>–$${hi}</span>`;
+      vsEl.style.display='block';
+      document.getElementById('calcShopRange').textContent=`$${shopLo}–$${shopHi}`;
+      savEl.style.display='inline-flex';
+      savTxt.textContent=`You save ~$${Math.round((savLo+savHi)/2)}`;
+      noteEl.textContent='This is an estimate based on typical jobs. Text us a photo for an exact quote.';
+      ctaEl.href='#quote';
+      if(type) preSelectService(type);
+    }
+  })();
+
+  // ── CHAT BUBBLE ───────────────────────────────────────────
+  (function() {
+    const chatBtn=document.getElementById('chatBtn');
+    const chatPanel=document.getElementById('chatPanel');
+    const chatClose=document.getElementById('chatClose');
+    const chatMessages=document.getElementById('chatMessages');
+    const chatOptions=document.getElementById('chatOptions');
+    const chatInput=document.getElementById('chatInput');
+    const chatSend=document.getElementById('chatSend');
+    if(!chatBtn) return;
+
+    const REPLIES = {
+      bumper: { q:'🚗 Bumper damage', a:'Bumper repair is one of the most common cosmetic repairs we handle. Cracks, scuffs, and impact damage are typically in the $249–$499 range depending on the job. We come to you — send a photo to get started.', showQuote:true },
+      scratch: { q:'✦ Scratch or scuff', a:'Surface scratches and scuffs are generally in the $149–$299 range depending on depth. We color-match to your vehicle for a clean result. Send a photo and we can take a look.', showQuote:true },
+      dent: { q:'⚙️ Dent repair', a:'For eligible dents where the paint is intact, paintless dent repair is typically $99–$249 and preserves the original finish. Whether it qualifies depends on the dent — send a photo first.', showQuote:true },
+      price: { q:'💰 How much does it cost?', a:'Pricing depends on the damage type and scope. Scratches start from $149, bumper repairs from $249, panel work from $349. Use the cost estimator on this page for a realistic range.', showQuote:false },
+      area: { q:'📍 Do you come to my area?', a:'We cover all of San Diego County — La Jolla, Downtown, Chula Vista, El Cajon, Mira Mesa, Santee, and more. Just text us your zip! 📍', showQuote:false },
+    };
+
+    function addMsg(text, from) {
+      const m=document.createElement('div');
+      m.className=`chat-msg ${from}`;
+      m.textContent=text;
+      chatMessages.appendChild(m);
+      chatMessages.scrollTop=chatMessages.scrollHeight;
+    }
+
+    chatBtn.addEventListener('click', () => {
+      chatPanel.classList.toggle('open');
+      chatBtn.querySelector('.chat-badge').style.display='none';
+    });
+    chatClose.addEventListener('click', () => chatPanel.classList.remove('open'));
+
+    chatOptions.querySelectorAll('.chat-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        const key=opt.dataset.reply;
+        const rep=REPLIES[key];
+        addMsg(rep.q, 'user');
+        chatOptions.style.display='none';
+        setTimeout(() => {
+          addMsg(rep.a, 'bot');
+          if (rep.showQuote) {
+            setTimeout(()=>{
+              addMsg('👉 Get your free quote in 30 min — no obligation.', 'bot');
+              const link=document.createElement('a');
+              link.href='#quote'; link.className='chat-option'; link.textContent='📋 Get Free Quote';
+              link.style.cssText='display:block;margin:0 16px 12px;text-decoration:none;text-align:center;';
+              link.addEventListener('click',()=>chatPanel.classList.remove('open'));
+              chatMessages.after(link);
+            }, 800);
+          }
+        }, 600);
+      });
+    });
+
+    function sendChatMsg() {
+      const val=chatInput.value.trim();
+      if(!val) return;
+      addMsg(val,'user');
+      chatInput.value='';
+      chatOptions.style.display='none';
+      setTimeout(()=>{ addMsg("Thanks! For a quick answer, call us at (858) 988-0325 or use the quote form below 👇",'bot'); },700);
+    }
+    chatSend.addEventListener('click', sendChatMsg);
+    chatInput.addEventListener('keydown', e=>{ if(e.key==='Enter') sendChatMsg(); });
+  })();
+
+  // ── STICKY CTA REDIRECT ───────────────────────────────────
+  // Set window.BUMPERFIX_QUOTE_URL = 'https://yourpage.com/quote'
+  // to make the sticky bar button redirect to an external page.
+  (function() {
+    var btn = document.getElementById('stickyQuoteBtn');
+    if (btn && window.BUMPERFIX_QUOTE_URL) {
+      btn.href = window.BUMPERFIX_QUOTE_URL;
+      btn.target = '_blank';
+      btn.rel = 'noopener';
+    }
+  })();
+</script>
+
+<!-- ── BOOKING MODAL ── -->
+<div class="booking-modal-overlay" id="bookingModalOverlay">
+  <div class="booking-modal">
+    <button class="booking-modal-close" id="bookingModalClose">×</button>
+
+    <!-- Step 1: Customer details -->
+    <div id="bookingStep1">
+      <div class="booking-modal-title">Confirm Your Appointment</div>
+      <div class="booking-modal-sub" id="bookingSelectedSlotText">You selected a time slot.</div>
+      <div class="booking-form-grid">
+        <input type="text"  id="bookingName"  class="booking-input" placeholder="Your first name" autocomplete="given-name" />
+        <input type="tel"   id="bookingPhone" class="booking-input" placeholder="Phone number (e.g. 619-555-0100)" autocomplete="tel" inputmode="tel" />
+        <input type="text"  id="bookingArea"  class="booking-input" placeholder="City / area (e.g. La Jolla)" />
+        <textarea           id="bookingNotes" class="booking-input booking-textarea" placeholder="Vehicle and damage note (optional)"></textarea>
+      </div>
+      <div class="booking-error" id="step1Error"></div>
+      <button class="booking-main-btn" id="sendVerificationBtn">SEND VERIFICATION CODE</button>
+      <div class="booking-helper-text">We’ll text you a 6-digit code to confirm this booking request.</div>
+    </div>
+
+    <!-- Step 2: Verify code -->
+    <div id="bookingStep2" style="display:none;">
+      <div class="booking-modal-title">Enter Your Code</div>
+      <div class="booking-modal-sub" id="bookingVerificationText">We sent a code to your phone.</div>
+      <input type="text" id="bookingCode" class="booking-input booking-code-input" placeholder="6-digit code" maxlength="6" inputmode="numeric" />
+      <div class="booking-error" id="step2Error"></div>
+      <button class="booking-main-btn" id="verifyBookingBtn">CONFIRM APPOINTMENT</button>
+      <button class="booking-secondary-btn" id="resendVerificationBtn">RESEND CODE</button>
+      <div class="booking-resend-confirm" id="resendConfirm">Code resent — check your messages.</div>
+      <div class="booking-helper-text">Your appointment is reserved only after the code is verified.</div>
+    </div>
+
+    <!-- Step 3: Confirmed -->
+    <div id="bookingStep3" style="display:none;">
+      <div class="booking-modal-title">✅ Appointment Confirmed</div>
+      <div class="booking-modal-sub" id="bookingConfirmedText">Your slot has been reserved. A confirmation text has been sent.</div>
+      <button class="booking-main-btn" id="bookingDoneBtn">DONE</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────────────────────────
+// Bumper Fix — Booking Modal (frontend controller)
+// Coordinates SMS verification → slot reservation via /api/check-verification.
+// ─────────────────────────────────────────────────────────────────────────────
+
+let bookingState = {
+  selectedDate:   null,
+  selectedTime:   null,
+  customerName:   '',
+  customerPhone:  '',
+  customerArea:   '',
+  customerNotes:  ''
+};
+
+// ── UI helpers ────────────────────────────────────────────────
+
+function showError(id, msg) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = msg;
+  el.style.display = msg ? 'block' : 'none';
+}
+
+function clearErrors() {
+  showError('step1Error', '');
+  showError('step2Error', '');
+}
+
+const _btnLabels = {};
+function setLoading(btnId, loading, loadingText) {
+  const btn = document.getElementById(btnId);
+  if (!btn) return;
+  if (loading) {
+    _btnLabels[btnId] = btn.textContent;
+    btn.textContent = loadingText || 'PLEASE WAIT…';
+    btn.disabled = true;
+  } else {
+    btn.textContent = _btnLabels[btnId] || btn.textContent;
+    btn.disabled = false;
+  }
+}
+
+// ── Modal open / close ────────────────────────────────────────
+
+function openBookingModal() {
+  clearErrors();
+  document.getElementById('bookingCode').value  = '';
+  // Reset button labels in case a previous load left them in loading state
+  ['sendVerificationBtn','verifyBookingBtn','resendVerificationBtn'].forEach(function(id) {
+    delete _btnLabels[id];
+  });
+  document.getElementById('bookingModalOverlay').classList.add('open');
+  document.getElementById('bookingStep1').style.display = 'block';
+  document.getElementById('bookingStep2').style.display = 'none';
+  document.getElementById('bookingStep3').style.display = 'none';
+  document.getElementById('bookingSelectedSlotText').textContent =
+    bookingState.selectedDate + ' at ' + bookingState.selectedTime +
+    '. Enter your details below and we will text you a verification code.';
+  // Focus first field
+  setTimeout(function() {
+    const n = document.getElementById('bookingName');
+    if (n) n.focus();
+  }, 80);
+}
+
+function closeBookingModal() {
+  document.getElementById('bookingModalOverlay').classList.remove('open');
+}
+
+// Close on backdrop click
+document.getElementById('bookingModalOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeBookingModal();
+});
+
+// Code input: strip non-digits, auto-trigger verify at 6 digits
+document.getElementById('bookingCode').addEventListener('input', function() {
+  this.value = this.value.replace(/\D/g, '').slice(0, 6);
+  if (this.value.length === 6) {
+    document.getElementById('step2Error').style.display = 'none';
+  }
+});
+
+document.getElementById('bookingModalClose').addEventListener('click', closeBookingModal);
+document.getElementById('bookingDoneBtn').addEventListener('click',    closeBookingModal);
+
+// ── Step 1 — Send verification code ──────────────────────────
+
+document.getElementById('sendVerificationBtn').addEventListener('click', async function() {
+  clearErrors();
+
+  const name  = document.getElementById('bookingName').value.trim();
+  const phone = document.getElementById('bookingPhone').value.trim();
+  const area  = document.getElementById('bookingArea').value.trim();
+  const notes = document.getElementById('bookingNotes').value.trim();
+
+  if (!name || !phone || !area) {
+    showError('step1Error', 'Please enter your name, phone number, and city or area.');
+    return;
+  }
+
+  bookingState.customerName  = name;
+  bookingState.customerPhone = phone;
+  bookingState.customerArea  = area;
+  bookingState.customerNotes = notes;
+
+  setLoading('sendVerificationBtn', true, 'SENDING CODE…');
+
+  try {
+    const res  = await fetch('/api/send-verification', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({ phone, name, date: bookingState.selectedDate, time: bookingState.selectedTime })
+    });
+    const data = await res.json();
+
+    if (!res.ok) {
+      showError('step1Error', data.error || 'Could not send verification code. Please try again.');
+      return;
+    }
+
+    document.getElementById('bookingStep1').style.display = 'none';
+    document.getElementById('bookingStep2').style.display = 'block';
+    document.getElementById('bookingVerificationText').textContent =
+      'We sent a 6-digit code to ' + phone + '. Enter it below to confirm your appointment.';
+
+  } catch (err) {
+    showError('step1Error', 'Network error. Please check your connection and try again.');
+  } finally {
+    setLoading('sendVerificationBtn', false);
+  }
+});
+
+// ── Step 2 — Verify code and create booking ───────────────────
+
+document.getElementById('verifyBookingBtn').addEventListener('click', async function() {
+  clearErrors();
+
+  const code = document.getElementById('bookingCode').value.trim();
+  if (!code || code.length < 6) {
+    showError('step2Error', 'Please enter the full 6-digit verification code.');
+    return;
+  }
+
+  setLoading('verifyBookingBtn', true, 'VERIFYING…');
+
+  try {
+    const res  = await fetch('/api/check-verification', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({
+        phone: bookingState.customerPhone,
+        code,
+        name:  bookingState.customerName,
+        area:  bookingState.customerArea,
+        notes: bookingState.customerNotes,
+        date:  bookingState.selectedDate,
+        time:  bookingState.selectedTime
+      })
+    });
+    const data = await res.json();
+
+    if (res.status === 409) {
+      showError('step2Error', 'That time slot was just taken. Please close this window and choose a different time.');
+      return;
+    }
+    if (!res.ok) {
+      showError('step2Error', data.error || 'Verification failed. Please check the code and try again.');
+      return;
+    }
+
+    // Success — show confirmed step and update calendar UI
+    document.getElementById('bookingStep2').style.display = 'none';
+    document.getElementById('bookingStep3').style.display = 'block';
+    document.getElementById('bookingConfirmedText').textContent =
+      'Your appointment for ' + bookingState.selectedDate + ' at ' + bookingState.selectedTime +
+      ' is confirmed. A confirmation text has been sent to ' + bookingState.customerPhone + '.';
+
+    const calSummary = document.getElementById('calSummary');
+    const calBookBtn = document.getElementById('calBookBtn');
+    if (calSummary) calSummary.innerHTML =
+      '✅ Booked — <strong>' + bookingState.selectedDate + '</strong> at <strong>' + bookingState.selectedTime + '</strong>';
+    if (calBookBtn) {
+      calBookBtn.textContent = 'APPOINTMENT CONFIRMED';
+      calBookBtn.disabled    = true;
+      calBookBtn.style.background = '#16A34A';
+    }
+
+    // Mark the reserved time slot as booked in the calendar grid
+    const slots = document.querySelectorAll('.ts-slot');
+    slots.forEach(function(slot) {
+      if (slot.dataset.time === bookingState.selectedTime) {
+        slot.classList.remove('selected');
+        slot.classList.add('booked');
+        slot.textContent = 'Reserved';
+      }
+    });
+
+  } catch (err) {
+    showError('step2Error', 'Network error. Please check your connection and try again.');
+  } finally {
+    setLoading('verifyBookingBtn', false);
+  }
+});
+
+// ── Resend code ───────────────────────────────────────────────
+
+document.getElementById('resendVerificationBtn').addEventListener('click', async function() {
+  clearErrors();
+  setLoading('resendVerificationBtn', true, 'RESENDING…');
+
+  try {
+    const res  = await fetch('/api/send-verification', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify({
+        phone: bookingState.customerPhone,
+        name:  bookingState.customerName,
+        date:  bookingState.selectedDate,
+        time:  bookingState.selectedTime
+      })
+    });
+    const data = await res.json();
+
+    if (!res.ok) {
+      showError('step2Error', data.error || 'Could not resend code. Please try again.');
+      return;
+    }
+
+    const confirm = document.getElementById('resendConfirm');
+    if (confirm) {
+      confirm.style.display = 'block';
+      setTimeout(function() { confirm.style.display = 'none'; }, 4000);
+    }
+
+  } catch (err) {
+    showError('step2Error', 'Network error. Could not resend code.');
+  } finally {
+    setLoading('resendVerificationBtn', false);
+  }
+});
+</script>
+
+
+<!-- Google Maps: replace YOUR_API_KEY with your Maps JavaScript API key -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initBfMap" async defer onerror="initBfFallback()"></script>
+</body>
+</html>
