@@ -476,10 +476,11 @@ function closeConfirmModal() {
 
 async function executeConfirm() {
   if (!pendingConfirmId) return;
+  const id          = pendingConfirmId;
   const sendSms     = document.getElementById('chkSendSms').checked;
   const notifyOwner = document.getElementById('chkNotifyOwner').checked;
   closeConfirmModal();
-  await updateStatus(pendingConfirmId, 'admin_confirmed', { sendCustomerSms: sendSms, notifyOwner });
+  await updateStatus(id, 'admin_confirmed', { sendCustomerSms: sendSms, notifyOwner });
 }
 
 // ── SEND TEXT MODAL ───────────────────────────────────────────────────────────
