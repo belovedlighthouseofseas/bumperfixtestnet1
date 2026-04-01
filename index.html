@@ -1428,14 +1428,16 @@
   <div class="area-header">
     <div>
       <div class="section-tag reveal">Service Area</div>
-      <h2 class="section-h reveal">Serving San Diego<br>County.</h2>
-      <p class="section-p reveal" style="margin-top:8px;">We provide mobile cosmetic auto body service across San Diego County. Use the map and neighborhood shortcuts to see example service coverage.</p>
+      <h2 class="section-h reveal">Mobile Repair Across<br>San Diego County.</h2>
+      <p class="section-p reveal" style="margin-top:8px;">
+        Bumper Fix is built to serve drivers across San Diego County with on-site cosmetic repair at homes, offices, apartments, parking structures, and approved private locations.
+      </p>
     </div>
-
   </div>
+
   <div class="area-legend">
-    <span class="legend-label">Map Key</span>
-    <span class="legend-item"><span class="legend-dot" style="background:#D92626;"></span>Service Area Marker</span>
+    <span class="legend-label">Coverage Map</span>
+    <span class="legend-item"><span class="legend-dot" style="background:#D92626;"></span>Mobile Service Location</span>
     <span style="width:1px;height:16px;background:rgba(255,255,255,0.1);"></span>
     <span class="legend-item"><span class="legend-patch" style="background:#3B82F6;"></span>Coastal</span>
     <span class="legend-item"><span class="legend-patch" style="background:#10B981;"></span>North County</span>
@@ -1443,6 +1445,7 @@
     <span class="legend-item"><span class="legend-patch" style="background:#F59E0B;"></span>South Bay</span>
     <span class="legend-item"><span class="legend-patch" style="background:#EF4444;"></span>Central San Diego</span>
   </div>
+
   <div class="area-map-wrap">
     <div id="bf-map"></div>
     <div id="bf-fallback">
@@ -1457,13 +1460,13 @@
         <path d="M28,30 L26,100" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none"/>
         <path d="M0,65 L65,60" stroke="rgba(255,255,255,0.05)" stroke-width="0.4" fill="none"/>
       </svg>
-      <!-- Districts -->
+
       <div class="fb-district" style="left:3%;top:12%;width:23%;height:22%;background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.35);" data-district="coastal"><span class="fb-district-name" style="color:#60A5FA;">🏖 Coastal</span></div>
       <div class="fb-district" style="left:27%;top:5%;width:34%;height:24%;background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.35);" data-district="north"><span class="fb-district-name" style="color:#34D399;">🌿 North County</span></div>
       <div class="fb-district" style="left:63%;top:5%;width:34%;height:40%;background:rgba(139,92,246,0.08);border-color:rgba(139,92,246,0.35);" data-district="east"><span class="fb-district-name" style="color:#A78BFA;">⛰ East County</span></div>
       <div class="fb-district" style="left:27%;top:29%;width:34%;height:30%;background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.35);" data-district="central"><span class="fb-district-name" style="color:#F87171;">🏙 Central San Diego</span></div>
       <div class="fb-district" style="left:5%;top:59%;width:55%;height:37%;background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.35);" data-district="southbay"><span class="fb-district-name" style="color:#FCD34D;">🌉 South Bay</span></div>
-      <!-- Pins -->
+
       <div class="bf-pin" style="left:14%;top:24%;" data-pin="0"><div class="bf-pin-label">La Jolla</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
       <div class="bf-pin" style="left:20%;top:40%;" data-pin="1"><div class="bf-pin-label">Pacific Beach</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
       <div class="bf-pin" style="left:9%;top:50%;" data-pin="2"><div class="bf-pin-label">Ocean Beach</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
@@ -1476,34 +1479,42 @@
       <div class="bf-pin" style="left:22%;top:74%;" data-pin="9"><div class="bf-pin-label">National City</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
       <div class="bf-pin" style="left:34%;top:83%;" data-pin="10"><div class="bf-pin-label">Chula Vista</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
       <div class="bf-pin" style="left:8%;top:68%;" data-pin="11"><div class="bf-pin-label">Coronado</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
-      <div class="fb-watermark">Google Maps live view activates when API key is connected.</div>
+
+      <div class="fb-watermark">Connect Google Maps API to activate full live map view</div>
     </div>
-    <!-- API banner -->
+
     <div id="bf-api-banner" style="position:absolute;top:12px;left:50%;transform:translateX(-50%);background:rgba(217,38,38,0.95);color:white;padding:8px 18px;border-radius:8px;font-size:12px;font-weight:600;z-index:10;text-align:center;pointer-events:none;display:none;white-space:nowrap;">
-      Map is currently showing design preview mode. Connect Google Maps API for live map functionality.
+      Live map activates when Google Maps API is connected
     </div>
-    <!-- Review popup -->
+
     <div id="bf-popup">
       <div class="pop-head">
-        <div><div class="pop-service" id="popService">Mobile Bumper Repair Example</div><div class="pop-location" id="popLocation">📍 San Diego County</div></div>
+        <div>
+          <div class="pop-service" id="popService">Mobile Cosmetic Repair Example</div>
+          <div class="pop-location" id="popLocation">📍 San Diego County</div>
+        </div>
         <button class="pop-close" id="popClose">×</button>
       </div>
       <div class="pop-body">
         <div class="pop-stars">★★★★★</div>
-        <p class="pop-text" id="popText">Example service scenario shown for layout preview.</p>
+        <p class="pop-text" id="popText">Example repair scenario shown to demonstrate service coverage and mobile workflow.</p>
         <div class="pop-author">
           <div class="pop-avatar" id="popAvatar">BF</div>
-          <div><div class="pop-name" id="popName">Service Example</div><div class="pop-car" id="popCar">Mobile cosmetic auto body service</div></div>
+          <div>
+            <div class="pop-name" id="popName">Service Example</div>
+            <div class="pop-car" id="popCar">Mobile bumper and cosmetic repair</div>
+          </div>
         </div>
       </div>
       <div class="pop-footer">
-        <div class="pop-detail">Time: <strong id="popTime">2 hrs</strong> · Savings: <strong id="popSaved">Varies</strong></div>
-        <a href="#quote" class="pop-cta">Request Similar Service →</a>
+        <div class="pop-detail">Time: <strong id="popTime">2 hrs</strong> · Typical range: <strong id="popSaved">Varies</strong></div>
+        <a href="#quote" class="pop-cta">Check Your Area →</a>
       </div>
     </div>
   </div>
+
   <div class="area-chips-wrap">
-    <div class="chips-label">Browse Service Areas</div>
+    <div class="chips-label">Common Service Areas</div>
     <div class="chips-row" id="bfChips">
       <div class="bf-chip" data-pin="0" style="--chip-color:#3B82F6">La Jolla</div>
       <div class="bf-chip" data-pin="1" style="--chip-color:#3B82F6">Pacific Beach</div>
@@ -1518,6 +1529,19 @@
       <div class="bf-chip" data-pin="9" style="--chip-color:#F59E0B">National City</div>
       <div class="bf-chip" data-pin="11" style="--chip-color:#F59E0B">Coronado</div>
     </div>
+  </div>
+
+  <div class="reveal" style="padding:24px 48px;background:var(--bg);border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+    <div style="max-width:760px;">
+      <div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:6px;">Not sure if your location works?</div>
+      <div style="font-size:13px;color:var(--mid);line-height:1.7;">
+        Send your zip code and a photo of the damage. If the repair is a strong fit for mobile service, we'll tell you quickly and give you the next step.
+      </div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:8px;">
+        Coastal, Central, East County, South Bay, and surrounding San Diego County service zones.
+      </div>
+    </div>
+    <a href="#quote" class="btn-sm">Check My Area</a>
   </div>
 </section>
 
