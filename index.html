@@ -1358,8 +1358,9 @@
 <!-- ══ COST CALCULATOR ══ -->
 <section id="calculator">
   <div class="section-tag reveal">Estimate</div>
-  <h2 class="section-h reveal">What Will Your<br>Repair Run?</h2>
-  <p class="section-p reveal">Select your damage type below. Exact pricing is confirmed after photo review — this gives you a realistic range.</p>
+  <h2 class="section-h reveal">Get a Realistic<br>Price Range First.</h2>
+  <p class="section-p reveal">Choose the damage type, severity, and vehicle size to get a fast pricing range. Then send a photo so we can review the repair and give you the clearest next step.</p>
+
   <div class="calc-wrap">
     <div class="calc-form reveal">
       <div class="calc-step">
@@ -1372,38 +1373,53 @@
           <div class="calc-opt" data-type="keying" data-min="199" data-max="449">Keying / Vandalism</div>
         </div>
       </div>
+
       <div class="calc-step">
         <div class="calc-label">Severity</div>
         <div class="calc-options">
-          <div class="calc-opt" data-sev="minor" data-mult="0.85">Minor (surface only)</div>
-          <div class="calc-opt" data-sev="moderate" data-mult="1.0">Moderate (paint through)</div>
-          <div class="calc-opt" data-sev="major" data-mult="1.4">Major (structural / large area)</div>
+          <div class="calc-opt" data-sev="minor" data-mult="0.85">Minor Surface Damage</div>
+          <div class="calc-opt" data-sev="moderate" data-mult="1.0">Moderate Paint Damage</div>
+          <div class="calc-opt" data-sev="major" data-mult="1.4">Larger / Heavier Damage</div>
         </div>
       </div>
+
       <div class="calc-step">
         <div class="calc-label">Vehicle Size</div>
         <div class="calc-options">
-          <div class="calc-opt" data-size="small" data-size-mult="0.9">Small (sedan, compact)</div>
-          <div class="calc-opt" data-size="mid" data-size-mult="1.0">Mid-size (SUV, crossover)</div>
-          <div class="calc-opt" data-size="large" data-size-mult="1.2">Large (truck, van, full SUV)</div>
+          <div class="calc-opt" data-size="small" data-size-mult="0.9">Small Car / Sedan</div>
+          <div class="calc-opt" data-size="mid" data-size-mult="1.0">SUV / Crossover</div>
+          <div class="calc-opt" data-size="large" data-size-mult="1.2">Truck / Large SUV / Van</div>
         </div>
       </div>
     </div>
+
     <div class="calc-result reveal">
       <div class="cr-label">Estimated Range</div>
       <div class="cr-range" id="calcRange">$<span>—</span></div>
-      <div class="cr-vs" id="calcVs" style="display:none;">Estimated range: <strong id="calcShopRange"></strong></div>
-      <div class="cr-saving" id="calcSaving" style="display:none;"><span id="calcSavingText"></span></div>
-      <p style="font-size:14px;color:rgba(255,255,255,0.5);margin-top:20px;line-height:1.6;" id="calcNote">Select your damage type, severity, and vehicle to get your estimate.</p>
-      <a href="#quote" class="cr-cta" id="calcCta">Request an Exact Quote →</a>
-      <p class="cr-disclaimer">Estimate only. Final price confirmed after photo review.</p>
+      <div class="cr-vs" id="calcVs" style="display:none;">Traditional shop range: <s id="calcShopRange"></s></div>
+      <div class="cr-saving" id="calcSaving" style="display:none;">💚 <span id="calcSavingText">Potential savings shown here</span></div>
+
+      <p style="font-size:14px;color:rgba(255,255,255,0.5);margin-top:20px;line-height:1.7;" id="calcNote">
+        Use this as a starting point. Final pricing depends on the actual damage, panel condition, and photo review.
+      </p>
+
+      <a href="#quote" class="cr-cta" id="calcCta">Send a Photo for Exact Pricing →</a>
+
+      <p class="cr-disclaimer">
+        This estimator is for guidance only. Exact quote is confirmed after reviewing photos of the damage.
+      </p>
     </div>
   </div>
+
   <div class="insurance-explainer reveal" style="padding:32px 40px;">
-    <div class="section-tag" style="margin-bottom:12px;">Should You File a Claim?</div>
-    <h3 style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:0.03em;color:#111;margin-bottom:14px;">For most repairs under $500 — probably not.</h3>
-    <p style="font-size:15px;color:#555;line-height:1.75;max-width:680px;">Between your deductible and the rate increase that follows a claim, filing often costs more over three years than paying directly. Our repairs are typically well below most deductibles. We provide itemized invoices if you choose to submit for reimbursement.</p>
-    <div style="margin-top:20px;padding:16px 20px;background:#111;border-radius:10px;font-size:14px;color:rgba(255,255,255,0.75);line-height:1.6;max-width:680px;"><strong style="color:white;">Typical deductible:</strong> $500–$1,000 &nbsp;·&nbsp; <strong style="color:white;">Typical Bumper Fix repair:</strong> $149–$449 &nbsp;·&nbsp; <strong style="color:white;">Premium impact:</strong> $200–$600/yr for 3–5 years</div>
+    <div class="section-tag" style="margin-bottom:12px;">Out-of-Pocket vs Claim</div>
+    <h3 style="font-family:'Anton',sans-serif;font-size:22px;letter-spacing:0.03em;color:#111;margin-bottom:14px;">Many cosmetic repairs make more sense out of pocket.</h3>
+    <p style="font-size:15px;color:#555;line-height:1.75;max-width:680px;">
+      For smaller cosmetic damage, many drivers choose direct payment instead of opening a claim. Between deductibles, delays, and possible premium impact, a straightforward repair can sometimes be the cleaner move.
+    </p>
+    <div style="margin-top:20px;padding:16px 20px;background:#111;border-radius:10px;font-size:14px;color:rgba(255,255,255,0.75);line-height:1.6;max-width:680px;">
+      <strong style="color:white;">Best next step:</strong> get the realistic repair range first, then decide whether this is something you even want to involve insurance in.
+    </div>
   </div>
 </section>
 
