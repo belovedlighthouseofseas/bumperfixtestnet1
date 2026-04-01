@@ -1449,36 +1449,146 @@
   <div class="area-map-wrap">
     <div id="bf-map"></div>
     <div id="bf-fallback">
-      <div class="fb-grid-bg"></div>
-      <div class="fb-ocean"></div>
-      <div class="fb-ocean-label">Pacific Ocean</div>
-      <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 100 100" preserveAspectRatio="none">
-        <path d="M18,0 L16,100" stroke="rgba(255,255,255,0.08)" stroke-width="0.6" fill="none"/>
-        <path d="M0,52 L100,48" stroke="rgba(255,255,255,0.08)" stroke-width="0.6" fill="none"/>
-        <path d="M50,0 L52,100" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none"/>
-        <path d="M0,32 L65,30" stroke="rgba(255,255,255,0.05)" stroke-width="0.4" fill="none"/>
-        <path d="M28,30 L26,100" stroke="rgba(255,255,255,0.06)" stroke-width="0.5" fill="none"/>
-        <path d="M0,65 L65,60" stroke="rgba(255,255,255,0.05)" stroke-width="0.4" fill="none"/>
+      <!--
+        Geographic SVG map of San Diego County.
+        Coordinate system: viewBox 0 0 800 510
+          x = (lng + 117.65) * 500   [lng range -117.65 to -116.05 → x 0..800]
+          y = (33.47 - lat) * 500    [lat range 32.47 to 33.47 → y 0..500]
+        Key: NW coast (33.39,-117.60)=(30,40), NE=(785,0), SE=(785,470), coast border=(260,472)
+      -->
+      <svg viewBox="0 0 800 510" style="position:absolute;inset:0;width:100%;height:100%;display:block;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="mgrid" x="0" y="0" width="48" height="48" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="48" y2="0" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+            <line x1="0" y1="0" x2="0" y2="48" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+          </pattern>
+          <!-- County shape used as clip path for district fills -->
+          <clipPath id="countyClip">
+            <path d="M30,40 L785,0 L785,470 L590,470 L360,470 L260,472 L255,452 L235,430 L205,402 L200,367 L196,352 L200,336 L192,317 L190,257 L178,217 L150,162 L135,137 Z"/>
+          </clipPath>
+          <linearGradient id="oceanG" x1="0%" y1="30%" x2="100%" y2="60%">
+            <stop offset="0%" stop-color="#0b2540"/>
+            <stop offset="100%" stop-color="#0f2f50" stop-opacity="0.65"/>
+          </linearGradient>
+          <linearGradient id="bayG" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0e3265"/>
+            <stop offset="100%" stop-color="#0a2850"/>
+          </linearGradient>
+        </defs>
+
+        <!-- ── BACKGROUND ── -->
+        <rect width="800" height="510" fill="#181818"/>
+        <rect width="800" height="510" fill="url(#mgrid)"/>
+
+        <!-- ── COUNTY LAND BASE ── -->
+        <path d="M30,40 L785,0 L785,470 L590,470 L360,470 L260,472 L255,452 L235,430 L205,402 L200,367 L196,352 L200,336 L192,317 L190,257 L178,217 L150,162 L135,137 Z"
+              fill="#202020"/>
+
+        <!-- ── DISTRICT COLOR FILLS (clipped to county boundary) ── -->
+        <g clip-path="url(#countyClip)">
+          <!-- Coastal strip (west of ~lng -117.13) -->
+          <rect x="0" y="0" width="260" height="510" fill="rgba(59,130,246,0.11)"/>
+          <!-- North County (north of ~lat 33.00) -->
+          <rect x="260" y="0" width="525" height="237" fill="rgba(16,185,129,0.11)"/>
+          <!-- Central SD -->
+          <rect x="260" y="237" width="265" height="178" fill="rgba(239,68,68,0.09)"/>
+          <!-- East County -->
+          <rect x="525" y="237" width="260" height="178" fill="rgba(139,92,246,0.09)"/>
+          <!-- South Bay (south of ~lat 32.64) -->
+          <rect x="260" y="415" width="525" height="100" fill="rgba(245,158,11,0.11)"/>
+        </g>
+
+        <!-- ── PACIFIC OCEAN ── -->
+        <path d="M0,0 L30,40 L135,137 L150,162 L178,217 L190,257 L192,317 L200,336 L196,352 L200,367 L205,402 L235,430 L255,452 L260,472 L0,510 Z"
+              fill="url(#oceanG)"/>
+
+        <!-- ── SAN DIEGO BAY ── -->
+        <!-- Bay sits east of Silver Strand/Coronado, between Pt Loma and downtown -->
+        <path d="M238,390 C248,383 258,385 262,390 L272,415 L274,437 L262,450 L248,450 L235,436 L230,418 Z"
+              fill="url(#bayG)" stroke="rgba(40,100,200,0.3)" stroke-width="0.8"/>
+
+        <!-- ── COUNTY OUTLINE ── -->
+        <path d="M30,40 L785,0 L785,470 L590,470 L360,470 L260,472 L255,452 L235,430 L205,402 L200,367 L196,352 L200,336 L192,317 L190,257 L178,217 L150,162 L135,137 Z"
+              fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+
+        <!-- ── MEXICO BORDER ── -->
+        <line x1="260" y1="472" x2="785" y2="470" stroke="rgba(200,60,60,0.6)" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="522" y="494" fill="rgba(200,60,60,0.45)" font-size="10" text-anchor="middle" letter-spacing="4" font-family="Arial, sans-serif">MEXICO</text>
+
+        <!-- ── FREEWAYS ── -->
+        <!-- I-5 (coastal, N→S) -->
+        <path d="M135,137 C148,150 162,174 178,217 C185,238 189,258 192,317 L200,336 L196,352 C200,360 206,372 212,390 L238,410 L255,432 L260,472"
+              fill="none" stroke="rgba(255,210,70,0.42)" stroke-width="1.8" stroke-linecap="round"/>
+        <!-- I-15 (inland N→S through Mira Mesa/Poway/RB) -->
+        <path d="M290,0 L290,80 L288,162 L282,200 L276,237 L268,282 L258,336 L252,358 L252,392 L257,415 L260,450 L260,472"
+              fill="none" stroke="rgba(255,210,70,0.35)" stroke-width="1.6" stroke-linecap="round"/>
+        <!-- I-8 (E-W through Mission Valley / El Cajon) -->
+        <path d="M200,367 C216,360 236,354 260,348 L322,340 L398,332 L478,325 L568,318 L672,314 L785,312"
+              fill="none" stroke="rgba(255,210,70,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- SR-78 (E-W through N County: Oceanside→Escondido) -->
+        <path d="M135,137 L178,134 L242,130 L300,126 L378,121 L442,116"
+              fill="none" stroke="rgba(255,210,70,0.24)" stroke-width="1.2"/>
+        <!-- I-805 (parallel to I-5, through Chula Vista) -->
+        <path d="M228,336 L232,360 L240,390 L250,414 L256,450 L260,472"
+              fill="none" stroke="rgba(255,210,70,0.22)" stroke-width="1.1"/>
+
+        <!-- Freeway labels -->
+        <text x="196" y="235" fill="rgba(255,210,70,0.6)" font-size="8" font-weight="bold" font-family="Arial">I-5</text>
+        <text x="294" y="14" fill="rgba(255,210,70,0.58)" font-size="8" font-weight="bold" font-family="Arial">I-15</text>
+        <text x="778" y="308" fill="rgba(255,210,70,0.52)" font-size="8" font-weight="bold" font-family="Arial" text-anchor="end">I-8</text>
+        <text x="446" y="112" fill="rgba(255,210,70,0.44)" font-size="7.5" font-family="Arial">SR-78</text>
+
+        <!-- ── DISTRICT LABELS ── -->
+        <text x="490" y="102" fill="rgba(56,190,110,0.6)" font-size="12" font-weight="700" text-anchor="middle" font-family="Arial, sans-serif" letter-spacing="2">NORTH COUNTY</text>
+        <text x="356" y="316" fill="rgba(220,72,72,0.56)" font-size="11" font-weight="700" text-anchor="middle" font-family="Arial, sans-serif" letter-spacing="1.5">CENTRAL SD</text>
+        <text x="636" y="322" fill="rgba(152,100,240,0.56)" font-size="11" font-weight="700" text-anchor="middle" font-family="Arial, sans-serif" letter-spacing="1.5">EAST COUNTY</text>
+        <text x="526" y="452" fill="rgba(245,178,50,0.56)" font-size="11" font-weight="700" text-anchor="middle" font-family="Arial, sans-serif" letter-spacing="1.5">SOUTH BAY</text>
+        <text x="164" y="282" fill="rgba(80,148,220,0.52)" font-size="9.5" font-weight="700" font-family="Arial, sans-serif" transform="rotate(-78,164,282)">COASTAL</text>
+
+        <!-- Pacific Ocean label -->
+        <text x="56" y="285" fill="rgba(100,165,230,0.36)" font-size="11" font-style="italic" letter-spacing="2" font-family="Georgia, serif" transform="rotate(-75,56,285)">PACIFIC OCEAN</text>
+
+        <!-- ── CITY DOTS (match pin positions below) ── -->
+        <!-- x=lng-based, y=lat-based per scale above -->
+        <circle cx="190" cy="315" r="2.2" fill="rgba(255,255,255,0.28)"/><!-- La Jolla -->
+        <circle cx="205" cy="335" r="2.2" fill="rgba(255,255,255,0.28)"/><!-- Pacific Beach -->
+        <circle cx="200" cy="365" r="2.2" fill="rgba(255,255,255,0.28)"/><!-- Ocean Beach -->
+        <circle cx="250" cy="280" r="2.2" fill="rgba(255,255,255,0.28)"/><!-- Mira Mesa -->
+        <circle cx="280" cy="230" r="2.2" fill="rgba(255,255,255,0.28)"/><!-- Rancho Bernardo -->
+        <circle cx="250" cy="350" r="2.2" fill="rgba(255,255,255,0.28)"/><!-- Mission Valley -->
+        <circle cx="244" cy="375" r="2.5" fill="rgba(255,255,255,0.32)"/><!-- Downtown SD -->
+        <circle cx="340" cy="315" r="2.2" fill="rgba(255,255,255,0.28)"/><!-- Santee -->
+        <circle cx="345" cy="340" r="2.2" fill="rgba(255,255,255,0.28)"/><!-- El Cajon -->
+        <circle cx="275" cy="395" r="2.2" fill="rgba(255,255,255,0.28)"/><!-- National City -->
+        <circle cx="285" cy="420" r="2.2" fill="rgba(255,255,255,0.28)"/><!-- Chula Vista -->
+        <circle cx="235" cy="395" r="2.2" fill="rgba(255,255,255,0.28)"/><!-- Coronado -->
+
+        <!-- Subtle city labels -->
+        <text x="194" y="311" fill="rgba(255,255,255,0.22)" font-size="7" font-family="Arial">La Jolla</text>
+        <text x="284" y="224" fill="rgba(255,255,255,0.22)" font-size="7" font-family="Arial">Rancho Bernardo</text>
+        <text x="254" y="344" fill="rgba(255,255,255,0.22)" font-size="7" font-family="Arial">Mission Valley</text>
+        <text x="344" y="310" fill="rgba(255,255,255,0.22)" font-size="7" font-family="Arial">Santee</text>
+        <text x="348" y="335" fill="rgba(255,255,255,0.22)" font-size="7" font-family="Arial">El Cajon</text>
+        <text x="278" y="390" fill="rgba(255,255,255,0.22)" font-size="7" font-family="Arial">Nat. City</text>
+        <text x="289" y="415" fill="rgba(255,255,255,0.22)" font-size="7" font-family="Arial">Chula Vista</text>
       </svg>
 
-      <div class="fb-district" style="left:3%;top:12%;width:23%;height:22%;background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.35);" data-district="coastal"><span class="fb-district-name" style="color:#60A5FA;">🏖 Coastal</span></div>
-      <div class="fb-district" style="left:27%;top:5%;width:34%;height:24%;background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.35);" data-district="north"><span class="fb-district-name" style="color:#34D399;">🌿 North County</span></div>
-      <div class="fb-district" style="left:63%;top:5%;width:34%;height:40%;background:rgba(139,92,246,0.08);border-color:rgba(139,92,246,0.35);" data-district="east"><span class="fb-district-name" style="color:#A78BFA;">⛰ East County</span></div>
-      <div class="fb-district" style="left:27%;top:29%;width:34%;height:30%;background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.35);" data-district="central"><span class="fb-district-name" style="color:#F87171;">🏙 Central San Diego</span></div>
-      <div class="fb-district" style="left:5%;top:59%;width:55%;height:37%;background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.35);" data-district="southbay"><span class="fb-district-name" style="color:#FCD34D;">🌉 South Bay</span></div>
-
-      <div class="bf-pin" style="left:14%;top:24%;" data-pin="0"><div class="bf-pin-label">La Jolla</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
-      <div class="bf-pin" style="left:20%;top:40%;" data-pin="1"><div class="bf-pin-label">Pacific Beach</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
-      <div class="bf-pin" style="left:9%;top:50%;" data-pin="2"><div class="bf-pin-label">Ocean Beach</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
-      <div class="bf-pin" style="left:38%;top:18%;" data-pin="3"><div class="bf-pin-label">Mira Mesa</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
-      <div class="bf-pin" style="left:54%;top:13%;" data-pin="4"><div class="bf-pin-label">Rancho Bernardo</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
-      <div class="bf-pin" style="left:42%;top:43%;" data-pin="5"><div class="bf-pin-label">Mission Valley</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
-      <div class="bf-pin" style="left:33%;top:55%;" data-pin="6"><div class="bf-pin-label">Downtown SD</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
-      <div class="bf-pin" style="left:72%;top:28%;" data-pin="7"><div class="bf-pin-label">Santee</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
-      <div class="bf-pin" style="left:80%;top:46%;" data-pin="8"><div class="bf-pin-label">El Cajon</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
-      <div class="bf-pin" style="left:22%;top:74%;" data-pin="9"><div class="bf-pin-label">National City</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
-      <div class="bf-pin" style="left:34%;top:83%;" data-pin="10"><div class="bf-pin-label">Chula Vista</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
-      <div class="bf-pin" style="left:8%;top:68%;" data-pin="11"><div class="bf-pin-label">Coronado</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <!--
+        Pins: left = SVG_x / 800 * 100, top = SVG_y / 510 * 100
+        The transform:translate(-50%,-100%) anchors the pin bottom-center to the (left,top) point.
+      -->
+      <div class="bf-pin" style="left:23.75%;top:61.8%;" data-pin="0"><div class="bf-pin-label">La Jolla</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:25.6%;top:65.7%;" data-pin="1"><div class="bf-pin-label">Pacific Beach</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:25%;top:71.6%;" data-pin="2"><div class="bf-pin-label">Ocean Beach</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:31.3%;top:54.9%;" data-pin="3"><div class="bf-pin-label">Mira Mesa</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:35%;top:45.1%;" data-pin="4"><div class="bf-pin-label">Rancho Bernardo</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:31.3%;top:68.6%;" data-pin="5"><div class="bf-pin-label">Mission Valley</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:30.5%;top:73.5%;" data-pin="6"><div class="bf-pin-label">Downtown SD</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:42.5%;top:61.8%;" data-pin="7"><div class="bf-pin-label">Santee</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:43.1%;top:66.7%;" data-pin="8"><div class="bf-pin-label">El Cajon</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:34.4%;top:77.5%;" data-pin="9"><div class="bf-pin-label">National City</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:35.6%;top:82.4%;" data-pin="10"><div class="bf-pin-label">Chula Vista</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
+      <div class="bf-pin" style="left:29.4%;top:77.5%;" data-pin="11"><div class="bf-pin-label">Coronado</div><div class="bf-pin-body"><span class="bf-pin-inner">🔧</span></div></div>
 
       <div class="fb-watermark">Connect Google Maps API to activate full live map view</div>
     </div>
