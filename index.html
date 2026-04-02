@@ -2002,6 +2002,7 @@ document.getElementById('popClose').addEventListener('click', bfClosePopup);
 
 // Google Maps init
 function initBfMap() {
+  try {
   document.getElementById('bf-fallback').style.display = 'none';
   document.getElementById('bf-map').style.display = 'block';
   document.getElementById('bf-api-banner').style.display = 'none';
@@ -2035,6 +2036,7 @@ function initBfMap() {
     });
   });
   bfMap.addListener('click',bfClosePopup);
+  } catch(e) { initBfFallback(); }
 }
 
 // Fallback
