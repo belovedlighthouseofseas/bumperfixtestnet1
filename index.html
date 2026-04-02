@@ -383,8 +383,8 @@
     .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
     .legend-patch { width: 18px; height: 10px; border-radius: 3px; flex-shrink: 0; opacity: 0.8; }
     .area-map-wrap { position: relative; height: 500px; }
-    #bf-map { width: 100%; height: 100%; display: none; }
-    #bf-fallback { width: 100%; height: 100%; background: #1A1A1A; position: relative; overflow: hidden; display: block; }
+    #bf-map { width: 100%; height: 100%; display: block; }
+    #bf-fallback { width: 100%; height: 100%; background: #1A1A1A; position: relative; overflow: hidden; display: none; }
     .fb-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px); background-size: 48px 48px; }
     .fb-ocean { position: absolute; left: 0; bottom: 0; width: 26%; height: 52%; background: rgba(30,80,140,0.25); border-radius: 0 60% 0 0; }
     .fb-ocean-label { position: absolute; left: 2%; bottom: 28%; font-size: 11px; color: rgba(100,160,220,0.5); font-style: italic; letter-spacing: 0.08em; transform: rotate(-15deg); }
@@ -1448,13 +1448,13 @@
 
   <div class="area-map-wrap">
     <div id="bf-map" style="width:100%;height:100%;position:relative;">
-      <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212948.1268398!2d-117.28!3d32.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d9530fad921e4b%3A0xd3a21fdfd15df79!2sSan%20Diego%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000"
+      <iframe allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=San+Diego+County,+CA&t=&z=10&ie=UTF8&iwloc=&output=embed"
         style="width:100%;height:100%;border:0;display:block;"
         title="Bumper Fix — San Diego County Service Area">
       </iframe>
     </div>
-    <div id="bf-fallback" style="display:none;">
+    <div id="bf-fallback">
       <!--
         Geographic SVG map of San Diego County.
         Coordinate system: viewBox 0 0 800 510
