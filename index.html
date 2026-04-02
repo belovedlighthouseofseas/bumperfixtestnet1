@@ -2053,9 +2053,10 @@ function initBfMap() {
     const liveMap = document.getElementById('bf-map');
     const fallbackMap = document.getElementById('bf-fallback');
     const apiBanner = document.getElementById('bf-api-banner');
-    if (fallbackMap) fallbackMap.style.display = 'none';
-    if (liveMap) liveMap.style.display = 'block';
+    /* Keep fallback visible until tiles actually load */
     if (apiBanner) apiBanner.style.display = 'none';
+    liveMap.style.visibility = 'hidden';
+    liveMap.style.display = 'block';
     bfMap = new google.maps.Map(liveMap, {
       center:{lat:32.760,lng:-117.050}, zoom:11, mapTypeId:'roadmap',
       styles:[{featureType:"water",elementType:"geometry",stylers:[{color:"#0A1A2A"}]},{featureType:"landscape",elementType:"geometry",stylers:[{color:"#1A1A1A"}]},{featureType:"road.highway",elementType:"geometry",stylers:[{color:"#2A2A2A"}]},{featureType:"road.arterial",elementType:"geometry",stylers:[{color:"#222222"}]},{featureType:"poi",elementType:"geometry",stylers:[{color:"#181818"}]},{featureType:"all",elementType:"labels.text.fill",stylers:[{color:"#888888"}]},{featureType:"transit",stylers:[{visibility:"off"}]}],
@@ -2089,10 +2090,16 @@ function initBfMap() {
       });
     });
     bfMap.addListener('click',bfClosePopup);
-    bfMapInitialized = true;
+    /* Only reveal live map after tiles actually load — hides Google's auth error screen */
+    google.maps.event.addListenerOnce(bfMap, 'tilesloaded', () => {
+      if (fallbackMap) fallbackMap.style.display = 'none';
+      liveMap.style.visibility = 'visible';
+      bfMapInitialized = true;
+    });
+    /* Safety: if tiles never load within 4s, fall back */
     setTimeout(()=>{
-      if(!bfMapInitialized || !liveMap.offsetHeight) showBfFallback('Live map could not render properly');
-    }, 1500);
+      if(!bfMapInitialized) showBfFallback('Live map could not render properly');
+    }, 4000);
   } catch(err) {
     console.error('initBfMap failed:', err);
     showBfFallback('Live map initialization failed');
