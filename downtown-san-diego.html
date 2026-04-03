@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobile Bumper Repair Downtown San Diego, CA | Bumper Fix</title>
+  <meta name="description" content="Mobile bumper repair and cosmetic auto body service in Downtown San Diego. We work in parking structures and garages — no shop drop-off required. Fast photo quote. (858) 988-0325."/>
+  <link rel="canonical" href="https://www.bumperfix.com/downtown-san-diego.html"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "AutoRepair"],
+    "name": "Bumper Fix",
+    "description": "Mobile bumper repair and cosmetic auto body service in Downtown San Diego. We work in parking structures and garages.",
+    "url": "https://www.bumperfix.com/downtown-san-diego.html",
+    "telephone": "+18589880325",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Diego",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 32.7157, "longitude": -117.1611 },
+    "areaServed": { "@type": "City", "name": "San Diego" },
+    "openingHours": ["Mo-Fr 07:00-19:00", "Sa-Su 08:00-17:00"],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0C0C0C;
+      --bg2:     #161616;
+      --bg3:     #1F1F1F;
+      --white:   #FFFFFF;
+      --mid:     #888888;
+      --line:    rgba(255,255,255,0.09);
+      --red:     #D92626;
+      --red2:    #B81E1E;
+      --rainbow: linear-gradient(90deg,#FF0000 0%,#FF6600 14%,#FFD600 28%,#00CC44 42%,#0088FF 57%,#6600FF 71%,#CC00FF 85%,#FF0066 100%);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--red);
+      height: 38px; overflow: hidden;
+      display: flex; align-items: center;
+      position: relative;
+    }
+    .topbar::before, .topbar::after {
+      content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+    }
+    .topbar::before { left: 0; background: linear-gradient(90deg, var(--red), transparent); }
+    .topbar::after  { right: 0; background: linear-gradient(270deg, var(--red), transparent); }
+    .topbar-track { display: flex; white-space: nowrap; animation: topbarScroll 32s linear infinite; }
+    .topbar-track:hover { animation-play-state: paused; }
+    .topbar-item {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: 'Anton', sans-serif; font-size: 13px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--white); padding: 0 28px; flex-shrink: 0;
+    }
+    .topbar-item a { color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.4); }
+    .topbar-sep { display: inline-block; width: 5px; height: 5px; background: rgba(255,255,255,0.5); border-radius: 50%; flex-shrink: 0; }
+    @keyframes topbarScroll { 0%{ transform: translateX(0); } 100%{ transform: translateX(-50%); } }
+
+    /* ── NAV ── */
+    nav {
+      background: rgba(12,12,12,0.98);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 48px;
+      position: sticky; top: 0; z-index: 300;
+      backdrop-filter: blur(12px);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-name { font-family: 'Anton', sans-serif; font-size: 21px; letter-spacing: 0.04em; color: var(--white); line-height: 1; }
+    .nav-name .sub { display: block; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); margin-top: 2px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--mid); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-phone {
+      color: var(--white) !important; font-weight: 800 !important;
+      background: var(--red) !important; padding: 8px 16px !important;
+      border-radius: 6px !important; font-size: 14px !important;
+      transition: background 0.2s !important;
+    }
+    .nav-phone:hover { background: var(--red2) !important; }
+    .nav-cta {
+      background: transparent !important; border: 1px solid rgba(255,255,255,0.25) !important;
+      color: var(--white) !important; padding: 8px 18px !important;
+      border-radius: 6px !important; font-weight: 600 !important; font-size: 14px !important;
+      transition: border-color 0.2s, background 0.2s !important;
+    }
+    .nav-cta:hover { border-color: var(--white) !important; background: rgba(255,255,255,0.05) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+    .mobile-menu { display: none; background: var(--bg2); border-top: 1px solid rgba(255,255,255,0.07); padding: 20px 24px; flex-direction: column; gap: 4px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { text-decoration: none; color: #E0E0E0; font-size: 16px; font-weight: 500; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mm-phone { font-weight: 700 !important; color: var(--red) !important; font-size: 18px !important; }
+    .mm-cta { background: var(--red) !important; color: var(--white) !important; text-align: center; border-radius: 6px; font-weight: 700 !important; padding: 14px !important; border-bottom: none !important; margin-top: 8px; }
+
+    /* ── SECTION COMMONS ── */
+    .section-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+    .section-tag::before { content: ''; width: 20px; height: 2px; background: var(--red); flex-shrink: 0; }
+    h2.section-h { font-family: 'Anton', sans-serif; font-size: clamp(40px, 5vw, 72px); letter-spacing: 0.01em; line-height: 0.92; margin-bottom: 18px; }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: 80px 48px 72px;
+      background: var(--bg);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 55% 70% at 85% 40%, rgba(217,38,38,0.1) 0%, transparent 60%);
+    }
+    .page-hero-inner { position: relative; z-index: 1; max-width: 760px; }
+    .breadcrumb { font-size: 13px; color: var(--mid); margin-bottom: 20px; }
+    .breadcrumb a { color: var(--mid); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--white); }
+    .breadcrumb span { color: rgba(255,255,255,0.3); margin: 0 6px; }
+    .page-hero h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(52px, 6.5vw, 96px);
+      line-height: 0.9; letter-spacing: 0.01em;
+      color: var(--white); margin-bottom: 22px;
+    }
+    .page-hero-sub { font-size: 17px; color: rgba(255,255,255,0.55); max-width: 600px; line-height: 1.75; margin-bottom: 32px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 9px; background: var(--red); color: var(--white); padding: 15px 32px; border-radius: 6px; font-size: 15px; font-weight: 700; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+    .btn-primary:hover { background: var(--red2); transform: translateY(-2px); }
+    .btn-sms { display: inline-flex; align-items: center; gap: 7px; color: #4ADE80; font-size: 14px; font-weight: 700; text-decoration: none; border: 1px solid rgba(74,222,128,0.3); padding: 14px 22px; border-radius: 6px; transition: all 0.2s; }
+    .btn-sms:hover { border-color: #4ADE80; background: rgba(74,222,128,0.06); }
+
+    /* ── SERVICES ── */
+    #services { padding: 88px 48px; background: var(--bg2); }
+    .services-header { margin-bottom: 52px; }
+    .services-header p { font-size: 16px; color: var(--mid); line-height: 1.75; max-width: 500px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .service-card { background: var(--bg3); padding: 40px 32px; position: relative; overflow: hidden; transition: background 0.3s; }
+    .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--red); transition: width 0.4s ease; }
+    .service-card:hover { background: #242424; }
+    .service-card:hover::after { width: 100%; }
+    .sc-icon { font-size: 34px; margin-bottom: 18px; }
+    .sc-title { font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 0.03em; margin-bottom: 10px; line-height: 1.1; color: var(--white); }
+    .sc-desc { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 14px; }
+    .sc-price { font-size: 13px; font-weight: 700; color: var(--red); margin-bottom: 4px; }
+    .sc-time { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+    .sc-num { position: absolute; bottom: 14px; right: 22px; font-family: 'Anton', sans-serif; font-size: 64px; color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none; }
+    .sc-not-sure { background: rgba(217,38,38,0.06); border: 1px solid rgba(217,38,38,0.2); }
+    .sc-not-sure:hover { background: rgba(217,38,38,0.1); }
+    .sc-not-sure .sc-title { color: var(--red); }
+
+    /* ── LOCAL SECTION ── */
+    #local { padding: 88px 48px; background: var(--bg); }
+    .local-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .local-content p { font-size: 16px; color: var(--mid); line-height: 1.8; margin-bottom: 28px; }
+    .neighborhoods { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+    .nbhd-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--bg2); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px; padding: 7px 16px;
+      font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nbhd-pill:hover { border-color: var(--red); color: var(--white); }
+    .nbhd-pill::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
+    .map-wrap { border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+    .map-wrap iframe { width: 100%; height: 380px; border: 0; display: block; }
+
+    /* ── WHY MOBILE ── */
+    #why { padding: 88px 48px; background: var(--bg2); border-top: 1px solid rgba(255,255,255,0.06); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .why-card {
+      background: var(--bg3); border-radius: 12px;
+      padding: 36px 28px; border: 1px solid rgba(255,255,255,0.07);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .why-card:hover { border-color: var(--red); transform: translateY(-4px); }
+    .why-icon { font-size: 36px; margin-bottom: 20px; }
+    .why-title { font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 0.03em; color: var(--white); margin-bottom: 12px; line-height: 1.1; }
+    .why-desc { font-size: 14px; color: var(--mid); line-height: 1.75; }
+
+    /* ── CTA ── */
+    .cta-section { padding: 88px 48px; background: var(--red); text-align: center; position: relative; overflow: hidden; }
+    .cta-section::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background-image: repeating-linear-gradient(-45deg, transparent, transparent 24px, rgba(255,255,255,0.04) 24px, rgba(255,255,255,0.04) 25px);
+    }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 16px; }
+    .cta-h { font-family: 'Anton', sans-serif; font-size: clamp(40px, 5.5vw, 72px); line-height: 0.92; color: var(--white); margin-bottom: 18px; letter-spacing: 0.01em; }
+    .cta-p { font-size: 17px; color: rgba(255,255,255,0.8); max-width: 480px; margin: 0 auto 36px; line-height: 1.7; }
+    .cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .cta-btn-dark { background: #111; color: var(--white); padding: 16px 36px; border-radius: 6px; font-size: 15px; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+    .cta-btn-dark:hover { background: #222; }
+    .cta-btn-outline { background: transparent; border: 2px solid rgba(255,255,255,0.5); color: var(--white); padding: 16px 36px; border-radius: 6px; font-size: 15px; font-weight: 700; text-decoration: none; transition: border-color 0.2s; }
+    .cta-btn-outline:hover { border-color: var(--white); }
+
+    /* ── FOOTER ── */
+    .footer-rainbow-stripe { height: 4px; background: var(--rainbow); }
+    footer { background: #080808; padding: 64px 48px 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand-row { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .footer-brand-name { font-family: 'Anton', sans-serif; font-size: 20px; letter-spacing: 0.06em; color: var(--white); }
+    .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.75; max-width: 280px; margin-bottom: 18px; }
+    .footer-phone { font-family: 'Anton', sans-serif; font-size: 24px; color: var(--red); text-decoration: none; display: block; }
+    .footer-col-title { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 16px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { text-decoration: none; color: rgba(255,255,255,0.45); font-size: 14px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.25); }
+
+    /* ── STICKY CTA ── */
+    .sticky-cta {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 400;
+      background: #0C0C0C; border-top: 2px solid var(--red);
+      padding: 12px 48px; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      transform: translateY(100%); transition: transform 0.4s ease;
+    }
+    .sticky-cta.vis { transform: translateY(0); }
+    .sticky-brand { font-family: 'Anton', sans-serif; font-size: 18px; letter-spacing: 0.04em; color: var(--white); }
+    .sticky-tagline { font-size: 12px; color: var(--mid); }
+    .sticky-actions { display: flex; align-items: center; gap: 12px; }
+    .sticky-phone { font-family: 'Anton', sans-serif; font-size: 20px; color: var(--red); text-decoration: none; }
+    .sticky-btn { background: var(--red); color: var(--white); padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+    .sticky-btn:hover { background: var(--red2); }
+    .sticky-close { background: none; border: none; color: var(--mid); font-size: 20px; cursor: pointer; padding: 4px; }
+
+    /* ── WHATSAPP ── */
+    .wa-btn {
+      position: fixed; bottom: 80px; right: 24px; z-index: 500;
+      background: #25D366; border-radius: 50%; width: 54px; height: 54px;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.4); font-size: 26px;
+      transition: transform 0.2s;
+    }
+    .wa-btn:hover { transform: scale(1.1); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .local-inner { grid-template-columns: 1fr; gap: 40px; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .page-hero { padding: 48px 24px 40px; }
+      #services, #local, #why { padding: 64px 24px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .cta-section { padding: 64px 24px; }
+      footer { padding: 48px 24px 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .sticky-cta { padding: 12px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-track">
+    <span class="topbar-item">BUMPER FIX<span class="topbar-sep"></span></span>
+    <span class="topbar-item">Downtown San Diego Mobile Repair<span class="topbar-sep"></span></span>
+    <span class="topbar-item">We Work in Parking Structures<span class="topbar-sep"></span></span>
+    <span class="topbar-item">No Shop Drop-Off Required<span class="topbar-sep"></span></span>
+    <span class="topbar-item">Call <a href="tel:+18589880325">(858) 988-0325</a><span class="topbar-sep"></span></span>
+    <span class="topbar-item">BUMPER FIX<span class="topbar-sep"></span></span>
+    <span class="topbar-item">Downtown San Diego Mobile Repair<span class="topbar-sep"></span></span>
+    <span class="topbar-item">We Work in Parking Structures<span class="topbar-sep"></span></span>
+    <span class="topbar-item">No Shop Drop-Off Required<span class="topbar-sep"></span></span>
+    <span class="topbar-item">Call <a href="tel:+18589880325">(858) 988-0325</a><span class="topbar-sep"></span></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="/">
+    <svg width="38" height="38" viewBox="0 0 36 36" fill="none">
+      <path d="M18 2L4 8V18C4 25.7 10.2 32.9 18 35C25.8 32.9 32 25.7 32 18V8L18 2Z" fill="#D92626"/>
+      <text x="18" y="23" font-family="Anton,sans-serif" font-size="13" fill="white" text-anchor="middle">BF</text>
+    </svg>
+    <div class="nav-name">BUMPER FIX<span class="sub">Mobile Auto Body · San Diego</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="service-area.html" class="active">Service Area</a>
+    <a href="tel:+18589880325" class="nav-phone">(858) 988-0325</a>
+    <a href="contact.html" class="nav-cta">Get a Quote</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="services.html">Services</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="service-area.html">Service Area</a>
+  <a href="tel:+18589880325" class="mm-phone">(858) 988-0325</a>
+  <a href="contact.html" class="mm-cta">Get a Quote →</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span>/</span>
+      <a href="service-area.html">Service Area</a>
+      <span>/</span>
+      Downtown San Diego
+    </div>
+    <div class="section-tag">Downtown San Diego</div>
+    <h1>MOBILE BUMPER REPAIR IN DOWNTOWN SAN DIEGO.</h1>
+    <p class="page-hero-sub">We work in parking structures, garages, and approved lots throughout Downtown San Diego. Bumper repair, scratch removal, and cosmetic bodywork — without leaving your building.</p>
+    <div class="hero-actions">
+      <a href="contact.html" class="btn-primary">Get a Quote →</a>
+      <a href="sms:+18589880325" class="btn-sms">💬 Text a Photo</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header reveal">
+    <div class="section-tag">What We Fix</div>
+    <h2 class="section-h">Our Services.</h2>
+    <p>Cosmetic auto body repair brought to you — wherever your car is parked in Downtown San Diego.</p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card reveal">
+      <div class="sc-icon">🚗</div>
+      <div class="sc-title">Bumper Repair</div>
+      <p class="sc-desc">Cracks, splits, dents, and scuffs on front and rear bumpers repaired on-site with a color-matched finish. The most common repair we do in urban parking decks.</p>
+      <div class="sc-price">From $175 – $450</div>
+      <div class="sc-time">1.5 – 3 hrs</div>
+      <div class="sc-num">01</div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="sc-icon">✏️</div>
+      <div class="sc-title">Scratch Removal</div>
+      <p class="sc-desc">Surface scratches and keying damage polished or refinished. We assess depth on-site and quote before starting — no surprises.</p>
+      <div class="sc-price">From $125 – $350</div>
+      <div class="sc-time">1 – 2.5 hrs</div>
+      <div class="sc-num">02</div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="sc-icon">💥</div>
+      <div class="sc-title">Dent Removal</div>
+      <p class="sc-desc">Paintless dent removal (PDR) for door dings and minor panel dents with no paint damage. Fast, clean, and invisible when done right.</p>
+      <div class="sc-price">From $100 – $300</div>
+      <div class="sc-time">45 min – 2 hrs</div>
+      <div class="sc-num">03</div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="sc-icon">🎨</div>
+      <div class="sc-title">Paint Touch-Up</div>
+      <p class="sc-desc">Stone chips, parking lot door dings, and small paint losses blended to match your factory color. Protects bare metal from rust.</p>
+      <div class="sc-price">From $85 – $225</div>
+      <div class="sc-time">45 min – 1.5 hrs</div>
+      <div class="sc-num">04</div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="sc-icon">🔧</div>
+      <div class="sc-title">Scuff &amp; Rub Mark Removal</div>
+      <p class="sc-desc">Rubber transfer and scuff marks from tight parking spots or shopping carts removed by machine polish or compound. Most go away completely.</p>
+      <div class="sc-price">From $75 – $200</div>
+      <div class="sc-time">30 min – 1.5 hrs</div>
+      <div class="sc-num">05</div>
+    </div>
+
+    <div class="service-card sc-not-sure reveal">
+      <div class="sc-icon">📸</div>
+      <div class="sc-title">Not Sure? Text a Photo.</div>
+      <p class="sc-desc">Snap a photo of the damage and send it to (858) 988-0325. We'll give you an honest assessment and a quote — usually within the hour, no obligation.</p>
+      <div class="sc-price" style="color:var(--white);opacity:0.5;">Free estimate</div>
+      <div class="sc-time">Fast response</div>
+      <div class="sc-num">?</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LOCAL SECTION -->
+<section id="local">
+  <div class="local-inner">
+    <div class="local-content">
+      <div class="section-tag reveal">Downtown San Diego Coverage.</div>
+      <h2 class="section-h reveal">Where We Serve<br>Downtown.</h2>
+      <p class="reveal">We frequently serve the parking structures and lots throughout Downtown, the Gaslamp Quarter, Little Italy, Cortez Hill, East Village, and Banker's Hill. Urban parking structure repairs are a core part of what we do — we carry all the equipment needed to work in covered, low-clearance decks.</p>
+      <p class="reveal">If your car is in a downtown office building, condo garage, or surface lot, text us the address and we'll confirm availability. Most Downtown jobs can be booked same-week, and often same-day when slots are open.</p>
+
+      <div class="neighborhoods reveal">
+        <span class="nbhd-pill">Gaslamp Quarter</span>
+        <span class="nbhd-pill">Little Italy</span>
+        <span class="nbhd-pill">East Village</span>
+        <span class="nbhd-pill">Cortez Hill</span>
+        <span class="nbhd-pill">Banker's Hill</span>
+        <span class="nbhd-pill">Marina District</span>
+      </div>
+
+      <a href="contact.html" class="btn-primary reveal">Get a Quote →</a>
+    </div>
+
+    <div class="reveal">
+      <div class="map-wrap">
+        <iframe
+          src="https://maps.google.com/maps?q=Downtown+San+Diego,+CA&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          title="Downtown San Diego service area — Bumper Fix"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MOBILE FOR DOWNTOWN -->
+<section id="why">
+  <div class="reveal">
+    <div class="section-tag">Why Mobile</div>
+    <h2 class="section-h">Built for Urban Drivers.</h2>
+    <p style="font-size:16px;color:var(--mid);line-height:1.75;max-width:520px;">Downtown parking means tight decks, daily dings, and no easy way to get a car to a shop. We designed our service around exactly that.</p>
+  </div>
+
+  <div class="why-grid">
+
+    <div class="why-card reveal">
+      <div class="why-icon">🏗️</div>
+      <div class="why-title">Parking Structure Friendly</div>
+      <p class="why-desc">We work in most covered parking structures, so your car stays exactly where it is. No need to find street parking or move it to a different location for us to get started.</p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-icon">🚫</div>
+      <div class="why-title">No Tow, No Trip</div>
+      <p class="why-desc">No need to drive to a shop across town, arrange a ride, or wait days for a booking. We come to your building, handle the repair, and you're done — car stays put.</p>
+    </div>
+
+    <div class="why-card reveal">
+      <div class="why-icon">⚡</div>
+      <div class="why-title">Same-Day When Available</div>
+      <p class="why-desc">Urban availability is often fast. Text a photo of the damage to check open slots in Downtown San Diego. We confirm quickly and many jobs complete the same day.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-tag">Get Started</div>
+    <h2 class="cta-h">Start With a Photo.</h2>
+    <p class="cta-p">Snap a photo of the damage and send it over. We'll quote you fast — no shop visit, no hassle, no obligation.</p>
+    <div class="cta-btns">
+      <a href="contact.html" class="cta-btn-dark">Get a Free Quote →</a>
+      <a href="sms:+18589880325" class="cta-btn-outline">💬 Text (858) 988-0325</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer-rainbow-stripe"></div>
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-row">
+        <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+          <path d="M18 2L4 8V18C4 25.7 10.2 32.9 18 35C25.8 32.9 32 25.7 32 18V8L18 2Z" fill="#D92626"/>
+          <text x="18" y="23" font-family="Anton,sans-serif" font-size="13" fill="white" text-anchor="middle">BF</text>
+        </svg>
+        <span class="footer-brand-name">BUMPER FIX</span>
+      </div>
+      <p class="footer-tagline">Mobile bumper repair and cosmetic auto body service across San Diego County. We come to you — no shop drop-off required.</p>
+      <a href="tel:+18589880325" class="footer-phone">(858) 988-0325</a>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="services.html">Bumper Repair</a></li>
+        <li><a href="services.html">Scratch Removal</a></li>
+        <li><a href="services.html">Dent Removal</a></li>
+        <li><a href="services.html">Paint Touch-Up</a></li>
+        <li><a href="services.html">Scuff Removal</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="service-area.html">Service Area</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Locations</div>
+      <ul class="footer-links">
+        <li><a href="downtown-san-diego.html">Downtown San Diego</a></li>
+        <li><a href="service-area.html">La Jolla</a></li>
+        <li><a href="service-area.html">Pacific Beach</a></li>
+        <li><a href="service-area.html">Chula Vista</a></li>
+        <li><a href="service-area.html">All Areas →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 Bumper Fix. All rights reserved.</span>
+    <span>Mobile Auto Body Repair · San Diego, CA</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/18589880325" class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp Bumper Fix">💬</a>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div>
+    <div class="sticky-brand">BUMPER FIX</div>
+    <div class="sticky-tagline">Mobile repair in Downtown San Diego</div>
+  </div>
+  <div class="sticky-actions">
+    <a href="tel:+18589880325" class="sticky-phone">(858) 988-0325</a>
+    <a href="contact.html" class="sticky-btn">Get a Quote</a>
+    <button class="sticky-close" id="stickyClose" aria-label="Close">&times;</button>
+  </div>
+</div>
+
+<script>
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+
+  // Sticky CTA
+  const stickyCta = document.getElementById('stickyCta');
+  const stickyClose = document.getElementById('stickyClose');
+  let stickyDismissed = false;
+  window.addEventListener('scroll', () => {
+    if (!stickyDismissed && window.scrollY > 480) {
+      stickyCta.classList.add('vis');
+    } else if (window.scrollY <= 480) {
+      stickyCta.classList.remove('vis');
+    }
+  });
+  stickyClose.addEventListener('click', () => {
+    stickyDismissed = true;
+    stickyCta.classList.remove('vis');
+  });
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
