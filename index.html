@@ -179,7 +179,18 @@
     .hero h1 {
       font-family: 'Anton', sans-serif; font-size: clamp(60px, 7.5vw, 108px);
       line-height: 0.88; letter-spacing: 0.01em; color: var(--white); margin-bottom: 14px;
-      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+    }
+    /* ── HERO LETTER DROP ── */
+    .hero-title-fall { display:flex; flex-direction:column; gap:0; margin-bottom:14px; line-height:0.88; font-family:'Anton',sans-serif; font-size:clamp(60px,7.5vw,108px); letter-spacing:0.01em; }
+    .hero-title-fall .hero-line { display:block; white-space:nowrap; }
+    .hero-title-fall .hero-line span { display:inline-block; opacity:0; transform:translateY(-90px) rotate(6deg); filter:blur(6px); will-change:transform,opacity,filter; }
+    .hero-title-fall .hero-line.hero-line-red span { color:var(--red); -webkit-text-fill-color:var(--red); }
+    .hero-title-fall .hero-space { width:0.38em; }
+    .hero-title-fall.is-animating .hero-line span { animation:heroLetterDrop 0.72s cubic-bezier(0.16,1,0.3,1) forwards; }
+    @keyframes heroLetterDrop {
+      0%   { opacity:0; transform:translateY(-90px) rotate(6deg); filter:blur(6px); }
+      60%  { opacity:1; transform:translateY(8px) rotate(0deg); filter:blur(0); }
+      100% { opacity:1; transform:translateY(0) rotate(0deg); filter:blur(0); }
     }
     .hero-location {
       font-family: 'Anton', sans-serif; font-size: clamp(15px, 1.8vw, 20px);
@@ -961,7 +972,23 @@
     <div class="hero-left-bg"></div>
     <div class="hero-left-texture"></div>
     <div class="hero-badge"><div class="badge-pulse"></div> Mobile Bumper Repair · San Diego County</div>
-    <h1>BUMPER REPAIR,<br>WITHOUT THE<br><span style="color:var(--red);">BODY SHOP.</span></h1>
+    <h1 class="hero-title-fall" aria-label="Bumper repair, without the body shop.">
+      <span class="hero-line" data-line="1">
+        <span>B</span><span>U</span><span>M</span><span>P</span><span>E</span><span>R</span>
+        <span class="hero-space"></span>
+        <span>R</span><span>E</span><span>P</span><span>A</span><span>I</span><span>R</span><span>,</span>
+      </span>
+      <span class="hero-line" data-line="2">
+        <span>W</span><span>I</span><span>T</span><span>H</span><span>O</span><span>U</span><span>T</span>
+        <span class="hero-space"></span>
+        <span>T</span><span>H</span><span>E</span>
+      </span>
+      <span class="hero-line hero-line-red" data-line="3">
+        <span>B</span><span>O</span><span>D</span><span>Y</span>
+        <span class="hero-space"></span>
+        <span>S</span><span>H</span><span>O</span><span>P</span><span>.</span>
+      </span>
+    </h1>
     <p class="hero-desc">Bumper Fix delivers mobile cosmetic bumper repair across San Diego County for drivers who want clean results without shop delays, shop overhead, or losing their vehicle for days.</p>
     <div class="hero-actions">
       <a href="#quote" class="btn-primary">Get a Quote</a>
@@ -2044,6 +2071,21 @@ const revealObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ── HERO LETTER DROP ───────────────────────────────────────────
+(function () {
+  const title = document.querySelector('.hero-title-fall');
+  if (!title) return;
+  const lines = title.querySelectorAll('.hero-line');
+  lines.forEach((line, lineIndex) => {
+    const letters = line.querySelectorAll('span:not(.hero-space)');
+    letters.forEach((letter, letterIndex) => {
+      const delay = (lineIndex * 0.22) + (letterIndex * 0.035);
+      letter.style.animationDelay = `${delay}s`;
+    });
+  });
+  requestAnimationFrame(() => title.classList.add('is-animating'));
+})();
 
 // ── HAMBURGER ──────────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
