@@ -182,10 +182,10 @@
     }
     /* ── HERO LETTER DROP ── */
     .hero-title-fall { display:flex; flex-direction:column; gap:0; margin-bottom:14px; line-height:0.88; font-family:'Anton',sans-serif; font-size:clamp(60px,7.5vw,108px); letter-spacing:0.01em; }
-    .hero-title-fall .hero-line { display:block; white-space:nowrap; }
-    .hero-title-fall .hero-line span { display:inline-block; opacity:0; transform:translateY(-90px) rotate(6deg); filter:blur(6px); will-change:transform,opacity,filter; }
+    .hero-title-fall .hero-line { display:block; white-space:nowrap; font-size:0; }
+    .hero-title-fall .hero-line span { display:inline-block; font-size:clamp(60px,7.5vw,108px); opacity:0; transform:translateY(-90px) rotate(6deg); filter:blur(6px); will-change:transform,opacity,filter; }
     .hero-title-fall .hero-line.hero-line-red span { color:var(--red); -webkit-text-fill-color:var(--red); }
-    .hero-title-fall .hero-space { width:0.38em; }
+    .hero-title-fall .hero-space { width:clamp(16px,2vw,28px); }
     .hero-title-fall.is-animating .hero-line span { animation:heroLetterDrop 0.72s cubic-bezier(0.16,1,0.3,1) forwards; }
     @keyframes heroLetterDrop {
       0%   { opacity:0; transform:translateY(-90px) rotate(6deg); filter:blur(6px); }
