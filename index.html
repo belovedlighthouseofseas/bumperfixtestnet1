@@ -1408,81 +1408,13 @@
   <div class="calc-wrap">
     <div class="calc-form reveal">
       <div class="calc-step">
-        <div class="calc-label">Pick the damage that looks like yours</div>
-        <div class="calc-photo-opts">
-
-          <div class="calc-opt calc-photo-opt" data-type="scratch" data-min="149" data-max="299">
-            <div class="cpo-img">
-              <svg width="52" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="48" height="32" rx="5" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-                <path d="M16 7L21 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                <path d="M24 5L30 27" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M33 9L36 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="cpo-body">
-              <span class="cpo-label">Scratch / Scuff</span>
-              <span class="cpo-desc">Surface mark, paint drag, clear coat damage</span>
-            </div>
-          </div>
-
-          <div class="calc-opt calc-photo-opt" data-type="bumper" data-min="249" data-max="499">
-            <div class="cpo-img">
-              <svg width="52" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="10" width="48" height="16" rx="5" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-                <path d="M12 10L17 19L22 13L27 20L32 13L37 19L42 10" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="cpo-body">
-              <span class="cpo-label">Bumper Damage</span>
-              <span class="cpo-desc">Crack, crease, impact, or structural scuff</span>
-            </div>
-          </div>
-
-          <div class="calc-opt calc-photo-opt" data-type="dent" data-min="99" data-max="249">
-            <div class="cpo-img">
-              <svg width="52" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="48" height="32" rx="5" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-                <ellipse cx="26" cy="18" rx="12" ry="9" stroke="currentColor" stroke-width="2"/>
-                <ellipse cx="24" cy="16" rx="5" ry="4" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
-              </svg>
-            </div>
-            <div class="cpo-body">
-              <span class="cpo-label">Dent</span>
-              <span class="cpo-desc">Panel push-in, no paint break</span>
-            </div>
-          </div>
-
-          <div class="calc-opt calc-photo-opt" data-type="paint" data-min="349" data-max="699">
-            <div class="cpo-img">
-              <svg width="52" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="48" height="32" rx="5" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-                <line x1="26" y1="2" x2="26" y2="34" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.5"/>
-                <path d="M8 11L8 25M13 9L13 27M18 9L18 27M23 9L23 27" stroke="currentColor" stroke-width="1" opacity="0.35"/>
-                <path d="M32 12L44 12M32 18L44 18M32 24L44 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-              </svg>
-            </div>
-            <div class="cpo-body">
-              <span class="cpo-label">Full Panel Repaint</span>
-              <span class="cpo-desc">Faded, peeling, or full color refresh</span>
-            </div>
-          </div>
-
-          <div class="calc-opt calc-photo-opt" data-type="keying" data-min="199" data-max="449">
-            <div class="cpo-img">
-              <svg width="52" height="36" viewBox="0 0 52 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="2" width="48" height="32" rx="5" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
-                <path d="M7 14Q18 11 28 16Q38 21 46 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                <path d="M7 21Q19 18 31 23Q39 26 46 23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.55"/>
-                <circle cx="45" cy="16" r="2.5" stroke="currentColor" stroke-width="1.5" opacity="0.65"/>
-              </svg>
-            </div>
-            <div class="cpo-body">
-              <span class="cpo-label">Keying / Vandalism</span>
-              <span class="cpo-desc">Long scratch lines, intentional damage</span>
-            </div>
-          </div>
-
+        <div class="calc-label">Damage Type</div>
+        <div class="calc-options">
+          <div class="calc-opt" data-type="scratch" data-min="149" data-max="299">Scratch / Scuff</div>
+          <div class="calc-opt" data-type="bumper" data-min="249" data-max="499">Bumper Damage</div>
+          <div class="calc-opt" data-type="dent" data-min="99" data-max="249">Dent</div>
+          <div class="calc-opt" data-type="paint" data-min="349" data-max="699">Full Panel Repaint</div>
+          <div class="calc-opt" data-type="keying" data-min="199" data-max="449">Keying / Vandalism</div>
         </div>
       </div>
 
@@ -2194,33 +2126,15 @@ const availBar = document.getElementById('availBar');
 const stickyCta = document.getElementById('stickyCta');
 let stickyDismissed = false;
 
-// Dynamic availability — day-seeded so slot count is consistent per day
-(function() {
-  const now = new Date();
-  const hr = now.getHours();
-  const day = now.getDay(); // 0=Sun … 6=Sat
-  // Deterministic slots per day (feels real, not random on refresh)
-  const daySlots = [2, 5, 4, 3, 4, 3, 2]; // Sun–Sat
-  const base = daySlots[day];
-  let msg = '';
-  if (hr < 7) {
-    msg = `⚡ <strong>${base} spots</strong> available today`;
-  } else if (hr >= 7 && hr < 10) {
-    msg = `⚡ <strong>${base} spots</strong> open this morning`;
-  } else if (hr >= 10 && hr < 13) {
-    const left = Math.max(2, base - 1);
-    msg = `⚡ <strong>${left} spots</strong> left today`;
-  } else if (hr >= 13 && hr < 17) {
-    msg = `⚡ <strong>2 spots</strong> left today`;
-  } else if (hr >= 17 && hr < 20) {
-    msg = `⚡ <strong>1 spot</strong> left today`;
-  } else {
-    const tmr = daySlots[(day + 1) % 7];
-    msg = `⚡ <strong>${tmr} spots</strong> available tomorrow`;
-  }
-  const slotsEl = availBar.querySelector('.avail-slots');
-  if (slotsEl) slotsEl.innerHTML = msg;
-})()
+// Dynamic availability
+const hr = new Date().getHours();
+const slotsEl = availBar.querySelector('.avail-slots');
+if (slotsEl) {
+  if (hr>=7&&hr<12) slotsEl.innerHTML='⚡ <strong>3 spots</strong> open this morning';
+  else if (hr>=12&&hr<16) slotsEl.innerHTML='⚡ <strong>2 spots</strong> left this afternoon';
+  else if (hr>=16&&hr<20) slotsEl.innerHTML='⚡ <strong>1 spot</strong> left today';
+  else slotsEl.innerHTML='⚡ Booking for tomorrow';
+}
 
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
