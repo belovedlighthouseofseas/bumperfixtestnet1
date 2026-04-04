@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -i 's/height:48px;width:auto;display:block/width:180px;height:auto;display:block/g' services.html pricing.html contact.html service-area.html la-jolla.html pacific-beach.html downtown-san-diego.html el-cajon.html chula-vista.html mira-mesa.html)",
+      "Bash(sed -i 's/height:40px;width:auto;display:block/width:160px;height:auto;display:block/g' services.html pricing.html contact.html service-area.html la-jolla.html pacific-beach.html downtown-san-diego.html el-cajon.html chula-vista.html mira-mesa.html)"
+    ]
+  }
+}
