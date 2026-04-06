@@ -89,6 +89,8 @@
     .wa-btn{position:fixed;bottom:24px;right:24px;z-index:500;background:#25D366;border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,0.3);font-size:26px}
     @media(max-width:960px){.contact-wrap{grid-template-columns:1fr}.contact-left{padding:56px 32px;border-right:none;border-bottom:1px solid rgba(255,255,255,0.07)}.contact-right{padding:56px 32px}}
     @media(max-width:768px){nav{padding:12px 20px}.nav-links{display:none}.hamburger{display:flex}.contact-left,.contact-right{padding:40px 24px}.qf-row{grid-template-columns:1fr}footer{padding:48px 24px 24px}.footer-grid{grid-template-columns:1fr;gap:32px}}
+  
+    .nav-dropdown{position:relative}.nav-dropdown>a{display:flex;align-items:center;gap:5px}.nav-dropdown>a::after{content:'▾';font-size:10px;opacity:0.6}.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:rgba(18,18,18,0.98);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px;min-width:360px;display:grid;grid-template-columns:1fr 1fr;gap:2px;box-shadow:0 12px 40px rgba(0,0,0,0.5);z-index:999;opacity:0;pointer-events:none;transition:opacity 0.18s ease,transform 0.18s ease;transform:translateX(-50%) translateY(-6px);backdrop-filter:blur(16px)}.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown-menu:hover{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}.nav-dropdown-menu a{text-decoration:none;color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;padding:8px 12px;border-radius:6px;transition:background 0.15s,color 0.15s;white-space:nowrap}.nav-dropdown-menu a:hover{background:rgba(255,255,255,0.08);color:#fff}.nav-dropdown-menu .dd-all{grid-column:1/-1;border-top:1px solid rgba(255,255,255,0.08);margin-top:4px;padding-top:10px;color:var(--red)!important;font-weight:700!important;text-align:center}.nav-dropdown-menu .dd-all:hover{background:rgba(220,38,38,0.1)!important;color:var(--red)!important}
   </style>
 </head>
 <body>
@@ -112,7 +114,7 @@
   <div class="nav-links">
     <a href="services.html">Services</a>
     <a href="pricing.html">Pricing</a>
-    <a href="service-area.html">Service Area</a>
+    <div class="nav-dropdown"><a href="service-area.html">Service Area</a><div class="nav-dropdown-menu"><a href="carlsbad.html">Carlsbad</a><a href="chula-vista.html">Chula Vista</a><a href="coronado.html">Coronado</a><a href="downtown-san-diego.html">Downtown San Diego</a><a href="el-cajon.html">El Cajon</a><a href="escondido.html">Escondido</a><a href="la-jolla.html">La Jolla</a><a href="mira-mesa.html">Mira Mesa</a><a href="mission-valley.html">Mission Valley</a><a href="national-city.html">National City</a><a href="ocean-beach.html">Ocean Beach</a><a href="oceanside.html">Oceanside</a><a href="pacific-beach.html">Pacific Beach</a><a href="poway.html">Poway</a><a href="rancho-bernardo.html">Rancho Bernardo</a><a href="santee.html">Santee</a><a href="vista.html">Vista</a><a href="service-area.html" class="dd-all">View All Service Areas →</a></div></div>
     <a href="tel:+18589880325" class="nav-phone">(858) 988-0325</a>
     <a href="contact.html" class="nav-cta" style="border-color:var(--red)!important;color:var(--red)!important;">Get a Quote</a>
   </div>
@@ -122,6 +124,24 @@
   <a href="services.html">Services</a>
   <a href="pricing.html">Pricing</a>
   <a href="service-area.html">Service Area</a>
+  
+  <a href="carlsbad.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Carlsbad</a>
+  <a href="chula-vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Chula Vista</a>
+  <a href="coronado.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Coronado</a>
+  <a href="downtown-san-diego.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Downtown San Diego</a>
+  <a href="el-cajon.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ El Cajon</a>
+  <a href="escondido.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Escondido</a>
+  <a href="la-jolla.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ La Jolla</a>
+  <a href="mira-mesa.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Mira Mesa</a>
+  <a href="mission-valley.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Mission Valley</a>
+  <a href="national-city.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ National City</a>
+  <a href="ocean-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Ocean Beach</a>
+  <a href="oceanside.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Oceanside</a>
+  <a href="pacific-beach.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Pacific Beach</a>
+  <a href="poway.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Poway</a>
+  <a href="rancho-bernardo.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Rancho Bernardo</a>
+  <a href="santee.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Santee</a>
+  <a href="vista.html" style="font-size:13px;padding:8px 0;color:rgba(255,255,255,0.55);">↳ Vista</a>
   <a href="tel:+18589880325" class="mm-phone">(858) 988-0325</a>
   <a href="contact.html" class="mm-cta">Get a Quote →</a>
 </div>
@@ -216,14 +236,26 @@
       </ul>
     </div>
     <div>
-      <div class="footer-col-title">Service Area</div>
+            <div class="footer-col-title">Service Area</div>
       <ul class="footer-links">
         <li><a href="service-area.html">San Diego County</a></li>
-        <li><a href="la-jolla.html">La Jolla</a></li>
-        <li><a href="pacific-beach.html">Pacific Beach</a></li>
-        <li><a href="downtown-san-diego.html">Downtown San Diego</a></li>
+        <li><a href="carlsbad.html">Carlsbad</a></li>
         <li><a href="chula-vista.html">Chula Vista</a></li>
+        <li><a href="coronado.html">Coronado</a></li>
+        <li><a href="downtown-san-diego.html">Downtown San Diego</a></li>
         <li><a href="el-cajon.html">El Cajon</a></li>
+        <li><a href="escondido.html">Escondido</a></li>
+        <li><a href="la-jolla.html">La Jolla</a></li>
+        <li><a href="mira-mesa.html">Mira Mesa</a></li>
+        <li><a href="mission-valley.html">Mission Valley</a></li>
+        <li><a href="national-city.html">National City</a></li>
+        <li><a href="ocean-beach.html">Ocean Beach</a></li>
+        <li><a href="oceanside.html">Oceanside</a></li>
+        <li><a href="pacific-beach.html">Pacific Beach</a></li>
+        <li><a href="poway.html">Poway</a></li>
+        <li><a href="rancho-bernardo.html">Rancho Bernardo</a></li>
+        <li><a href="santee.html">Santee</a></li>
+        <li><a href="vista.html">Vista</a></li>
       </ul>
     </div>
     <div>
