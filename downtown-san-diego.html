@@ -24,8 +24,7 @@
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 32.7157, "longitude": -117.1611 },
     "areaServed": { "@type": "City", "name": "San Diego" },
-    "openingHours": ["Mo-Fr 07:00-19:00", "Sa-Su 08:00-17:00"],
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47" }
+    "openingHours": ["Mo-Fr 07:00-19:00", "Sa-Su 08:00-17:00"]
   }
   </script>
 
@@ -289,6 +288,7 @@
       .why-grid { grid-template-columns: 1fr 1fr; }
       .services-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .core-repairs-grid { grid-template-columns: 1fr 1fr !important; }
     }
     @media (max-width: 768px) {
       nav { padding: 12px 20px; }
@@ -331,7 +331,7 @@
   <div class="nav-links">
     <a href="services.html">Services</a>
     <a href="pricing.html">Pricing</a>
-    <a href="service-area.html" class="active">Service Area</a>
+    <div class="nav-dropdown"><a href="service-area.html">Service Area</a><div class="nav-dropdown-menu"><a href="carlsbad.html">Carlsbad</a><a href="chula-vista.html">Chula Vista</a><a href="coronado.html">Coronado</a><a href="downtown-san-diego.html">Downtown San Diego</a><a href="el-cajon.html">El Cajon</a><a href="escondido.html">Escondido</a><a href="la-jolla.html">La Jolla</a><a href="mira-mesa.html">Mira Mesa</a><a href="mission-valley.html">Mission Valley</a><a href="national-city.html">National City</a><a href="ocean-beach.html">Ocean Beach</a><a href="oceanside.html">Oceanside</a><a href="pacific-beach.html">Pacific Beach</a><a href="poway.html">Poway</a><a href="rancho-bernardo.html">Rancho Bernardo</a><a href="santee.html">Santee</a><a href="vista.html">Vista</a><a href="service-area.html" class="dd-all">View All Service Areas →</a></div></div>
     <a href="tel:+18589880325" class="nav-phone">(858) 988-0325</a>
     <a href="contact.html" class="nav-cta">Get a Quote</a>
   </div>
@@ -369,19 +369,48 @@
 <section class="page-hero">
   <div class="page-hero-inner">
     <div class="breadcrumb">
-      <a href="/">Home</a>
-      <span>/</span>
-      <div class="nav-dropdown"><a href="service-area.html">Service Area</a><div class="nav-dropdown-menu"><a href="carlsbad.html">Carlsbad</a><a href="chula-vista.html">Chula Vista</a><a href="coronado.html">Coronado</a><a href="downtown-san-diego.html">Downtown San Diego</a><a href="el-cajon.html">El Cajon</a><a href="escondido.html">Escondido</a><a href="la-jolla.html">La Jolla</a><a href="mira-mesa.html">Mira Mesa</a><a href="mission-valley.html">Mission Valley</a><a href="national-city.html">National City</a><a href="ocean-beach.html">Ocean Beach</a><a href="oceanside.html">Oceanside</a><a href="pacific-beach.html">Pacific Beach</a><a href="poway.html">Poway</a><a href="rancho-bernardo.html">Rancho Bernardo</a><a href="santee.html">Santee</a><a href="vista.html">Vista</a><a href="service-area.html" class="dd-all">View All Service Areas →</a></div></div>
-      <span>/</span>
-      Downtown San Diego
+      <a href="/">Home</a> / <a href="service-area.html">Service Area</a> / Downtown San Diego
     </div>
     <div class="section-tag">Downtown San Diego</div>
-    <h1>MOBILE BUMPER REPAIR IN DOWNTOWN SAN DIEGO.</h1>
-    <p class="page-hero-sub">We work in parking structures, garages, and approved lots throughout Downtown San Diego. Bumper repair, scratch removal, and cosmetic bodywork — without leaving your building.</p>
+    <h1>Mobile Bumper Repair<br>Downtown San Diego, CA</h1>
+    <p class="page-hero-sub">We fix your car inside parking structures, garages, and tight urban lots — without you moving it. Bumper repair, scratch removal, and cosmetic bodywork. Most repairs same day.</p>
     <div class="hero-actions">
       <a href="contact.html" class="btn-primary">Get a Quote →</a>
       <a href="sms:+18589880325" class="btn-sms">💬 Text a Photo</a>
     </div>
+  </div>
+</section>
+
+<!-- CORE REPAIRS -->
+<section style="padding:64px 48px;background:var(--bg2);border-bottom:1px solid rgba(255,255,255,0.07);">
+  <div class="section-tag reveal">Core Repairs</div>
+  <h2 class="section-h reveal" style="font-size:clamp(28px,3vw,44px);margin-bottom:8px;">What Downtown Drivers Deal With Daily.</h2>
+  <div class="core-repairs-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:32px;">
+
+    <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">🚧</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Scratches</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Tight parking structures and narrow downtown garages cause constant side scrapes and bumper scratches — we repair them on-site.</p>
+    </div>
+
+    <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">🔨</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Dents</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Door dings from crowded garages and shared parking decks are one of the most common repairs we run in Downtown. Fixed where it sits.</p>
+    </div>
+
+    <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">🎨</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Paint Damage</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Paint transfer, peeling, and wear from daily urban driving corrected with precision color-matching. No booth required for cosmetic panels.</p>
+    </div>
+
+    <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">💥</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Cracks</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Low-speed impacts in garages and tight urban streets often crack bumper covers. We repair or replace on-site the same day.</p>
+    </div>
+
   </div>
 </section>
 
@@ -469,6 +498,8 @@
         <span class="nbhd-pill">Banker's Hill</span>
         <span class="nbhd-pill">Marina District</span>
       </div>
+
+      <p class="reveal" style="font-size:14px;color:var(--mid);line-height:1.75;margin-bottom:24px;">We also provide mobile bumper repair in nearby areas: <a href="coronado.html" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;">Coronado</a> · <a href="chula-vista.html" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;">Chula Vista</a> · <a href="national-city.html" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;">National City</a> · <a href="la-jolla.html" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;">La Jolla</a></p>
 
       <a href="contact.html" class="btn-primary reveal">Get a Quote →</a>
     </div>
@@ -561,24 +592,37 @@
       </ul>
     </div>
     <div>
-      <div class="footer-col-title">Locations</div>
+      <div class="footer-col-title">Service Area</div>
       <ul class="footer-links">
+        <li><a href="service-area.html">San Diego County</a></li>
         <li><a href="downtown-san-diego.html">Downtown San Diego</a></li>
-        <li><a href="service-area.html">La Jolla</a></li>
-        <li><a href="service-area.html">Pacific Beach</a></li>
-        <li><a href="service-area.html">Chula Vista</a></li>
-        <li><a href="service-area.html">All Areas →</a></li>
+        <li><a href="la-jolla.html">La Jolla</a></li>
+        <li><a href="pacific-beach.html">Pacific Beach</a></li>
+        <li><a href="coronado.html">Coronado</a></li>
+        <li><a href="chula-vista.html">Chula Vista</a></li>
+        <li><a href="national-city.html">National City</a></li>
+        <li><a href="el-cajon.html">El Cajon</a></li>
+        <li><a href="carlsbad.html">Carlsbad</a></li>
+        <li><a href="oceanside.html">Oceanside</a></li>
+        <li><a href="escondido.html">Escondido</a></li>
+        <li><a href="mission-valley.html">Mission Valley</a></li>
+        <li><a href="mira-mesa.html">Mira Mesa</a></li>
+        <li><a href="rancho-bernardo.html">Rancho Bernardo</a></li>
+        <li><a href="poway.html">Poway</a></li>
+        <li><a href="santee.html">Santee</a></li>
+        <li><a href="vista.html">Vista</a></li>
+        <li><a href="ocean-beach.html">Ocean Beach</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2025 Bumper Fix. All rights reserved.</span>
+    <span>&copy; 2026 Bumper Fix. All rights reserved.</span>
     <span>Mobile Auto Body Repair · San Diego, CA</span>
   </div>
 </footer>
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/18589880325" class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp Bumper Fix">💬</a>
+<a href="https://wa.me/18589880325?text=Hi! I need a quote for bumper repair in Downtown San Diego." class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp Bumper Fix">💬</a>
 
 <!-- STICKY CTA -->
 <div class="sticky-cta" id="stickyCta">
