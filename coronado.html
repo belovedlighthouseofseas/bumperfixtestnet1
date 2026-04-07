@@ -30,8 +30,7 @@
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 32.6859, "longitude": -117.1831 },
     "areaServed": { "@type": "City", "name": "Coronado" },
-    "openingHours": ["Mo-Fr 07:00-19:00", "Sa-Su 08:00-17:00"],
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47" }
+    "openingHours": ["Mo-Fr 07:00-19:00", "Sa-Su 08:00-17:00"]
   }
   </script>
 
@@ -191,6 +190,7 @@
       .local-grid{grid-template-columns:1fr}
       .local-map{height:320px}
     }
+    @media(max-width:960px){.core-repairs-grid{grid-template-columns:1fr 1fr!important}}
     @media(max-width:768px){
       nav{padding:12px 20px}
       .nav-links{display:none}
@@ -272,13 +272,46 @@
 <div class="page-hero">
   <div class="breadcrumb"><a href="/">Home</a> / <a href="service-area.html">Service Area</a> / Coronado</div>
   <div class="section-tag">Coronado</div>
-  <h1>MOBILE BUMPER REPAIR IN CORONADO.</h1>
+  <h1>Mobile Bumper Repair<br>Coronado, CA</h1>
   <p class="page-hero-sub">Serving Coronado Island — the bridge, the naval base, and the tight residential streets. We come to you. We cross the bridge.</p>
   <div style="display:flex;gap:14px;flex-wrap:wrap;">
     <a href="contact.html" class="btn-primary">Get a Quote</a>
     <a href="sms:+18589880325" class="btn-sms">💬 Text a Photo</a>
   </div>
 </div>
+
+<!-- CORE REPAIRS -->
+<section style="padding:64px 48px;background:var(--bg2);border-bottom:1px solid rgba(255,255,255,0.07);">
+  <div class="section-tag reveal">Core Repairs</div>
+  <h2 class="section-h reveal" style="font-size:clamp(28px,3vw,44px);margin-bottom:8px;">What Coronado Drivers Fix Most.</h2>
+  <div class="core-repairs-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:32px;">
+
+    <div style="background:var(--bg2);padding:36px 28px;position:relative;overflow:hidden;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">✦</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Scratches</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Keying, side-swipes, and parking lot brushes are common on Coronado's narrow Orange Avenue streets and tight residential lanes.</p>
+    </div>
+
+    <div style="background:var(--bg2);padding:36px 28px;position:relative;overflow:hidden;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">🔨</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Dents</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Door dings in hotel lots, shopping impacts near Ferry Landing, and parking dents repaired on-site — no bridge trip to a mainland shop.</p>
+    </div>
+
+    <div style="background:var(--bg2);padding:36px 28px;position:relative;overflow:hidden;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">🎨</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Paint Damage</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Oxidation, peeling clear coat, and transfer marks corrected with factory color-matching. Salt air on the island accelerates paint wear.</p>
+    </div>
+
+    <div style="background:var(--bg2);padding:36px 28px;position:relative;overflow:hidden;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">💥</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Cracks</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Cracked bumper covers from low-speed impacts in parking areas. We repair or replace on-site at your Coronado address — same day.</p>
+    </div>
+
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section class="services-section">
@@ -373,6 +406,8 @@
       </ul>
 
       <p class="local-venues reveal">We service all of Coronado ZIP code 92118. No extra charge for the bridge crossing. We come to your home, hotel, or wherever your car is parked on the island.</p>
+
+      <p class="local-venues reveal" style="margin-top:20px;">We also provide mobile bumper repair in nearby areas: <a href="downtown-san-diego.html" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;">Downtown San Diego</a> · <a href="chula-vista.html" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;">Chula Vista</a> · <a href="national-city.html" style="color:var(--white);text-decoration:underline;text-underline-offset:3px;">National City</a></p>
     </div>
 
     <div class="reveal">
