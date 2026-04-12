@@ -143,15 +143,20 @@ h2.section-h{font-family:'Anton',sans-serif;font-size:clamp(40px,5vw,72px);lette
 .page-hero-sub{font-size:17px;color:rgba(255,255,255,0.55);max-width:600px;line-height:1.75;margin-bottom:32px}
 /* services */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.svc-card{background:var(--bg2);padding:36px 28px;position:relative;overflow:hidden;transition:background 0.3s}
+.svc-card{background:var(--bg2);padding:44px 36px;position:relative;overflow:hidden;transition:background 0.3s}
 .svc-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--red);transition:width 0.4s}
-.svc-card:hover{background:var(--bg3)}
+.svc-card:hover{background:#1c1c1c}
 .svc-card:hover::after{width:100%}
 .svc-icon{font-size:32px;margin-bottom:14px}
 .svc-title{font-family:'Anton',sans-serif;font-size:20px;letter-spacing:0.02em;color:#fff;margin-bottom:8px;line-height:1.1}
 .svc-desc{font-size:13px;color:var(--mid);line-height:1.65;margin-bottom:14px}
-.svc-meta{display:flex;gap:8px;flex-wrap:wrap}
-.svc-badge{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--red);background:rgba(217,38,38,0.1);border:1px solid rgba(217,38,38,0.2);padding:4px 9px;border-radius:4px}
+.svc-meta{font-size:13px;font-weight:700;color:var(--red);margin-bottom:4px}
+.svc-badge{font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.3)}
+.svc-num{position:absolute;bottom:14px;right:22px;font-family:'Anton',sans-serif;font-size:64px;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none}
+.svc-card-cta{background:rgba(217,38,38,0.06);border:1px solid rgba(217,38,38,0.2)}
+.svc-card-cta:hover{background:rgba(217,38,38,0.1)}
+.svc-card-cta .svc-title{color:var(--red)}
+.services-section{padding:88px 48px;background:var(--bg2)}
 /* local */
 .local-section{padding:80px 48px;background:var(--bg)}
 .local-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;align-items:start}
@@ -198,7 +203,7 @@ footer{background:#080808;padding:64px 48px 32px}
 .sticky-btn{background:var(--red);color:#fff;padding:10px 24px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none}
 .sticky-close{background:none;border:none;color:var(--mid);font-size:20px;cursor:pointer;padding:4px}
 /* responsive */
-@media(max-width:960px){.svc-grid{grid-template-columns:1fr 1fr}.local-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:960px){.svc-grid{grid-template-columns:1fr 1fr}.core-repairs-grid{grid-template-columns:1fr 1fr!important}.local-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){nav{padding:12px 20px}.nav-links{display:none}.hamburger{display:flex}.page-hero,.local-section,.why-section,.cta-section{padding-left:24px;padding-right:24px}.svc-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}footer{padding:48px 24px 24px}.footer-grid{grid-template-columns:1fr;gap:32px}.sticky-cta{padding:12px 20px}}
   
     .nav-dropdown{position:relative}.nav-dropdown>a{display:flex;align-items:center;gap:5px}.nav-dropdown>a::after{content:'▾';font-size:10px;opacity:0.6}.nav-dropdown-menu{display:none;position:absolute;top:100%;padding-top:14px;left:50%;transform:translateX(-50%);background:rgba(18,18,18,0.98);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px;min-width:360px;display:grid;grid-template-columns:1fr 1fr;gap:2px;box-shadow:0 12px 40px rgba(0,0,0,0.5);z-index:999;opacity:0;pointer-events:none;transition:opacity 0.18s ease,transform 0.18s ease;transform:translateX(-50%) translateY(-6px);backdrop-filter:blur(16px)}.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown-menu:hover{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}.nav-dropdown-menu a{text-decoration:none;color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;padding:8px 12px;border-radius:6px;transition:background 0.15s,color 0.15s;white-space:nowrap}.nav-dropdown-menu a:hover{background:rgba(255,255,255,0.08);color:#fff}.nav-dropdown-menu .dd-all{grid-column:1/-1;border-top:1px solid rgba(255,255,255,0.08);margin-top:4px;padding-top:10px;color:var(--red)!important;font-weight:700!important;text-align:center}.nav-dropdown-menu .dd-all:hover{background:rgba(220,38,38,0.1)!important;color:var(--red)!important}
@@ -306,31 +311,39 @@ footer{background:#080808;padding:64px 48px 32px}
   </div>
 </div>
 
-<!-- DAMAGE TYPES (SEO) -->
-<section style="padding:56px 48px 0;background:var(--bg2);">
+<!-- CORE REPAIRS -->
+<section style="padding:64px 48px;background:var(--bg2);border-bottom:1px solid rgba(255,255,255,0.07);">
   <div class="section-tag reveal">Core Repairs</div>
-  <h2 class="section-h reveal">What Kind of Damage<br>Do You Have?</h2>
-  <div class="svc-grid reveal" style="margin-top:32px;">
-    <div class="svc-card">
-      <div class="svc-icon">✦</div>
-      <div class="svc-title">Scratches</div>
-      <p class="svc-desc">Clear coat and paint scratches on bumpers, doors, and body panels. Surface marks to deeper paint damage — assessed from your photos.</p>
+  <h2 class="section-h reveal" style="font-size:clamp(28px,3vw,44px);margin-bottom:8px;">What El Cajon Drivers Deal With.</h2>
+  <div class="core-repairs-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:32px;">
+
+    <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">🚧</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Car Scratch Repair</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Parking lots near Parkway Plaza, tight apartment spaces, and East County surface streets cause frequent side scrapes. Fixed on-site at your El Cajon address.</p>
     </div>
-    <div class="svc-card">
-      <div class="svc-icon">🔧</div>
-      <div class="svc-title">Dents</div>
-      <p class="svc-desc">Minor bumper dents and door dings repaired on-site. PDR when paint is intact; refinish when it's not.</p>
+
+    <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">🔨</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Dent Repair</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Door dings in busy El Cajon shopping center lots and residential streets are constant. Paintless dent repair restores panels same day at your location.</p>
     </div>
-    <div class="svc-card">
-      <div class="svc-icon">🎨</div>
-      <div class="svc-title">Paint Damage</div>
-      <p class="svc-desc">Peeling, fading, chipped paint, and paint transfer corrected with a color-matched refinish using your vehicle's factory paint code.</p>
+
+    <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">🎨</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Paint Repair</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Inland East County heat and I-8 freeway debris accelerate paint chips and fade. We precision color-match and refinish on-site — no shop required.</p>
     </div>
-    <div class="svc-card">
-      <div class="svc-icon">⚡</div>
-      <div class="svc-title">Cracks</div>
-      <p class="svc-desc">Repairable bumper cracks fixed on-site depending on location and severity. Text a photo and we'll confirm if mobile repair is a fit.</p>
+
+    <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">💥</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Bumper Crack Repair</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Low-speed impacts on Main St and parking lot fender-benders frequently crack bumper covers. We repair or replace on-site the same day in El Cajon.</p>
     </div>
+
+  </div>
+  <div style="margin-top:28px;text-align:center;" class="reveal">
+    <a href="contact.html" class="btn-primary">Get a Fast Quote →</a>
   </div>
 </section>
 
@@ -346,10 +359,8 @@ footer{background:#080808;padding:64px 48px 32px}
       <div class="svc-icon">🚗</div>
       <div class="svc-title">Bumper Repair</div>
       <p class="svc-desc">Cracks, dents, scuffs, and impact damage repaired on-site with a color-matched refinish. Front and rear bumpers handled the same day.</p>
-      <div class="svc-meta">
-        <span class="svc-badge">2–3 hrs typical</span>
-        <span class="svc-badge">$350–$600</span>
-      </div>
+      <div class="svc-meta">From $350 – $600</div>
+      <div class="svc-badge">2 – 3 hrs</div>
       <div class="svc-num">01</div>
     </div>
 
@@ -357,10 +368,8 @@ footer{background:#080808;padding:64px 48px 32px}
       <div class="svc-icon">✦</div>
       <div class="svc-title">Scratch Removal</div>
       <p class="svc-desc">From minor surface marks to deeper paint scratches across doors, panels, and bumpers. Clean result without a full respray when possible.</p>
-      <div class="svc-meta">
-        <span class="svc-badge">1.5–3 hrs</span>
-        <span class="svc-badge">$200–$450</span>
-      </div>
+      <div class="svc-meta">From $200 – $450</div>
+      <div class="svc-badge">1.5 – 3 hrs</div>
       <div class="svc-num">02</div>
     </div>
 
@@ -368,10 +377,8 @@ footer{background:#080808;padding:64px 48px 32px}
       <div class="svc-icon">🛡️</div>
       <div class="svc-title">Scuff &amp; Scrape Repair</div>
       <p class="svc-desc">Surface-level scuffs and scrapes from parking lot contact or curb rash. Often the most cost-effective mobile repair type — done quickly on-site.</p>
-      <div class="svc-meta">
-        <span class="svc-badge">1–2 hrs</span>
-        <span class="svc-badge">$150–$350</span>
-      </div>
+      <div class="svc-meta">From $150 – $350</div>
+      <div class="svc-badge">1 – 2 hrs</div>
       <div class="svc-num">03</div>
     </div>
 
@@ -379,10 +386,8 @@ footer{background:#080808;padding:64px 48px 32px}
       <div class="svc-icon">🎨</div>
       <div class="svc-title">Auto Body Paint</div>
       <p class="svc-desc">Panel repaints and color-matched refinishing using factory paint codes. Done on-site with professional spray equipment — no booth required for cosmetic panels.</p>
-      <div class="svc-meta">
-        <span class="svc-badge">3–5 hrs</span>
-        <span class="svc-badge">$400–$750</span>
-      </div>
+      <div class="svc-meta">From $400 – $750</div>
+      <div class="svc-badge">3 – 5 hrs</div>
       <div class="svc-num">04</div>
     </div>
 
@@ -390,17 +395,18 @@ footer{background:#080808;padding:64px 48px 32px}
       <div class="svc-icon">⚙️</div>
       <div class="svc-title">Paintless Dent Repair</div>
       <p class="svc-desc">PDR removes dents from hoods, doors, and body panels without repainting — when the paint is undamaged and the dent shape allows for it.</p>
-      <div class="svc-meta">
-        <span class="svc-badge">1.5–3 hrs</span>
-        <span class="svc-badge">$200–$500</span>
-      </div>
+      <div class="svc-meta">From $200 – $500</div>
+      <div class="svc-badge">1.5 – 3 hrs</div>
       <div class="svc-num">05</div>
     </div>
 
-    <div class="svc-card reveal" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:rgba(217,38,38,0.05);border:1px dashed rgba(217,38,38,0.3);">
-      <div style="font-family:'Anton',sans-serif;font-size:22px;color:var(--white);margin-bottom:12px;line-height:1.1;">Not Sure What<br>You Need?</div>
-      <p style="font-size:14px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:24px;">Text a photo of the damage. We will tell you what type of repair fits, whether mobile service works for your situation, and what the price range looks like.</p>
-      <a href="sms:+18589880325" style="display:inline-flex;align-items:center;gap:8px;background:var(--red);color:white;padding:12px 22px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;">💬 Text Us a Photo</a>
+    <div class="svc-card svc-card-cta reveal">
+      <div class="svc-icon">📸</div>
+      <div class="svc-title">Not Sure? Text a Photo.</div>
+      <p class="svc-desc">Snap a photo of the damage and send it to (858) 988-0325. We'll tell you what fits, whether mobile repair works, and what the price range looks like — no obligation.</p>
+      <div class="svc-meta" style="color:rgba(255,255,255,0.5);">Free estimate</div>
+      <div class="svc-badge">Fast response</div>
+      <div class="svc-num">?</div>
     </div>
 
   </div>
