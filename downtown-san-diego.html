@@ -238,50 +238,38 @@
     .btn-sms:hover { border-color: #4ADE80; background: rgba(74,222,128,0.06); }
 
     /* ── SERVICES ── */
-    #services { padding: 88px 48px; background: var(--bg2); }
-    .services-header { margin-bottom: 52px; }
-    .services-header p { font-size: 16px; color: var(--mid); line-height: 1.75; max-width: 500px; }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-    .service-card { background: var(--bg3); padding: 40px 32px; position: relative; overflow: hidden; transition: background 0.3s; }
-    .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--red); transition: width 0.4s ease; }
-    .service-card:hover { background: #242424; }
-    .service-card:hover::after { width: 100%; }
-    .sc-icon { font-size: 34px; margin-bottom: 18px; }
-    .sc-title { font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 0.03em; margin-bottom: 10px; line-height: 1.1; color: var(--white); }
-    .sc-desc { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 14px; }
-    .sc-price { font-size: 13px; font-weight: 700; color: var(--red); margin-bottom: 4px; }
-    .sc-time { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
-    .sc-num { position: absolute; bottom: 14px; right: 22px; font-family: 'Anton', sans-serif; font-size: 64px; color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none; }
-    .sc-not-sure { background: rgba(217,38,38,0.06); border: 1px solid rgba(217,38,38,0.2); }
-    .sc-not-sure:hover { background: rgba(217,38,38,0.1); }
-    .sc-not-sure .sc-title { color: var(--red); }
+    .svc-section { padding: 88px 48px; background: var(--bg2); }
+    .svc-header { margin-bottom: 52px; }
+    .svc-header p { font-size: 16px; color: var(--mid); line-height: 1.75; max-width: 500px; }
+    .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 48px; }
+    .svc-card { background: var(--bg2); padding: 44px 36px; position: relative; overflow: hidden; transition: background 0.3s; }
+    .svc-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background: var(--red); transition: width 0.4s ease; }
+    .svc-card:hover { background: #1c1c1c; }
+    .svc-card:hover::after { width: 100%; }
+    .svc-icon { font-size: 34px; margin-bottom: 18px; }
+    .svc-title { font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 0.03em; margin-bottom: 10px; line-height: 1.1; color: var(--white); }
+    .svc-desc { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 14px; }
+    .svc-meta { font-size: 13px; font-weight: 700; color: var(--red); margin-bottom: 4px; }
+    .svc-badge { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+    .svc-num { position: absolute; bottom: 14px; right: 22px; font-family: 'Anton', sans-serif; font-size: 64px; color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none; }
+    .svc-card-cta { background: rgba(217,38,38,0.06); border: 1px solid rgba(217,38,38,0.2); }
+    .svc-card-cta:hover { background: rgba(217,38,38,0.1); }
+    .svc-card-cta .svc-title { color: var(--red); }
 
     /* ── LOCAL SECTION ── */
-    #local { padding: 88px 48px; background: var(--bg); }
-    .local-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    .local-content p { font-size: 16px; color: var(--mid); line-height: 1.8; margin-bottom: 28px; }
-    .neighborhoods { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
-    .nbhd-pill {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--bg2); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 100px; padding: 7px 16px;
-      font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.7);
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .nbhd-pill:hover { border-color: var(--red); color: var(--white); }
-    .nbhd-pill::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
-    .map-wrap { border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
-    .map-wrap iframe { width: 100%; height: 380px; border: 0; display: block; }
+    .local-section { padding: 88px 48px; background: var(--bg); }
+    .local-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .local-intro p { font-size: 16px; color: var(--mid); line-height: 1.8; margin-bottom: 28px; }
+    .neighborhood-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
+    .neighborhood-list li { font-size: 14px; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 10px; }
+    .neighborhood-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--red); flex-shrink: 0; }
+    .local-map { border: 1px solid rgba(255,255,255,0.08); overflow: hidden; }
+    .local-map iframe { width: 100%; height: 380px; border: 0; display: block; }
 
     /* ── WHY MOBILE ── */
-    #why { padding: 88px 48px; background: var(--bg2); border-top: 1px solid rgba(255,255,255,0.06); }
-    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-    .why-card {
-      background: var(--bg3); border-radius: 12px;
-      padding: 36px 28px; border: 1px solid rgba(255,255,255,0.07);
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .why-card:hover { border-color: var(--red); transform: translateY(-4px); }
+    .why-section { padding: 88px 48px; background: var(--bg2); border-top: 1px solid rgba(255,255,255,0.06); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--line); border: 1px solid var(--line); margin-top: 48px; }
+    .why-block { background: var(--bg2); padding: 44px 36px; }
     .why-icon { font-size: 36px; margin-bottom: 20px; }
     .why-title { font-family: 'Anton', sans-serif; font-size: 22px; letter-spacing: 0.03em; color: var(--white); margin-bottom: 12px; line-height: 1.1; }
     .why-desc { font-size: 14px; color: var(--mid); line-height: 1.75; }
@@ -344,9 +332,9 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
-      .local-inner { grid-template-columns: 1fr; gap: 40px; }
+      .local-grid { grid-template-columns: 1fr; gap: 40px; }
       .why-grid { grid-template-columns: 1fr 1fr; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
+      .svc-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
       .core-repairs-grid { grid-template-columns: 1fr 1fr !important; }
     }
@@ -355,8 +343,8 @@
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .page-hero { padding: 48px 24px 40px; }
-      #services, #local, #why { padding: 64px 24px; }
-      .services-grid { grid-template-columns: 1fr; }
+      .svc-section, .local-section, .why-section { padding: 64px 24px; }
+      .svc-grid { grid-template-columns: 1fr; }
       .why-grid { grid-template-columns: 1fr; }
       .cta-section { padding: 64px 24px; }
       footer { padding: 48px 24px 24px; }
@@ -483,113 +471,109 @@
 </section>
 
 <!-- SERVICES -->
-<section id="services">
-  <div class="services-header reveal">
+<section class="svc-section">
+  <div class="svc-header reveal">
     <div class="section-tag">What We Fix</div>
     <h2 class="section-h">Our Services.</h2>
     <p>Cosmetic auto body repair brought to you — wherever your car is parked in Downtown San Diego.</p>
   </div>
 
-  <div class="services-grid">
+  <div class="svc-grid">
 
-    <div class="service-card reveal">
-      <div class="sc-icon">🚗</div>
-      <div class="sc-title">Bumper Repair</div>
-      <p class="sc-desc">Cracks, splits, dents, and scuffs on front and rear bumpers repaired on-site with a color-matched finish. The most common repair we do in urban parking decks.</p>
-      <div class="sc-price">From $175 – $450</div>
-      <div class="sc-time">1.5 – 3 hrs</div>
-      <div class="sc-num">01</div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">🚗</div>
+      <div class="svc-title">Bumper Repair</div>
+      <p class="svc-desc">Cracks, splits, dents, and scuffs on front and rear bumpers repaired on-site with a color-matched finish. The most common repair we do in urban parking decks.</p>
+      <div class="svc-meta">From $175 – $450</div>
+      <div class="svc-badge">1.5 – 3 hrs</div>
+      <div class="svc-num">01</div>
     </div>
 
-    <div class="service-card reveal">
-      <div class="sc-icon">✏️</div>
-      <div class="sc-title">Scratch Removal</div>
-      <p class="sc-desc">Surface scratches and keying damage polished or refinished. We assess depth on-site and quote before starting — no surprises.</p>
-      <div class="sc-price">From $125 – $350</div>
-      <div class="sc-time">1 – 2.5 hrs</div>
-      <div class="sc-num">02</div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">✏️</div>
+      <div class="svc-title">Scratch Removal</div>
+      <p class="svc-desc">Surface scratches and keying damage polished or refinished. We assess depth on-site and quote before starting — no surprises.</p>
+      <div class="svc-meta">From $125 – $350</div>
+      <div class="svc-badge">1 – 2.5 hrs</div>
+      <div class="svc-num">02</div>
     </div>
 
-    <div class="service-card reveal">
-      <div class="sc-icon">💥</div>
-      <div class="sc-title">Dent Removal</div>
-      <p class="sc-desc">Paintless dent removal (PDR) for door dings and minor panel dents with no paint damage. Fast, clean, and invisible when done right.</p>
-      <div class="sc-price">From $100 – $300</div>
-      <div class="sc-time">45 min – 2 hrs</div>
-      <div class="sc-num">03</div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">💥</div>
+      <div class="svc-title">Dent Removal</div>
+      <p class="svc-desc">Paintless dent removal (PDR) for door dings and minor panel dents with no paint damage. Fast, clean, and invisible when done right.</p>
+      <div class="svc-meta">From $100 – $300</div>
+      <div class="svc-badge">45 min – 2 hrs</div>
+      <div class="svc-num">03</div>
     </div>
 
-    <div class="service-card reveal">
-      <div class="sc-icon">🎨</div>
-      <div class="sc-title">Paint Touch-Up</div>
-      <p class="sc-desc">Stone chips, parking lot door dings, and small paint losses blended to match your factory color. Protects bare metal from rust.</p>
-      <div class="sc-price">From $85 – $225</div>
-      <div class="sc-time">45 min – 1.5 hrs</div>
-      <div class="sc-num">04</div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">🎨</div>
+      <div class="svc-title">Paint Touch-Up</div>
+      <p class="svc-desc">Stone chips, parking lot door dings, and small paint losses blended to match your factory color. Protects bare metal from rust.</p>
+      <div class="svc-meta">From $85 – $225</div>
+      <div class="svc-badge">45 min – 1.5 hrs</div>
+      <div class="svc-num">04</div>
     </div>
 
-    <div class="service-card reveal">
-      <div class="sc-icon">🔧</div>
-      <div class="sc-title">Scuff &amp; Rub Mark Removal</div>
-      <p class="sc-desc">Rubber transfer and scuff marks from tight parking spots or shopping carts removed by machine polish or compound. Most go away completely.</p>
-      <div class="sc-price">From $75 – $200</div>
-      <div class="sc-time">30 min – 1.5 hrs</div>
-      <div class="sc-num">05</div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">🔧</div>
+      <div class="svc-title">Scuff &amp; Rub Mark Removal</div>
+      <p class="svc-desc">Rubber transfer and scuff marks from tight parking spots or shopping carts removed by machine polish or compound. Most go away completely.</p>
+      <div class="svc-meta">From $75 – $200</div>
+      <div class="svc-badge">30 min – 1.5 hrs</div>
+      <div class="svc-num">05</div>
     </div>
 
-    <div class="service-card sc-not-sure reveal">
-      <div class="sc-icon">📸</div>
-      <div class="sc-title">Not Sure? Text a Photo.</div>
-      <p class="sc-desc">Snap a photo of the damage and send it to (858) 988-0325. We'll give you an honest assessment and a quote — usually within the hour, no obligation.</p>
-      <div class="sc-price" style="color:var(--white);opacity:0.5;">Free estimate</div>
-      <div class="sc-time">Fast response</div>
-      <div class="sc-num">?</div>
+    <div class="svc-card svc-card-cta reveal">
+      <div class="svc-icon">📸</div>
+      <div class="svc-title">Not Sure? Text a Photo.</div>
+      <p class="svc-desc">Snap a photo of the damage and send it to (858) 988-0325. We'll give you an honest assessment and a quote — usually within the hour, no obligation.</p>
+      <div class="svc-meta" style="color:var(--white);opacity:0.5;">Free estimate</div>
+      <div class="svc-badge">Fast response</div>
+      <div class="svc-num">?</div>
     </div>
 
   </div>
 </section>
 
 <!-- LOCAL SECTION -->
-<section id="local">
-  <div class="local-inner">
-    <div class="local-content">
+<section class="local-section">
+  <div class="local-grid">
+    <div class="local-intro">
       <div class="section-tag reveal">Downtown San Diego Coverage.</div>
       <h2 class="section-h reveal">Where We Serve<br>Downtown.</h2>
       <p class="reveal">We frequently serve the parking structures and lots throughout Downtown, the Gaslamp Quarter, Little Italy, Cortez Hill, East Village, and Banker's Hill. Urban parking structure repairs are a core part of what we do — we carry all the equipment needed to work in covered, low-clearance decks.</p>
       <p class="reveal">If your car is in a downtown office building, condo garage, or surface lot, text us the address and we'll confirm availability. Most Downtown jobs can be booked same-week, and often same-day when slots are open.</p>
       <p class="reveal">If you searched for <strong>bumper repair near me Downtown San Diego</strong> — this is exactly what we do. Whether your bumper was hit in a parking garage, scraped in a tight downtown lot, or damaged on the freeway on-ramp, we come to your car.</p>
 
-      <p class="reveal" style="font-size:14px;color:var(--mid);line-height:1.75;margin-bottom:24px;">Mobile bumper repair in Downtown San Diego, Gaslamp Quarter, East Village, Little Italy, Cortez Hill, and surrounding urban areas.</p>
+      <ul class="neighborhood-list reveal">
+        <li>Gaslamp Quarter</li>
+        <li>Little Italy</li>
+        <li>East Village</li>
+        <li>Cortez Hill</li>
+        <li>Banker's Hill</li>
+        <li>Marina District</li>
+      </ul>
 
-      <div class="neighborhoods reveal">
-        <span class="nbhd-pill">Gaslamp Quarter</span>
-        <span class="nbhd-pill">Little Italy</span>
-        <span class="nbhd-pill">East Village</span>
-        <span class="nbhd-pill">Cortez Hill</span>
-        <span class="nbhd-pill">Banker's Hill</span>
-        <span class="nbhd-pill">Marina District</span>
-      </div>
-
-      <p class="local-copy reveal" style="margin-top:24px;">Also serving nearby areas: <a href="la-jolla.html" style="color:var(--red);">La Jolla bumper repair</a>, <a href="mission-valley.html" style="color:var(--red);">Mission Valley bumper repair</a>, <a href="chula-vista.html" style="color:var(--red);">Chula Vista bumper repair</a>, and <a href="national-city.html" style="color:var(--red);">National City bumper repair</a>.</p>
+      <p class="reveal" style="margin-bottom:28px;">Also serving nearby areas: <a href="la-jolla.html" style="color:var(--red);">La Jolla bumper repair</a>, <a href="mission-valley.html" style="color:var(--red);">Mission Valley bumper repair</a>, <a href="chula-vista.html" style="color:var(--red);">Chula Vista bumper repair</a>, and <a href="national-city.html" style="color:var(--red);">National City bumper repair</a>.</p>
 
       <a href="contact.html" class="btn-primary reveal">Get a Quote →</a>
     </div>
 
-    <div class="reveal">
-      <div class="map-wrap">
-        <iframe
-          src="https://maps.google.com/maps?q=Downtown+San+Diego,+CA&t=&z=14&ie=UTF8&iwloc=&output=embed"
-          title="Downtown San Diego service area — Bumper Fix"
-          allowfullscreen
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
+    <div class="local-map reveal">
+      <iframe
+        src="https://maps.google.com/maps?q=Downtown+San+Diego,+CA&t=&z=14&ie=UTF8&iwloc=&output=embed"
+        title="Downtown San Diego service area — Bumper Fix"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </div>
 </section>
 
 <!-- WHY MOBILE FOR DOWNTOWN -->
-<section id="why">
+<section class="why-section">
   <div class="reveal">
     <div class="section-tag">Why Mobile</div>
     <h2 class="section-h">Built for Urban Drivers.</h2>
@@ -598,19 +582,19 @@
 
   <div class="why-grid">
 
-    <div class="why-card reveal">
+    <div class="why-block reveal">
       <div class="why-icon">🏗️</div>
       <div class="why-title">Parking Structure Friendly</div>
       <p class="why-desc">We work in most covered parking structures, so your car stays exactly where it is. No need to find street parking or move it to a different location for us to get started.</p>
     </div>
 
-    <div class="why-card reveal">
+    <div class="why-block reveal">
       <div class="why-icon">🚫</div>
       <div class="why-title">No Tow, No Trip</div>
       <p class="why-desc">No need to drive to a shop across town, arrange a ride, or wait days for a booking. We come to your building, handle the repair, and you're done — car stays put.</p>
     </div>
 
-    <div class="why-card reveal">
+    <div class="why-block reveal">
       <div class="why-icon">⚡</div>
       <div class="why-title">Same-Day When Available</div>
       <p class="why-desc">Urban availability is often fast. Text a photo of the damage to check open slots in Downtown San Diego. We confirm quickly and many jobs complete the same day.</p>

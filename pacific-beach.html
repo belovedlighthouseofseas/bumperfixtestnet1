@@ -355,129 +355,38 @@
     .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
 
     /* ── SERVICES SECTION ── */
-    .services-section { padding: 80px 48px; background: var(--bg2); }
-    .services-heading {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(36px, 4.5vw, 64px);
-      letter-spacing: 0.01em;
-      line-height: 0.92;
-      color: #fff;
-      margin-bottom: 48px;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .service-card {
-      background: var(--bg3);
-      border-radius: 12px;
-      padding: 28px;
-      border: 1px solid rgba(255,255,255,0.07);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: border-color 0.25s;
-    }
-    .service-card:hover { border-color: rgba(217,38,38,0.4); }
-    .service-icon { font-size: 28px; line-height: 1; }
-    .service-title {
-      font-family: 'Anton', sans-serif;
-      font-size: 20px;
-      letter-spacing: 0.02em;
-      color: #fff;
-    }
-    .service-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; flex: 1; }
-    .service-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
-    .badge-price {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--red);
-      background: rgba(217,38,38,0.12);
-      padding: 4px 10px;
-      border-radius: 20px;
-      letter-spacing: 0.03em;
-    }
-    .badge-time {
-      font-size: 12px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.45);
-      background: rgba(255,255,255,0.07);
-      padding: 4px 10px;
-      border-radius: 20px;
-    }
-    .service-card-cta {
-      background: rgba(217,38,38,0.07);
-      border-color: rgba(217,38,38,0.25) !important;
-    }
-    .service-card-cta .service-title { color: var(--red); }
+    .services-section{padding:88px 48px;background:var(--bg2)}
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:48px}
+    .svc-card{background:var(--bg2);padding:44px 36px;position:relative;overflow:hidden;transition:background 0.3s}
+    .svc-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--red);transition:width 0.4s ease}
+    .svc-card:hover{background:var(--bg3)}
+    .svc-card:hover::after{width:100%}
+    .svc-icon{font-size:36px;margin-bottom:20px}
+    .svc-title{font-family:'Anton',sans-serif;font-size:24px;letter-spacing:0.02em;color:var(--white);margin-bottom:12px;line-height:1.1}
+    .svc-desc{font-size:14px;color:var(--mid);line-height:1.75;margin-bottom:16px}
+    .svc-badge{font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--red);background:rgba(217,38,38,0.1);border:1px solid rgba(217,38,38,0.2);padding:5px 10px;border-radius:4px}
+    .svc-meta{display:flex;gap:10px;flex-wrap:wrap}
+    .svc-num{position:absolute;bottom:12px;right:20px;font-family:'Anton',sans-serif;font-size:72px;color:rgba(255,255,255,0.025);line-height:1;pointer-events:none}
 
-    /* ── LOCAL AREA SECTION ── */
-    .local-section { padding: 72px 48px; background: var(--bg); }
-    .local-section h2 {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(36px, 4.5vw, 64px);
-      letter-spacing: 0.01em;
-      line-height: 0.92;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-    .local-copy {
-      font-size: 16px;
-      color: rgba(255,255,255,0.55);
-      max-width: 620px;
-      line-height: 1.8;
-      margin-bottom: 28px;
-    }
-    .neighborhood-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
-    .chip {
-      font-size: 13px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.75);
-      background: var(--bg3);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 6px 16px;
-      border-radius: 20px;
-    }
-    .chip.active {
-      color: #fff;
-      background: rgba(217,38,38,0.18);
-      border-color: rgba(217,38,38,0.45);
-    }
-    .map-wrap {
-      height: 380px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-    .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+    /* ── LOCAL SECTION ── */
+    .local-section{padding:88px 48px;background:var(--bg)}
+    .local-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:48px}
+    .local-intro{font-size:16px;color:rgba(255,255,255,0.65);line-height:1.8;margin-bottom:28px}
+    .neighborhood-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+    .neighborhood-list li{font-size:15px;color:rgba(255,255,255,0.75);display:flex;gap:10px;align-items:center;line-height:1.5;padding:10px 16px;background:var(--bg2);border-radius:6px;border:1px solid rgba(255,255,255,0.06)}
+    .neighborhood-list li::before{content:'📍';font-size:13px;flex-shrink:0}
+    .local-venues{font-size:14px;color:var(--mid);line-height:1.75}
+    .local-map{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);height:420px}
+    .local-map iframe{width:100%;height:100%;border:0;display:block}
 
     /* ── WHY MOBILE SECTION ── */
-    .why-section { padding: 72px 48px; background: var(--bg2); }
-    .why-section h2 {
-      font-family: 'Anton', sans-serif;
-      font-size: clamp(36px, 4.5vw, 60px);
-      letter-spacing: 0.01em;
-      line-height: 0.92;
-      color: #fff;
-      margin-bottom: 40px;
-    }
-    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .why-card {
-      background: var(--bg3);
-      border-radius: 12px;
-      padding: 32px 28px;
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-    .why-icon { font-size: 32px; margin-bottom: 16px; }
-    .why-title {
-      font-family: 'Anton', sans-serif;
-      font-size: 20px;
-      letter-spacing: 0.02em;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .why-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.75; }
+    .why-section{padding:88px 48px;background:var(--bg2)}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line);border:1px solid var(--line);margin-top:48px}
+    .why-block{background:var(--bg2);padding:44px 36px;transition:background 0.3s}
+    .why-block:hover{background:var(--bg3)}
+    .why-icon{font-size:40px;margin-bottom:20px}
+    .why-title{font-family:'Anton',sans-serif;font-size:22px;letter-spacing:0.02em;color:var(--white);margin-bottom:14px;line-height:1.1}
+    .why-desc{font-size:14px;color:var(--mid);line-height:1.8}
 
     /* ── CTA SECTION ── */
     .cta-section { padding: 80px 48px; background: var(--red); text-align: center; }
@@ -583,27 +492,25 @@
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .why-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    @media(max-width:960px){
+      .svc-grid{grid-template-columns:1fr 1fr}
+      .why-grid{grid-template-columns:1fr 1fr}
+      .local-grid{grid-template-columns:1fr}
+      .local-map{height:320px}
+      .core-repairs-grid{grid-template-columns:1fr 1fr!important}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
     }
-    @media (max-width: 768px) {
-      nav { padding: 12px 20px; }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .page-hero { padding: 48px 24px 40px; }
-      .services-section,
-      .local-section,
-      .why-section,
-      .cta-section { padding-left: 24px; padding-right: 24px; }
-      .services-grid { grid-template-columns: 1fr; }
-      .why-grid { grid-template-columns: 1fr; }
-      .map-wrap { height: 300px; }
-      footer { padding: 48px 24px 24px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .sticky-cta { padding: 12px 20px; }
-      .hero-btns { flex-direction: column; align-items: flex-start; }
+    @media(max-width:768px){
+      nav{padding:12px 20px}
+      .nav-links{display:none}
+      .hamburger{display:flex}
+      .page-hero{padding:48px 24px 40px}
+      .services-section,.local-section,.why-section,.cta-section{padding-left:24px;padding-right:24px}
+      .svc-grid{grid-template-columns:1fr}
+      .why-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr;gap:32px}
+      footer{padding:48px 24px 24px}
+      .sticky-cta{padding:12px 20px}
     }
   </style>
 </head>
@@ -682,125 +589,177 @@
   </div>
 </section>
 
-<!-- SERVICES SECTION -->
+<!-- CORE REPAIRS -->
+<section style="padding:64px 48px;background:var(--bg2);border-bottom:1px solid rgba(255,255,255,0.07);">
+  <div class="section-tag reveal">Core Repairs</div>
+  <h2 class="section-h reveal" style="font-size:clamp(28px,3vw,44px);margin-bottom:8px;">What Pacific Beach Drivers Deal With.</h2>
+  <div class="core-repairs-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:32px;">
+
+    <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">✦</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Car Scratch Repair</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Tight beach parking, alley driveways, and Garnet Avenue street parking cause constant side scrapes. Repaired on-site at your PB address.</p>
+    </div>
+
+    <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">🔨</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Dent Repair</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Door dings in crowded beach lots and Mission Bay adjacent parking. Repaired without full repaint when paint is intact.</p>
+    </div>
+
+    <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">🎨</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Paint Repair</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Salt air and UV exposure from Pacific Beach's coastal climate take a toll on paint. Color-matched refinishing done on-site.</p>
+    </div>
+
+    <div style="background:var(--bg2);padding:36px 28px;" class="reveal">
+      <div style="font-size:28px;margin-bottom:14px;">💥</div>
+      <div style="font-family:'Anton',sans-serif;font-size:20px;color:var(--white);margin-bottom:10px;letter-spacing:0.02em;">Bumper Crack Repair</div>
+      <p style="font-size:14px;color:var(--mid);line-height:1.75;">Low-speed parking impacts in tight PB alleys and beach lots crack bumper covers. Repaired or replaced on-site same day.</p>
+    </div>
+
+  </div>
+  <div style="margin-top:28px;text-align:center;" class="reveal">
+    <a href="contact.html" class="btn-primary">Get a Fast Quote →</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
 <section class="services-section">
-  <div class="section-tag reveal">What We Do</div>
-  <h2 class="services-heading reveal">Five Services. All Done at Your Location.</h2>
-  <div class="services-grid">
+  <div class="section-tag reveal">Services in Pacific Beach</div>
+  <h2 class="section-h reveal">What We Fix.<br>All On-Site.</h2>
+  <p class="section-p reveal">Every service is performed at your Pacific Beach location — your apartment parking, home driveway, or street spot. No tow, no drop-off, no waiting days for your car back.</p>
 
-    <!-- Bumper Repair -->
-    <div class="service-card reveal">
-      <div class="service-icon">🚗</div>
-      <div class="service-title">Bumper Repair</div>
-      <p class="service-desc">Cracks, splits, dents, and scuffs on plastic bumper covers — repaired and color-matched on-site. We blend the repair to the surrounding panel so it disappears cleanly.</p>
-      <div class="service-badges">
-        <span class="badge-price">From $175</span>
-        <span class="badge-time">2–3 hrs</span>
+  <div class="svc-grid">
+
+    <div class="svc-card reveal">
+      <div class="svc-icon">🚗</div>
+      <div class="svc-title">Bumper Repair</div>
+      <p class="svc-desc">Cracks, dents, scuffs, and impact damage repaired on-site with a color-matched refinish. Front and rear bumpers handled the same day.</p>
+      <div class="svc-meta">
+        <span class="svc-badge">2–3 hrs typical</span>
+        <span class="svc-badge">$350–$600</span>
       </div>
+      <div class="svc-num">01</div>
     </div>
 
-    <!-- Scratch Removal -->
-    <div class="service-card reveal">
-      <div class="service-icon">✏️</div>
-      <div class="service-title">Scratch Removal</div>
-      <p class="service-desc">Surface scratches and keyed paint corrected with compound, polish, and spot-paint as needed. We assess depth first so the fix is accurate — not oversold.</p>
-      <div class="service-badges">
-        <span class="badge-price">From $95</span>
-        <span class="badge-time">1–2 hrs</span>
+    <div class="svc-card reveal">
+      <div class="svc-icon">✦</div>
+      <div class="svc-title">Scratch Removal</div>
+      <p class="svc-desc">From minor surface marks to deeper paint scratches across doors, panels, and bumpers. Clean result without a full respray when possible.</p>
+      <div class="svc-meta">
+        <span class="svc-badge">1.5–3 hrs</span>
+        <span class="svc-badge">$200–$450</span>
       </div>
+      <div class="svc-num">02</div>
     </div>
 
-    <!-- Scuff & Scrape -->
-    <div class="service-card reveal">
-      <div class="service-icon">🔧</div>
-      <div class="service-title">Scuff &amp; Scrape Repair</div>
-      <p class="service-desc">Parking-lot scuffs, curb rash, and surface transfers cleaned, smoothed, and touched up. Most scuffs come out the same day without panel removal.</p>
-      <div class="service-badges">
-        <span class="badge-price">From $95</span>
-        <span class="badge-time">1–2 hrs</span>
+    <div class="svc-card reveal">
+      <div class="svc-icon">🛡️</div>
+      <div class="svc-title">Scuff &amp; Scrape Repair</div>
+      <p class="svc-desc">Surface-level scuffs and scrapes from parking lot contact or curb rash. Often the most cost-effective mobile repair type — done quickly on-site.</p>
+      <div class="svc-meta">
+        <span class="svc-badge">1–2 hrs</span>
+        <span class="svc-badge">$150–$350</span>
       </div>
+      <div class="svc-num">03</div>
     </div>
 
-    <!-- Auto Body Paint -->
-    <div class="service-card reveal">
-      <div class="service-icon">🎨</div>
-      <div class="service-title">Auto Body Paint</div>
-      <p class="service-desc">Spot paint and panel blends using factory color codes and professional mobile spray equipment. Results are OEM-quality without the body shop overhead.</p>
-      <div class="service-badges">
-        <span class="badge-price">From $250</span>
-        <span class="badge-time">3–5 hrs</span>
+    <div class="svc-card reveal">
+      <div class="svc-icon">🎨</div>
+      <div class="svc-title">Auto Body Paint</div>
+      <p class="svc-desc">Panel repaints and color-matched refinishing using factory paint codes. Done on-site with professional spray equipment — no booth required for cosmetic panels.</p>
+      <div class="svc-meta">
+        <span class="svc-badge">3–5 hrs</span>
+        <span class="svc-badge">$400–$750</span>
       </div>
+      <div class="svc-num">04</div>
     </div>
 
-    <!-- PDR -->
-    <div class="service-card reveal">
-      <div class="service-icon">💠</div>
-      <div class="service-title">Paintless Dent Repair</div>
-      <p class="service-desc">Minor dents and dings removed without paint using professional PDR rods and glue-pull tools. Works best on clean dents with no creases or paint damage.</p>
-      <div class="service-badges">
-        <span class="badge-price">From $85</span>
-        <span class="badge-time">45–90 min</span>
+    <div class="svc-card reveal">
+      <div class="svc-icon">⚙️</div>
+      <div class="svc-title">Paintless Dent Repair</div>
+      <p class="svc-desc">PDR removes dents from hoods, doors, and body panels without repainting — when the paint is undamaged and the dent shape allows for it.</p>
+      <div class="svc-meta">
+        <span class="svc-badge">1.5–3 hrs</span>
+        <span class="svc-badge">$200–$500</span>
       </div>
+      <div class="svc-num">05</div>
     </div>
 
-    <!-- Not sure? -->
-    <div class="service-card service-card-cta reveal">
-      <div class="service-icon">📸</div>
-      <div class="service-title">Not Sure?</div>
-      <p class="service-desc">Text a photo of the damage and your location in Pacific Beach. We will identify the right service, give you a real price range, and confirm availability — usually within a few minutes.</p>
-      <div class="service-badges">
-        <a href="sms:+18589880325" style="display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;padding:10px 18px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;margin-top:4px;">💬 Text a Photo Now</a>
-      </div>
+    <div class="svc-card reveal" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:rgba(217,38,38,0.05);border:1px dashed rgba(217,38,38,0.3);">
+      <div style="font-family:'Anton',sans-serif;font-size:22px;color:var(--white);margin-bottom:12px;line-height:1.1;">Not Sure What<br>You Need?</div>
+      <p style="font-size:14px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:24px;">Text a photo of the damage. We will tell you what type of repair fits, whether mobile service works for your situation, and what the price range looks like.</p>
+      <a href="sms:+18589880325" style="display:inline-flex;align-items:center;gap:8px;background:var(--red);color:white;padding:12px 22px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;">💬 Text Us a Photo</a>
     </div>
 
   </div>
 </section>
 
-<!-- LOCAL AREA SECTION -->
+<!-- LOCAL SECTION -->
 <section class="local-section">
-  <div class="section-tag reveal">Coverage</div>
-  <h2 class="reveal">Serving Pacific Beach Drivers.</h2>
-  <p class="local-copy reveal">We serve drivers in Pacific Beach, Mission Beach, Ocean Beach, and the surrounding coastal neighborhoods. We come to apartment parking, home driveways, and street parking (when permitted) in the area.</p>
-  <p class="local-copy reveal" style="margin-top:0;">If you searched for <strong>bumper repair near me in Pacific Beach</strong> — this is exactly what we do. Whether your bumper was scraped in a crowded beach parking lot, dinged on Garnet Avenue, or hit in a tight alley behind your apartment, we come to your car.</p>
-  <div class="neighborhood-chips reveal">
-    <span class="chip active">Pacific Beach</span>
-    <span class="chip">Mission Beach</span>
-    <span class="chip">Ocean Beach</span>
-    <span class="chip">Mission Hills</span>
-    <span class="chip">Bay Park</span>
-    <span class="chip">Clairemont</span>
+  <div class="section-tag reveal">Local Coverage</div>
+  <h2 class="section-h reveal">Serving Pacific Beach Drivers.</h2>
+  <p class="section-p reveal">We cover all of Pacific Beach — from Crown Point to Garnet Avenue, Mission Bay to Windansea. If you live, park, or work here, we come to you.</p>
+
+  <div class="local-grid">
+    <div>
+      <p class="local-intro reveal">Pacific Beach is one of San Diego's most densely parked coastal neighborhoods — beach lots, tight apartment alleys, street-only parking near the boardwalk, and crowded Garnet Avenue lots all create constant bumper and scratch damage. We fix it where it happened.</p>
+      <p class="local-intro reveal" style="margin-top:0;">We service apartment driveways along Mission Boulevard, parking spots near Crown Point, home driveways in the quieter PB residential streets, and lots near the Garnet Avenue commercial corridor. If your car is in Pacific Beach, we come to it — no tow, no drop-off required.</p>
+      <p class="local-intro reveal" style="margin-top:0;">If you searched for <strong>bumper repair near me in Pacific Beach</strong> — this is exactly what we do. Whether your bumper was scraped in a crowded beach parking lot, dinged on Garnet Avenue, or hit in a tight alley behind your apartment, we come to your car.</p>
+
+      <div class="section-tag reveal" style="margin-top:32px;">Areas We Cover</div>
+      <ul class="neighborhood-list reveal">
+        <li><strong>Crown Point</strong> — residential streets and Mission Bay adjacent parking</li>
+        <li><strong>Garnet Avenue Corridor</strong> — retail parking and apartment lots</li>
+        <li><strong>Mission Boulevard</strong> — beachside apartments and vacation rentals</li>
+        <li><strong>Bay Park Adjacent</strong> — residential driveways and surface lots</li>
+        <li><strong>Clairemont Adjacent</strong> — commuter homes and neighborhood streets</li>
+      </ul>
+
+      <p class="local-venues reveal">We cover all of Pacific Beach ZIP code 92109. Also serving nearby areas: <a href="la-jolla.html" style="color:var(--red);">La Jolla bumper repair</a>, <a href="mission-valley.html" style="color:var(--red);">Mission Valley bumper repair</a>, <a href="ocean-beach.html" style="color:var(--red);">Ocean Beach bumper repair</a>, and <a href="downtown-san-diego.html" style="color:var(--red);">Downtown San Diego bumper repair</a>.</p>
+    </div>
+
+    <div class="reveal">
+      <div class="local-map">
+        <iframe
+          src="https://maps.google.com/maps?q=Pacific+Beach,+San+Diego,+CA&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          title="Bumper Fix — Pacific Beach Service Area"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
   </div>
-  <div class="map-wrap reveal">
-    <iframe
-      src="https://maps.google.com/maps?q=Pacific+Beach,+San+Diego,+CA&t=&z=13&ie=UTF8&iwloc=&output=embed"
-      title="Bumper Fix — Pacific Beach Service Area"
-      allowfullscreen
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-  <p class="local-copy reveal" style="margin-top:24px;">Also serving nearby areas: <a href="la-jolla.html" style="color:var(--red);">La Jolla bumper repair</a>, <a href="mission-valley.html" style="color:var(--red);">Mission Valley bumper repair</a>, <a href="ocean-beach.html" style="color:var(--red);">Ocean Beach bumper repair</a>, and <a href="downtown-san-diego.html" style="color:var(--red);">Downtown San Diego bumper repair</a>.</p>
 </section>
 
-<!-- WHY MOBILE SECTION -->
+<!-- WHY MOBILE -->
 <section class="why-section">
   <div class="section-tag reveal">Why Mobile</div>
-  <h2 class="reveal">No Drive. No Wait.<br>No Drop-Off.</h2>
+  <h2 class="section-h reveal">Built for Pacific Beach<br>Convenience.</h2>
+  <p class="section-p reveal">No shop logistics. No leaving your car for days. Mobile repair fits Pacific Beach's active, beach-adjacent lifestyle — done where your car already is.</p>
+
   <div class="why-grid">
-    <div class="why-card reveal">
-      <div class="why-icon">🏠</div>
-      <div class="why-title">No Drop-Off Required</div>
-      <p class="why-desc">We come to your apartment, condo parking lot, or home driveway in Pacific Beach. You keep your car — and your day — until we arrive.</p>
+
+    <div class="why-block reveal">
+      <div class="why-icon">🏖️</div>
+      <div class="why-title">Apartments, Lots &amp; Driveways</div>
+      <p class="why-desc">Pacific Beach is packed with apartment buildings, beach rentals, and tight residential streets. We come to wherever your car is — your apartment lot, a home driveway, or a permitted street spot. No need to move it to a shop across town.</p>
     </div>
-    <div class="why-card reveal">
+
+    <div class="why-block reveal">
       <div class="why-icon">⚡</div>
-      <div class="why-title">Same-Day When Available</div>
-      <p class="why-desc">Many repairs in Pacific Beach can be scheduled same-day or next-day depending on availability. Text a photo and we confirm the timeline quickly.</p>
+      <div class="why-title">Same-Day Availability</div>
+      <p class="why-desc">Most cosmetic repairs are booked and completed within 24 to 48 hours of your first message. Bumper repairs and scratch removal typically run two to four hours on-site. You get your car back the same day.</p>
     </div>
-    <div class="why-card reveal">
+
+    <div class="why-block reveal">
       <div class="why-icon">📸</div>
       <div class="why-title">Photo-First Quoting</div>
-      <p class="why-desc">Send a photo of the damage. We give you a real price range before anything is booked — no in-person estimate appointment needed.</p>
+      <p class="why-desc">Text a few photos of the damage and we respond with whether mobile repair is a good fit and what the price range looks like — before you commit to anything. Fast, honest, and no in-person estimate required.</p>
     </div>
+
   </div>
 </section>
 
