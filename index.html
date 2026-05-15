@@ -131,10 +131,13 @@
       backdrop-filter: blur(16px);
     }
     .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu,
     .nav-dropdown-menu:hover {
       opacity: 1; pointer-events: auto;
       transform: translateX(-50%) translateY(0);
     }
+    .nav-dropdown > a:focus-visible { outline: 2px solid rgba(255,255,255,0.7); outline-offset: 3px; border-radius: 3px; }
+    .nav-dropdown-menu a:focus-visible { outline: 2px solid var(--red); outline-offset: 1px; }
     .nav-dropdown-menu a {
       text-decoration: none; color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500;
       padding: 8px 12px; border-radius: 6px; transition: background 0.15s, color 0.15s;
@@ -1466,7 +1469,7 @@
         <div class="calc-label">Damage Type</div>
         <div class="calc-options">
           <div class="calc-opt" data-type="scratch" data-min="149" data-max="299">Scratch / Scuff</div>
-          <div class="calc-opt" data-type="bumper" data-min="249" data-max="499">Bumper Damage</div>
+          <div class="calc-opt" data-type="bumper" data-min="299" data-max="499">Bumper Damage</div>
           <div class="calc-opt" data-type="dent" data-min="99" data-max="249">Dent</div>
           <div class="calc-opt" data-type="paint" data-min="349" data-max="699">Full Panel Repaint</div>
           <div class="calc-opt" data-type="keying" data-min="199" data-max="449">Keying / Vandalism</div>
@@ -1547,7 +1550,7 @@
 
   <div class="area-map-wrap">
     <div id="bf-map" style="width:100%;height:100%;position:relative;">
-      <iframe allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+      <iframe loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
         src="https://maps.google.com/maps?q=San+Diego+County,+CA&t=&z=10&ie=UTF8&iwloc=&output=embed"
         style="width:100%;height:100%;border:0;display:block;"
         title="Bumper Fix — San Diego County Service Area">
@@ -2056,16 +2059,16 @@
 </footer>
 
 <!-- ── LIVE CHAT BUBBLE ── -->
-<div class="chat-btn" id="chatBtn">
-  <span class="chat-btn-icon">💬</span>
-  <span class="chat-badge">1</span>
-  <span class="chat-tooltip">Ask us anything</span>
-</div>
-<div class="chat-panel" id="chatPanel">
+<button class="chat-btn" id="chatBtn" type="button" aria-label="Open quick answers" aria-haspopup="dialog" aria-expanded="false">
+  <span class="chat-btn-icon" aria-hidden="true">💬</span>
+  <span class="chat-badge" aria-hidden="true">1</span>
+  <span class="chat-tooltip">Quick answers</span>
+</button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Quick answers">
   <div class="chat-panel-head">
     <div>
-      <div class="chat-panel-title">Bumper Fix Support</div>
-      <div class="chat-panel-sub">Usually replies within minutes</div>
+      <div class="chat-panel-title">Quick Answers</div>
+      <div class="chat-panel-sub">Common questions, instant answers · text us for a real reply</div>
     </div>
     <button class="chat-panel-close" id="chatClose">×</button>
   </div>
@@ -2073,11 +2076,11 @@
     <div class="chat-msg bot">What kind of damage are you dealing with?</div>
   </div>
   <div class="chat-options" id="chatOptions">
-    <button class="chat-option" data-reply="bumper">🚗 Bumper damage</button>
-    <button class="chat-option" data-reply="scratch">✦ Scratch or scuff</button>
-    <button class="chat-option" data-reply="dent">⚙️ Dent repair</button>
-    <button class="chat-option" data-reply="price">💰 How much does it cost?</button>
-    <button class="chat-option" data-reply="area">📍 Do you come to my area?</button>
+    <button class="chat-option" data-reply="bumper"><span aria-hidden="true">🚗</span> Bumper damage</button>
+    <button class="chat-option" data-reply="scratch"><span aria-hidden="true">✦</span> Scratch or scuff</button>
+    <button class="chat-option" data-reply="dent"><span aria-hidden="true">⚙️</span> Dent repair</button>
+    <button class="chat-option" data-reply="price"><span aria-hidden="true">💰</span> How much does it cost?</button>
+    <button class="chat-option" data-reply="area"><span aria-hidden="true">📍</span> Do you come to my area?</button>
   </div>
   <div class="chat-input-row">
     <input class="chat-input" type="text" id="chatInput" placeholder="Type a message...">
@@ -2507,10 +2510,10 @@ document.addEventListener('mouseleave', function(e) {
     if(!chatBtn) return;
 
     const REPLIES = {
-      bumper: { q:'🚗 Bumper damage', a:'Bumper repair is one of the most common cosmetic repairs we handle. Cracks, scuffs, and impact damage are typically in the $249–$499 range depending on the job. We come to you — send a photo to get started.', showQuote:true },
+      bumper: { q:'🚗 Bumper damage', a:'Bumper repair is one of the most common cosmetic repairs we handle. Cracks, scuffs, and impact damage typically start at $299 and run higher depending on the job. We come to you — send a photo to get started.', showQuote:true },
       scratch: { q:'✦ Scratch or scuff', a:'Surface scratches and scuffs are generally in the $149–$299 range depending on depth. We color-match to your vehicle for a clean result. Send a photo and we can take a look.', showQuote:true },
       dent: { q:'⚙️ Dent repair', a:'For eligible dents where the paint is intact, paintless dent repair is typically $99–$249 and preserves the original finish. Whether it qualifies depends on the dent — send a photo first.', showQuote:true },
-      price: { q:'💰 How much does it cost?', a:'Pricing depends on the damage type and scope. Scratches start from $149, bumper repairs from $249, panel work from $349. Use the cost estimator on this page for a realistic range.', showQuote:false },
+      price: { q:'💰 How much does it cost?', a:'Pricing depends on the damage type and scope. Surface repairs start from $149, bumper restoration from $299, panel respray from $449. Use the cost estimator on this page for a realistic range.', showQuote:false },
       area: { q:'📍 Do you come to my area?', a:'We cover all of San Diego County — La Jolla, Downtown, Chula Vista, El Cajon, Mira Mesa, Santee, and more. Just text us your zip! 📍', showQuote:false },
     };
 
@@ -2523,10 +2526,14 @@ document.addEventListener('mouseleave', function(e) {
     }
 
     chatBtn.addEventListener('click', () => {
-      chatPanel.classList.toggle('open');
+      const isOpen = chatPanel.classList.toggle('open');
+      chatBtn.setAttribute('aria-expanded', String(isOpen));
       chatBtn.querySelector('.chat-badge').style.display='none';
     });
-    chatClose.addEventListener('click', () => chatPanel.classList.remove('open'));
+    chatClose.addEventListener('click', () => {
+      chatPanel.classList.remove('open');
+      chatBtn.setAttribute('aria-expanded', 'false');
+    });
 
     chatOptions.querySelectorAll('.chat-option').forEach(opt => {
       opt.addEventListener('click', () => {
